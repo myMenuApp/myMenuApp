@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Item {
@@ -25,6 +26,9 @@ public class Item {
 
 	@Lob
 	private String ingredients;
+
+	@ManyToOne
+	private Menu menu;
 
 	public Item() {
 	}
@@ -47,6 +51,10 @@ public class Item {
 
 	public Long getId() {
 		return id;
+	}
+
+	public Menu getMenu() {
+		return menu;
 	}
 
 	public String getItemName() {

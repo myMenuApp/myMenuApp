@@ -13,7 +13,7 @@ public class Customer {
 	
 	private String userName;
 	private String password;
-	private String avi;
+	private String avatar;
 	private String email;
 
 	public Long getId() {
@@ -28,8 +28,8 @@ public class Customer {
 		return password;
 	}
 
-	public String getAvi() {
-		return avi;
+	public String getAvatar() {
+		return avatar;
 	}
 
 	public String getEmail() {
@@ -40,18 +40,17 @@ public class Customer {
 
 	}
 
-	public Customer(Long id, String userName, String password, String avi, String email) {
+	public Customer(Long id, String userName, String password, String avatar, String email) {
 		this.id = id;
 		this.userName = userName;
 		this.password = password;
-		this.avi = avi;
+		this.avatar = avatar;
 		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", userName=" + userName + ", password=" + password + ", avi=" + avi + ", email="
-				+ email + "]";
+		return userName;
 	}
 
 }

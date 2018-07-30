@@ -12,13 +12,13 @@ public class ReviewTest {
 
 	@Test
 	public void testReviewClassExistsButIsNotNull() {
-		Reviews testReviews = null;
+		Review testReviews = null;
 		Assert.assertNull(testReviews);
 	}
 	@Test
 	public void testItemHasNameDescriptionPricePictureCaloriesIngredients() {
 
-		Reviews testReviews = new Reviews(id, creator, review, rating);
+		Review testReviews = new Review(id, creator, review, rating);
 		
 		Assert.assertEquals(creator, testReviews.getCreator());
 		Assert.assertEquals(review, testReviews.getReview());
