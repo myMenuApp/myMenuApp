@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title th:text="${item.itemName}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
+</head>
+<body>
+        <nav>
+                <ul>
+                    <li>
+                        <a th:href="@{/restaraunts}">Restaurants </a>
+                    </li>
+                    <li>
+                        <a th:href="@{/menu}">Menu</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/item}">Items</a>
+                    </li>
+                </ul>
+            </nav>
+<header>
+    <H1 th:text="${item.itemName}"></H1>
+</header>
+    <div>
+        <ul class="items">
+            <li>
+                <a th:text="${item.description}"></a>
+            </li>
+
+            <li>
+                <a th:text="${item.image}"></a>
+            </li>
+
+            <li>
+                <a th:text="${item.price}"></a>
+            </li>
+
+            <li>
+                <a th:text="${item.calories}"></a>
+            </li>
+
+            <li>
+                <a th:text="${item.ingredients}"></a>
+            </li>
+                
+        </ul>
+    </div>
+        <link th:href="|@{/restaurants}@{restaurant.restuarantName}/@{menu.menuId}|">Go Back</link>
+    </body>
+<footer>Handcrest&reg;</footer>
+<script src="javascript.js"></script>
+</body>
+</html>
