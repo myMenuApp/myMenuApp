@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Customer</title>
+    <title th:text="${restaurant.restaurantName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
 </head>
 <body>
 <header>
-    <H1>Customer</H1>
+    <H1 th:text="${restaurant.restaurantName}"></H1>
 </header>
 
-	<ul class= "restaurants">
-        <li th: each = "restaurant : {restaurants}">
-            <a th: href= "|@{/restaurants/}${restaurant.restaurantName}|">
-                <span th: text= "${restaurant.restaurantName}"></span>
+	<ul class= "menus">
+        <li th: each = "menu : {menus}">
+            <a th: href= "|@{/menus/}${menu.menuName}|">
+                <span th: text= "${menu.menuName}"></span>
             </a>
         </li>
     </ul>
