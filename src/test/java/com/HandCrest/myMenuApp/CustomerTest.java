@@ -19,7 +19,7 @@ public class CustomerTest {
 	}
 		
 		@Test
-		public void testItemHasNameDescriptionPricePictureCaloriesIngredients() {
+		public void testItemHasNamePasswordAviAndEmail() {
 
 			Customer testCustomer = new Customer(id, userName, password, avi, email);
 

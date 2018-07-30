@@ -4,7 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
-public class Reviews {
+public class Review {
 
 	@Id
 	@GeneratedValue
@@ -15,11 +15,11 @@ public class Reviews {
 	private String review;
 	private String rating;
 
-	public Reviews() {
+	public Review() {
 
 	}
 
-	public Reviews(Long id, String creator, String review, String rating) {
+	public Review(Long id, String creator, String review, String rating) {
 		this.id = id;
 		this.creator = creator;
 		this.review = review;
