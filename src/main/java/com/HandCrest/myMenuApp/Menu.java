@@ -4,14 +4,18 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Menu {
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String menuName;
-	@OneToMany(mappedBy = "item")
+	@OneToMany(mappedBy = "menu")
 	private Collection<Item> items;
 
 	@ManyToOne
