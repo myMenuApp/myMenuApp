@@ -28,6 +28,11 @@ public class MenuController {
 		return "redirect:/index";
 	}
 	
+	@RequestMapping ("/index")
+	public String index(Model model) {
+		return "index";
+	}
+	
 	@RequestMapping("/restaurants")
 	public String getRestaurants(Model model) {
 		model.addAttribute("restaurants", restaurantRepo.findAll());
