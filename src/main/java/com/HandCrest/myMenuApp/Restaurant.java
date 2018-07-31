@@ -22,7 +22,7 @@ public class Restaurant {
 
 	}
 
-	public Restaurant(String restaurantName, Menu... menus) {
+	public Restaurant(String restaurantName, Menu ... menus) {
 		this.restaurantName = restaurantName;
 		this.menus = Arrays.asList(menus);
 	}

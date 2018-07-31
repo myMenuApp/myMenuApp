@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title th:text="${menu.menuName}"></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
 </head>
@@ -24,7 +24,7 @@
 </header>
 
 <!-- List of items on the menu -- click for details -->
-	<ul class= "items">
+	<ul class= "itemsList">
         <li th:each ="item : {items}">
             <a th:href="|@{/items/}${item.itemName}|">
                 <span th:text="${item.itemName}"></span>

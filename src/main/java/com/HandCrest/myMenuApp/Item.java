@@ -1,7 +1,5 @@
 package com.HandCrest.myMenuApp;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +18,7 @@ public class Item {
 	@Lob
 	private String description;
 
-	private BigDecimal price;
+	private Double price;
 	private String picture;
 	private int calories;
 
@@ -30,15 +28,18 @@ public class Item {
 	@ManyToOne
 	private Menu menu;
 
+	@ManyToOne
+	private Restaurant restaurant;
+
 	public Item() {
 	}
 
-	public Item(String itemName, String description, BigDecimal price, String picture, int calories,
+	public Item(String itemName, String description, Double price, String picture, int calories,
 			String ingredients) {
 
 	}
 
-	public Item(Long id, String itemName, String description, BigDecimal price, String picture, int calories,
+	public Item(Long id, String itemName, String description, Double price, String picture, int calories,
 			String ingredients) {
 		this.id = id;
 		this.itemName = itemName;
@@ -65,7 +66,7 @@ public class Item {
 		return description;
 	}
 
-	public BigDecimal getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 

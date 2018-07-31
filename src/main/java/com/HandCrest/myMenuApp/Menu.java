@@ -33,9 +33,8 @@ public class Menu {
 		return items;
 	}
 
-	public Menu(String menuName, Restaurant restaurant, Item... items) {
+	public Menu(String menuName, Item ... items) {
 		this.menuName = menuName;
-		this.restaurant = restaurant;
 		this.items = Arrays.asList(items);
 	}
 

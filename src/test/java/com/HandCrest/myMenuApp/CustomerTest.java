@@ -8,7 +8,7 @@ public class CustomerTest {
 	private Long id;
 	private String userName;
 	private String password;
-	private String avi;
+	private String avatar;
 	private String email;
 	
 	
@@ -21,12 +21,12 @@ public class CustomerTest {
 		@Test
 		public void testItemHasNameDescriptionPricePictureCaloriesIngredients() {
 
-			Customer testCustomer = new Customer(id, userName, password, avi, email);
+			Customer testCustomer = new Customer(id, userName, password, avatar, email);
 
 			Assert.assertEquals(id, testCustomer.getId());
 			Assert.assertEquals(userName, testCustomer.getUserName());
 			Assert.assertEquals(password, testCustomer.getPassword());
-			Assert.assertEquals(avi, testCustomer.getAvi());
+			Assert.assertEquals(avatar, testCustomer.getAvatar());
 			Assert.assertEquals(email, testCustomer.getEmail());
 			
 
