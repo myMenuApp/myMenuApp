@@ -33,9 +33,6 @@ public class Item {
 	@ManyToOne
 	private Restaurant restaurant;
 
-	public Item() {
-	}
-
 
 	public Item(String itemName, String description, BigDecimal price, String picture, int calories,
 			String ingredients, Menu menu) {
