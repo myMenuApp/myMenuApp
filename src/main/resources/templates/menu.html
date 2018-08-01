@@ -28,10 +28,10 @@
         <li th:each="item : ${menu.items}">
            <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
+                <img th:src="${item.picture}" style="width:10vw" />
            </a> 
         </li>
     </ul>
-    <a th:href="|@{/index/}@{restaurant.restuarantName}|">Go Back</a>
 <footer>Handcrest&reg;</footer>
 <script src="javascript.js"></script>
 </body>

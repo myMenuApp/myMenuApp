@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>ITEM</title>
+    <title th:text="${items.itemName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
 </head>
-<body>
+<body>	
         <nav>
                 <ul>
                     <li>
-                        <a th:href="@{/index}">Restaurants </a>
+                        <a th:href="@{/index}">Restaurants</a>
                     </li>
                     <li>
                         <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
@@ -21,33 +21,32 @@
                 </ul>
             </nav>
 <header>
-    <h1 th:text="${itemName}"></h1>
+    <h1 th:text="${items.itemName}"></h1>
 </header>
     <div>
         <ul class="itemDetails">
             <li>
-                <a th:text="${description}"></a>
+                <a th:text="|Description: ${items.description}|"></a>
             </li>
 
             <li>
-                <a th:text="${image}"></a>
+                <img th:src="${items.picture}" style="width:25vw" />
             </li>
 
             <li>
-                <a th:text="${price}"></a>
+                <a th:text="|Price: $${items.price}|"></a>
             </li>
 
             <li>
-                <a th:text="${calories}"></a>
+                <a th:text="|Calories: ${items.calories}|"></a>
             </li>
 
             <li>
-                <a th:text="${ingredients}"></a>
+                <a th:text="|Ingredients: ${items.ingredients}|"></a>
             </li>
                 
         </ul>
     </div>
-        <a th:href="|@{/index}@{restaurant.restuarantName}/@{menus}/@{menu.menuId}|">Go Back</a>
 <footer>Handcrest&reg;</footer>
    
 <script src="javascript.js"></script>
