@@ -6,7 +6,6 @@
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
 </head>
 <body>
         <nav>
@@ -23,7 +22,6 @@
     <h1 th:text="${menu.menuName}"></h1>
 </header>
 
-<!-- List of items on the menu click for details -->
 	<ul class= "itemsList">
         <li th:each="item : ${menu.items}">
            <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
@@ -32,7 +30,11 @@
            </a> 
         </li>
     </ul>
+
+    <!-- Fix "Go Back" button
+    <a th:href="@{/restaurant}">Go Back</a> -->
+
 <footer>Handcrest&reg;</footer>
-<script src="javascript.js"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>

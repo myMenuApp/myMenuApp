@@ -6,7 +6,6 @@
     <title th:text="${restaurantName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
 </head>
 <body>
     <nav>
@@ -17,23 +16,20 @@
         </ul>
     </nav>
 <header>
-    <H1 th:text="${restaurantName}"></H1>
+    <h1 th:text="${restaurantName}"></h1>
 </header>
 
-<!-- List of menus (drink, breakfast, lunch, dinner, dessert, specials, etc.) -->
 	<ul class= "menusList">
         <li th:each="menu : ${restaurant.menus}">
-        
-        
              <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
                  th:text= "${menu.menuName}">
-            </a>
-            
+            </a>    
         </li>
     </ul>
+
     <a th:href="@{/index}">Go Back</a>
 
 <footer>Handcrest&reg;</footer>
-<script src="javascript.js"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>
