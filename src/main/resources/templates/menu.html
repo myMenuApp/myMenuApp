@@ -12,26 +12,26 @@
         <nav>
                 <ul>
                     <li>
-                        <a th:href="@{/restaraunts}">Restaurants</a>
+                        <a th:href="@{/index}">Restaurants</a>
                     </li>
                     <li>
-                        <a th:href="@{/menu}">Menu</a>
+                        <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
                     </li>
                 </ul>
             </nav>
 <header>
-    <H1 th:text="${menu.menuName}"></H1>
+    <h1 th:text="${menu.menuName}"></h1>
 </header>
 
-<!-- List of items on the menu -- click for details -->
+<!-- List of items on the menu click for details -->
 	<ul class= "itemsList">
-        <li th:each ="item : {items}">
-            <a th:href="|@{/items/}${item.itemName}|">
+        <li th:each="item : ${menu.items}">
+           <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
-            </a>
+           </a> 
         </li>
     </ul>
-    <link th:href="|@{/restaurants}@{restaurant.restuarantName}|">Go Back</link>
+    <a th:href="|@{/index/}@{restaurant.restuarantName}|">Go Back</a>
 <footer>Handcrest&reg;</footer>
 <script src="javascript.js"></script>
 </body>

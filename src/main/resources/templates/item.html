@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title th:text="${item.itemName}"></title>
+    <title>ITEM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
@@ -12,46 +12,44 @@
         <nav>
                 <ul>
                     <li>
-                        <a th:href="@{/restaraunts}">Restaurants </a>
+                        <a th:href="@{/index}">Restaurants </a>
                     </li>
                     <li>
-                        <a th:href="@{/menu}">Menu</a>
+                        <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
                     </li>
-                    <li>
-                        <a th:href="@{/item}">Items</a>
-                    </li>
+                    
                 </ul>
             </nav>
 <header>
-    <H1 th:text="${item.itemName}"></H1>
+    <h1 th:text="${itemName}"></h1>
 </header>
     <div>
         <ul class="itemDetails">
             <li>
-                <a th:text="${item.description}"></a>
+                <a th:text="${description}"></a>
             </li>
 
             <li>
-                <a th:text="${item.image}"></a>
+                <a th:text="${image}"></a>
             </li>
 
             <li>
-                <a th:text="${item.price}"></a>
+                <a th:text="${price}"></a>
             </li>
 
             <li>
-                <a th:text="${item.calories}"></a>
+                <a th:text="${calories}"></a>
             </li>
 
             <li>
-                <a th:text="${item.ingredients}"></a>
+                <a th:text="${ingredients}"></a>
             </li>
                 
         </ul>
     </div>
-        <link th:href="|@{/restaurants}@{restaurant.restuarantName}/@{menu.menuId}|">Go Back</link>
-    </body>
+        <a th:href="|@{/index}@{restaurant.restuarantName}/@{menus}/@{menu.menuId}|">Go Back</a>
 <footer>Handcrest&reg;</footer>
+   
 <script src="javascript.js"></script>
 </body>
 </html>

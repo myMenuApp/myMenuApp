@@ -11,7 +11,7 @@ public class Item {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long itemId;
 
 	private String itemName;
 
@@ -34,24 +34,25 @@ public class Item {
 	public Item() {
 	}
 
+
 	public Item(String itemName, String description, Double price, String picture, int calories,
-			String ingredients) {
-
-	}
-
-	public Item(Long id, String itemName, String description, Double price, String picture, int calories,
-			String ingredients) {
-		this.id = id;
+			String ingredients, Menu menu) {
 		this.itemName = itemName;
 		this.description = description;
 		this.price = price;
 		this.picture = picture;
 		this.calories = calories;
 		this.ingredients = ingredients;
+		this.menu = menu;
 	}
 
-	public Long getId() {
-		return id;
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+
+	public Long getItemId() {
+		return itemId;
 	}
 
 	public Menu getMenu() {
@@ -84,8 +85,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", itemName=" + itemName + ", description=" + description + ", price=" + price
-				+ ", picture=" + picture + ", calories=" + calories + ", ingredients=" + ingredients + "]";
+		return itemName;
 	}
 
 }
