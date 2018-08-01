@@ -28,22 +28,17 @@ public class MenuController {
 		return "redirect:/index";
 	}
 	
-	@RequestMapping ("/index")
-	public String index(Model model) {
+	@RequestMapping("/index")
+	public String getIndex(Model model) {
+		model.addAttribute("restaurants", restaurantRepo.findAll());
 		return "index";
 	}
-	
-	@RequestMapping("/restaurants")
-	public String getRestaurants(Model model) {
-		model.addAttribute("restaurants", restaurantRepo.findAll());
-		return "restaurants";
-	}
-	@RequestMapping("/restaurants/{restaurantName}")
+	@RequestMapping("/index/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		return "restaurant";
 	}
-	@RequestMapping("/restaurants/{restaurantName}/{menuId}")
+	@RequestMapping("/index/{restaurantName}/menus/{menuId}")
 	public String getMenu(@PathVariable(name = "restaurantName")String restaurantName,
 							@PathVariable(name = "menuId") Long menuId, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
@@ -51,7 +46,7 @@ public class MenuController {
 		return "menu";
 	}
 
-	@RequestMapping("/restaurants/{restaurantName}/{menuId}/{itemId}")
+	@RequestMapping("/index/{restaurantName}/menus/{menuId}/items/{itemId}")
 		public String getItem(@PathVariable(name = "restaurantName")String restaurantName,
 								@PathVariable(name = "menuId")Long menuId,
 								@PathVariable(name = "itemId")Long itemId, Model model) {

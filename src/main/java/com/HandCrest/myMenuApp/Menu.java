@@ -1,6 +1,5 @@
 package com.HandCrest.myMenuApp;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -13,7 +12,7 @@ import javax.persistence.OneToMany;
 public class Menu {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long menuId;
 	private String menuName;
 	@OneToMany(mappedBy = "menu")
 	private Collection<Item> items;
@@ -21,8 +20,8 @@ public class Menu {
 	@ManyToOne
 	private Restaurant restaurant;
 
-	public Long getId() {
-		return id;
+	public Long getMenuId() {
+		return menuId;
 	}
 
 	public Restaurant getRestaurant() {
@@ -33,10 +32,17 @@ public class Menu {
 		return items;
 	}
 
-	public Menu(String menuName, Restaurant restaurant, Item... items) {
+	public String getMenuName() {
+		return menuName;
+	}
+	
+	public Menu() {
+		
+	}
+
+	public Menu(String menuName, Restaurant  restaurant) {
 		this.menuName = menuName;
 		this.restaurant = restaurant;
-		this.items = Arrays.asList(items);
 	}
 
 	@Override
