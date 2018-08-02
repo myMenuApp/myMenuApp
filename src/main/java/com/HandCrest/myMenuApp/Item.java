@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Item {
 
@@ -28,10 +30,11 @@ public class Item {
 	private String ingredients;
 
 	@ManyToOne
+	@JsonIgnore
 	private Menu menu;
 
-	@ManyToOne
-	private Restaurant restaurant;
+/*	@ManyToOne
+	private Restaurant restaurant;*/
 
 	public Item() {
 	}
@@ -48,9 +51,9 @@ public class Item {
 		this.menu = menu;
 	}
 
-	public Restaurant getRestaurant() {
+/*	public Restaurant getRestaurant() {
 		return restaurant;
-	}
+	}*/
 
 
 	public Long getItemId() {
