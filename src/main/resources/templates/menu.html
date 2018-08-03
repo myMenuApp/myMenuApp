@@ -6,8 +6,8 @@
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/projectstyles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles.css" />
+  
 
 </head>
 <body>
@@ -24,15 +24,6 @@
 <header>
     <h1 th:text="${menu.menuName}"></h1>
 
-    <section class="addItem">
-            <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
-            <label>Description: <input type="text" name="addDescriptionApi" placeholder="Description" /></label>
-            <label>Price: <input type="text" name="addPriceApi" placeholder="0.00" /></label>
-            <label>Image URL: <input type="text" name="addImageURL" placeholder="URL" /></label>
-            <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
-            <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
-            <button class="submitItemButton">Submit</button>
-    </section> 
 </header>
 <main>
     
@@ -62,6 +53,7 @@
     
 </main>
     <footer>Handcrest&reg;</footer>
+    <script src="/deleteItem.js"></script>
     <script src="/javascript.js"></script>
     <script src="/additem.js"></script>
 

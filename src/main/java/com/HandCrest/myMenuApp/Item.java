@@ -36,7 +36,8 @@ public class Item {
 /*	@ManyToOne
 	private Restaurant restaurant;*/
 
-
+ private Item() {}
+ 
 	public Item(String itemName, String description, BigDecimal price, String picture, int calories,
 			String ingredients, Menu menu) {
 		this.itemName = itemName;
