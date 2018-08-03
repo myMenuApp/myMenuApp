@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/projectstyles.css" />
+
 </head>
 <body>
 <header>
-    <H1>Welcome, Customer</H1>
+    <h1>Welcome</h1>
 </header>
 
-<!-- List of restaurants -->
 	<ul class="restaurantsList">
         <li th:each="restaurant : ${restaurants}">
             <a th:href="|@{/index/}${restaurant.restaurantName}|">
@@ -23,6 +24,8 @@
     </ul>
 
 <footer>Handcrest&reg;</footer>
+
 <script src="/javascript.js"></script>
+
 </body>
 </html>
