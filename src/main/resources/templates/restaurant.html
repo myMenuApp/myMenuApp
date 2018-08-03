@@ -25,7 +25,8 @@
         <li th:each="menu : ${restaurant.menus}">
              <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
                  th:text= "${menu.menuName}">
-            </a>    
+            </a> 
+               <button class = "deleteMenuButton">Delete Menu</button>
         </li>
     </ul>
 
@@ -34,6 +35,7 @@
 <footer>Handcrest&reg;</footer>
 
 <script src="/javascript.js"></script>
+<script src="/deleteMenu.js"></script>
 
 </body>
 </html>
