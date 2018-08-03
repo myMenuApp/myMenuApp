@@ -11,11 +11,11 @@
         <nav>
                 <ul>
                     <li>
-                        <a th:href="@{/index}">Restaurants</a>
+                        <a th:href="@{/index}">List of Restaurants</a>
                     </li>
-                    <li>
-                        <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
-                    </li>
+                 	<li>
+                		<a th:href="|@{/index/}${restaurantName}">List of Menus</a>
+            		</li>
                 </ul>
             </nav>
 <header>
@@ -40,9 +40,6 @@
            </a> 
         </li>
     </ul>
-
-    <!-- Fix "Go Back" button
-    <a th:href="@{/restaurant}">Go Back</a> -->
 
 <footer>Handcrest&reg;</footer>
     <script src="javascript.js"></script>
