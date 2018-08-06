@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+  
 </head>
 <body>
 	<nav>
 		<ul>
 			<li>
-				<a th:href="@{/index}">Restaurants</a>
+				<a th:href="@{/index}">List of Restaurants</a>
 			</li>
 			<li>
 				<a th:href="|@{/index/}${restaurantName}">List of Menus</a>
@@ -20,11 +21,10 @@
 	</nav>
 <header>
     <h1 th:text="${menu.menuName}"></h1>
-
 </header>
 <main>
 
-	<ul class= "itemsList">
+    <ul class= "itemsList">
         <li th:each="item : ${menu.items}">
             <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
@@ -48,8 +48,8 @@
     
 </main>
 <footer>Handcrest&reg;</footer>
-    <script src="/deleteItem.js"></script>
-    <script src="/javascript.js"></script>
-    <script src="/additem.js"></script>
+    <script src="/js/deleteItem.js"></script>
+    <script src="/js/javascript.js"></script>
+    <script src="/js/additem.js"></script>
 </body>
 </html>
