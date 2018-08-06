@@ -31,7 +31,7 @@ function removeItem(event) {
 				itemList.innerHTML = html
 			}
 		}
-		xhr.open("DELETE",`/api/restaurants?itemId=${itemId}&restaurantName=${restaurantName}&menuId=${menuId}`, true )
+		xhr.open("DELETE",`/api/restaurants?restaurantName=${restaurantName}&menuId=${menuId}&itemId=${itemId}`, true )
 		xhr.send()
 	}
 }
