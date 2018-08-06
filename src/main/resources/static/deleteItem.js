@@ -35,3 +35,4 @@ function removeItem(event) {
 		xhr.send()
 	}
 }
+
