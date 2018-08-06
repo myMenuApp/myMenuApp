@@ -33,8 +33,8 @@ public class Item {
 	@JsonIgnore
 	private Menu menu;
 
-	public Item() {
-	}
+/*	@ManyToOne
+	private Restaurant restaurant;*/
 
 	public Item(String itemName, String description, BigDecimal price, String picture, int calories, String ingredients,
 			Menu menu) {
