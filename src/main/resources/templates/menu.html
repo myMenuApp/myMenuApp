@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-
-
-    <link rel="stylesheet" type="text/css" media="screen" href="/styles.css" />
-
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
 <body>
 	<nav>
@@ -46,13 +41,8 @@
             <label>Image URL: <input type="text" name="addImageApi" placeholder="URL" /></label>
             <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
             <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
-
             	<input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}"></input>
             	<input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
-
-            <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}"></input>
-            <input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
-
             <button class="submitItemButton">Submit</button>
     </section>
     
@@ -61,14 +51,6 @@
     <script src="/deleteItem.js"></script>
     <script src="/javascript.js"></script>
     <script src="/additem.js"></script>
-
-
-
-
-
-    <!-- Fix "Go Back" button
-    <a th:href="@{/restaurant}">Go Back</a> -->
-
 
 </body>
 </html>
