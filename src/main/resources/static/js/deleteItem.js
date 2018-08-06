@@ -21,8 +21,9 @@ function removeItem(event) {
 					remainingItems.forEach(function(item) {
 					html += `
 						<li>
-							<a href="/index/${restaurantName}/menus/${menuId}/items/${itemId}">
+							<a href="/index/${restaurantName}/menus/${menuId}/items/${item.itemId}">
 								${item.itemName}
+								<img src="${item.picture}" style="width:10vw" />
 							</a>
 							<button class="deleteItemButton">Delete Item</button>
 						</li>		

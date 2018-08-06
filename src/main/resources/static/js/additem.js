@@ -20,7 +20,7 @@ submitItemButton.addEventListener("click", function submitItem(){
             items.forEach(item =>{
                 list += `
                 <li>
-                    <a href= "${menuId.value}/items/${item.itemId}">${item.itemName}
+                    <a href= "/index/${restaurantName.value}/menus/${menuId.value}/items/${item.itemId}">${item.itemName}
                         <img src="${item.picture}" style="width:10vw" />
                     </a>
                     <button class="deleteItemButton">Delete Item</button> 

@@ -14,7 +14,7 @@ submitMenuButton.addEventListener("click", function submitMenu(){
 
                 list += `
                 <li>
-                    <a href= "${restaurantName.value}/menus/${menu.menuId}">
+                    <a href= "/index/${restaurantName.value}/menus/${menu.menuId}">
                         ${menu.menuName}
                     </a>
                     <button class="deleteMenuButton">Delete Menu</button>

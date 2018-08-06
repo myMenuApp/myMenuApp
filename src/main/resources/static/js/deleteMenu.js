@@ -16,10 +16,10 @@ function removeMenu(event) {
 			if(xhr.readyState == 4 && xhr.status == 200) {
 				const remainingMenus = JSON.parse(response.currentTarget.response);
 				let list = ''
-					remainingMenus.forEach(function(item) {
+					remainingMenus.forEach(function(menu) {
 						list +=`
 							 <li>
-								<a href= "|@{/index/}${restaurantName}/@{menus}/${menuId}|">
+								<a href= "/index/${restaurantName}/menus/${menu.menuId}">
 									${menu.menuName}
 								</a> 
 								<button class = "deleteMenuButton">Delete Menu</button>
