@@ -2,22 +2,22 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Menu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="projectstyles.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 <body>
 <header>
-    <H1>My Menu</H1>
+    <h1>Welcome</h1>
 </header>
-<div>
-        <a th:href="@{/customer}">Customer</a>
-        <a th:href="@{/manager}">Manager</a>
-</div>
-
+    <ul class="restaurantsList">
+        <li th:each="restaurant : ${restaurants}">
+            <a th:href="|@{/index/}${restaurant.restaurantName}|">
+                <span th:text="${restaurant.restaurantName}"></span>
+            </a>
+        </li>
+    </ul>
 <footer>Handcrest&reg;</footer>
-<script src="javascript.js"></script>
+<script src="/js/javascript.js"></script>
 </body>
 </html>

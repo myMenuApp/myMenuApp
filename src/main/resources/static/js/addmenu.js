@@ -17,7 +17,7 @@ submitMenuButton.addEventListener("click", function submitMenu(){
                     <a href= "${restaurantName.value}/menus/${menu.menuId}">
                         ${menu.menuName}
                     </a>
-                    <button class="deleteMenuButton">Delete</button>
+                    <button class="deleteMenuButton">Delete Menu</button>
                 </li>
                 
                 `
