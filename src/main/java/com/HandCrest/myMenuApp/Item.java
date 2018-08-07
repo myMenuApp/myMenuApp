@@ -33,9 +33,8 @@ public class Item {
 	@JsonIgnore
 	private Menu menu;
 
-/*	@ManyToOne
-	private Restaurant restaurant;*/
 	
+
 	public Item() {
 	}
 
