@@ -6,13 +6,12 @@
     <title th:text="${restaurantName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/projectstyles.css" />
 </head>
 <body>
     <nav>
         <ul>
             <li>
-                <a th:href="@{/index}">Restaurants </a>
+                <a th:href="@{/index}">List of Restaurants</a>
             </li>
         </ul>
     </nav>
@@ -23,7 +22,7 @@
         <li th:each="menu : ${restaurant.menus}">
              <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
                  th:text= "${menu.menuName}">
-            </a> 
+			</a> 
                <button class = "deleteMenuButton">Delete Menu</button>
         </li>
     </ul>
@@ -34,10 +33,11 @@
             <input type="hidden" name="apiRestaurantName" th:value="${restaurant.restaurantName}"></input>
             <button class="submitMenuButton">Submit</button>
     	</section>
-    <a th:href="@{/index}">Go Back</a>
+    	
 <footer>Handcrest&reg;</footer>
-<script src="/js/javascript.js"></script>
-<script src="/js/deleteMenu.js"></script>
-<script src="/js/addmenu.js"></script>
+	<script src="/js/javascript.js"></script>
+	<script src="/js/deleteMenu.js"></script>
+	<script src="/js/addmenu.js"></script>
 </body>
 </html>
+
