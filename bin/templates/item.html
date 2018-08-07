@@ -6,18 +6,17 @@
     <title th:text="${items.itemName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/projectstyles.css" />
 </head>
 <body>    
     <nav>
         <ul>
             <li>
-                <a th:href="@{/index}">List of Restaurants</a>
-            </li>    
-			      <li>
-                <a th:href="|@{/index/}${restaurantName}">List of Menus</a>
-            </li> 
+                <a th:href="@{/index}">Restaurants</a>
+            </li>
+            
             <li>
-                <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Back to Menu</a>
+                <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
             </li>
         </ul>
     </nav>
@@ -43,10 +42,10 @@
             </li>        
         </ul>
     </div>
-    
 <footer>Handcrest&reg;</footer>
-
-	<script src="/js/javascript.js"></script>
-
+   
+<script src="/js/javascript.js"></script>
+    <!-- Fix "Go Back" button
+    <a th:href="@{/menu}">Go Back</a> -->
 </body>
 </html>
