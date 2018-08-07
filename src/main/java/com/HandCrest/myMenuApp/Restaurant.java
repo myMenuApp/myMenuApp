@@ -1,5 +1,6 @@
 package com.HandCrest.myMenuApp;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import javax.persistence.Entity;
@@ -21,8 +22,9 @@ public class Restaurant {
 
 	}
 
-	public Restaurant(String restaurantName) {
+	public Restaurant(String restaurantName, Menu... menus) {
 		this.restaurantName = restaurantName;
+		this.menus = Arrays.asList(menus);
 	}
 
 	public Long getRestaurantId() {

@@ -21,8 +21,9 @@ function removeItem(event) {
 					remainingItems.forEach(function(item) {
 					html += `
 						<li>
-							<a href="/index/${restaurantName}/menus/${menuId}/items/${itemId}">
+							<a href="/index/${restaurantName}/menus/${menuId}/items/${item.itemId}">
 								${item.itemName}
+								<img src="${item.picture}" style="width:10vw" />
 							</a>
 							<button class="deleteItemButton">Delete Item</button>
 						</li>		
@@ -31,9 +32,9 @@ function removeItem(event) {
 				itemList.innerHTML = html
 			}
 		}
-		xhr.open("DELETE",`/api/restaurants?itemId=${itemId}&restaurantName=${restaurantName}&menuId=${menuId}`, true )
+
+		xhr.open("DELETE",`/api/restaurants?restaurantName=${restaurantName}&menuId=${menuId}&itemId=${itemId}`, true )
 		xhr.send()
 	}
 }
 
-	

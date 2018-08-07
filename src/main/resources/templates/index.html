@@ -5,27 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/projectstyles.css" />
-
 </head>
+
 <body>
 <header>
     <h1>Welcome</h1>
 </header>
 
-	<ul class="restaurantsList">
+    <ul class="restaurantsList">
+
         <li th:each="restaurant : ${restaurants}">
             <a th:href="|@{/index/}${restaurant.restaurantName}|">
                 <span th:text="${restaurant.restaurantName}"></span>
             </a>
         </li>
     </ul>
-
 <footer>Handcrest&reg;</footer>
 
-<script src="/javascript.js"></script>
+<script src="/js/javascript.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+    <h1>Welcome</h1>
+</header>
+    <ul class="restaurantsList">
+        <li th:each="restaurant : ${restaurants}">
+            <a th:href="|@{/index/}${restaurant.restaurantName}|">
+                <span th:text="${restaurant.restaurantName}"></span>
+            </a>
+        </li>
+    </ul>
+<footer>Handcrest&reg;</footer>
+<script src="/js/javascript.js"></script>
+</body>
+</html>

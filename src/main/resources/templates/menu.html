@@ -5,40 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/projectstyles.css" />
-
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+  
 </head>
 <body>
-        <nav>
-                <ul>
-                    <li>
-                        <a th:href="@{/index}">Restaurants</a>
-                    </li>
-                    <li>
-                        <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
-                    </li>
-                </ul>
-            </nav>
+	<nav>
+		<ul>
+			<li>
+				<a th:href="@{/index}">List of Restaurants</a>
+			</li>
+			<li>
+				<a th:href="|@{/index/}${restaurantName}">List of Menus</a>
+			</li>
+		</ul>
+	</nav>
 <header>
     <h1 th:text="${menu.menuName}"></h1>
-
-    <section class="addItem">
-            <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
-            <label>Description: <input type="text" name="addDescriptionApi" placeholder="Description" /></label>
-            <label>Price: <input type="text" name="addPriceApi" placeholder="0.00" /></label>
-            <label>Image URL: <input type="text" name="addImageURL" placeholder="URL" /></label>
-            <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
-            <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
-            <button class="submitItemButton">Submit</button>
-    </section> 
 </header>
 <main>
-    
-    <!-- List of items on the menu click for details -->
-
-	<ul class= "itemsList">
+    <ul class= "itemsList">
         <li th:each="item : ${menu.items}">
             <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
@@ -62,12 +47,8 @@
     
 </main>
     <footer>Handcrest&reg;</footer>
-    <script src="/javascript.js"></script>
-    <script src="/additem.js"></script>
-
-
-    <!-- Fix "Go Back" button
-    <a th:href="@{/restaurant}">Go Back</a> -->
-
+    <script src="/js/deleteItem.js"></script>
+    <script src="/js/javascript.js"></script>
+    <script src="/js/additem.js"></script>
 </body>
 </html>
