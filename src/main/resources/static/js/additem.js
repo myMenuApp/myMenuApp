@@ -14,7 +14,6 @@ submitItemButton.addEventListener("click", function submitItem(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function (response){
         if(xhr.readyState == 4 && xhr.status == 200) {
-            console.log(response.currentTarget.response)
             const items = JSON.parse(response.currentTarget.response)
             let list = '';
             items.forEach(item =>{
