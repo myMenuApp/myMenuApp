@@ -28,8 +28,9 @@ public class MenuController {
 		return "redirect:/index";
 	}
 	
+	
 	@RequestMapping("/index")
-	public String getIndex(Model model) {
+	public String getRestaurants(Model model) {
 		model.addAttribute("restaurants", restaurantRepo.findAll());
 		return "index";
 	}
