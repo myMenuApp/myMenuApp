@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
 </head>
-<body>    
+<body>
+<span th:text="${menu.menuId}" id="menuId" style="display: none"></span>    
+<span th:text="${items.itemId}" id="itemId" style="display: none"></span>    
     <nav>
         <ul>
             <li>
@@ -43,10 +45,27 @@
             </li>        
         </ul>
     </div>
+    <h5>Comments</h5>
+	<div>
+		<label>Your name : <input type="text" name="Creator"
+			placeholder="Enter Your Name Here " /></label> <label>Your Comment:
+			<input type="text" name="comment"
+			placeholder="Enter Your Comment Here" />
+		</label> <input type="hidden" name="itemId" th:value="${items.itemId}"></input>
+		<input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
+		<button id="submitComment">Submit</button>
+	</div>
+
+	<ul class="commentList">
+		<li th:each="comment : ${items.comments}"><span
+			th:text="|${comment.creator}: ${comment.comment}|"></span></li>
+	</ul>
+	
     
 <footer>Handcrest&reg;</footer>
 
 	<script src="/js/javascript.js"></script>
+	<script src="/js/comment.js"></script>
 
 </body>
 </html>

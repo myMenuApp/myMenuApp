@@ -23,7 +23,7 @@ public class ItemTest {
 	@Test
 	public void testItemHasNameDescriptionPricePictureCaloriesIngredients() {
 
-		Item testMenuItems = new Item(itemName, description, price, picture, calories, ingredients);
+		Item testMenuItems = new Item(itemName, description, price, picture, calories, ingredients, null);
 
 		Assert.assertEquals(itemName, testMenuItems.getItemName());
 		Assert.assertEquals(description, testMenuItems.getDescription());

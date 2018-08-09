@@ -1,12 +1,15 @@
 package com.HandCrest.myMenuApp;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -32,6 +35,9 @@ public class Item {
 	@ManyToOne
 	@JsonIgnore
 	private Menu menu;
+	
+	@OneToMany(mappedBy = "item")
+	private Collection<Comment> comments;
 
 	public Item() {
 	}
@@ -45,6 +51,7 @@ public class Item {
 		this.calories = calories;
 		this.ingredients = ingredients;
 		this.menu = menu;
+		
 	}
 
 	public Long getItemId() {
@@ -82,6 +89,10 @@ public class Item {
 	@Override
 	public String toString() {
 		return itemName;
+	}
+
+	public Collection<Comment> getComments() {
+		return comments;
 	}
 
 }
