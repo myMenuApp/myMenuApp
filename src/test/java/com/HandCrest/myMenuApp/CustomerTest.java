@@ -26,7 +26,7 @@ public class CustomerTest {
 			Assert.assertEquals(id, testCustomer.getId());
 			Assert.assertEquals(userName, testCustomer.getUserName());
 			Assert.assertEquals(password, testCustomer.getPassword());
-			Assert.assertEquals(avi, testCustomer.getAvi());
+			Assert.assertEquals(avi, testCustomer.getAvatar());
 			Assert.assertEquals(email, testCustomer.getEmail());
 			
 

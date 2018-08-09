@@ -32,9 +32,7 @@ function removeItem(event) {
 				itemList.innerHTML = html
 			}
 		}
-
 		xhr.open("DELETE",`/api/restaurants?restaurantName=${restaurantName}&menuId=${menuId}&itemId=${itemId}`, true )
 		xhr.send()
 	}
 }
-
