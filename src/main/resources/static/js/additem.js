@@ -21,7 +21,6 @@ submitItemButton.addEventListener("click", function submitItem(){
                 list += `
                 <li>
                     <a href= "/index/${restaurantName.value}/menus/${menuId.value}/items/${item.itemId}">${item.itemName}
-
                         <img src="${item.picture}" style="width:10vw" />
                     </a>
                     <button class="deleteItemButton">Delete Item</button> 
@@ -33,6 +32,4 @@ submitItemButton.addEventListener("click", function submitItem(){
     })
     xhr.open("POST", `/api/menu/${menuId.value}/items?itemName=${addItemNameApi.value}&description=${addDescriptionApi.value}&price=${addPriceApi.value}&picture=${addImageApi.value}&calories=${addCaloriesApi.value}&ingredients=${addIngredientsApi.value}`, true);
     xhr.send();
-
 })
-

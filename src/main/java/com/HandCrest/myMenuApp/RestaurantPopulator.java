@@ -25,6 +25,10 @@ public class RestaurantPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Restaurant steakhouse = restaurantRepo.save(new Restaurant("The Steakhouse"));
+		Restaurant fishMarket = restaurantRepo.save(new Restaurant("The Fish Market"));
+		Restaurant burgerBar = restaurantRepo.save(new Restaurant("Burger Bar"));
+		Restaurant winery = restaurantRepo.save(new Restaurant("The Wine and Dine"));
+		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop"));
 		Menu steakhouseAppetizers = menuRepo.save(new Menu("Appetizers", steakhouse));
 		Item crabcakes = itemRepo.save(new Item("crabcakes", "cakes but made of crabs", BigDecimal.valueOf(786549.00),
 				"/img/crabcakes.jpg", 350000, "imitation crab, birthday cake mix", steakhouseAppetizers));
