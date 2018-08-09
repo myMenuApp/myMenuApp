@@ -53,7 +53,7 @@ public class MenuController {
 								@PathVariable(name = "itemId")Long itemId, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		model.addAttribute("menu", menuRepo.findOne(menuId));
-		model.addAttribute("items", itemRepo.findOne(itemId));
+		model.addAttribute("item", itemRepo.findOne(itemId));
 		return "item";
 	}
 	

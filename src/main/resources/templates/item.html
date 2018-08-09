@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title th:text="${items.itemName}"></title>
+    <title th:text="${item.itemName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/itemLayout.css" />
 </head>
@@ -22,16 +22,30 @@
         </ul>
     </nav>
 <header>
-    <h1 th:text="${items.itemName}"></h1>
+    <h1 th:text="${item.itemName}"></h1>
+    <input type="hidden" name="itemId" th:value="${item.itemId}" />
+    <input type="hidden" name="menuId" th:value="${menu.menuId}" />
 </header>
-    <div>
-        <ul class="itemDetails">
-            <li>
-                <img class = "picture" th:src="${items.picture}" style="width:25vw" />
-                <button class="deletePhotoBtn">Delete photo</button>
+<div>
+    <ul class="itemDetails">
+        <li>
+            <img class = "picture" th:src="${item.picture}" style="width:25vw" />
+            <button id="editPictureBtn">Edit</button>
+            <div id = "picture-modal-screen">
+                <div id = "picture-modal-box">
+                    <header>
+                        <h3>
+                            Enter picture file path
+                            </h3>
+                            <button id = "close-picture-modal">Cancel</button>
+                        </header>
+                        <label>Picture: <input type="text" name="itemPicture" th:placeholder="${item.picture}" /></label>
+                            <button class="submitPictureBtn">Save changes</button>
+                        </div>
+                </div>
             </li>
-            <li>
-                <a class = "description" th:text="|Description: ${items.description}|"></a>
+            <li class = "itemDescription">
+                <p class = "description" th:text="|Description: ${item.description}|"></p>
                 <button id ="editDescriptionBtn">Edit</button>
                 <div id = "description-modal-screen">
                     <div id = "description-modal-box">
@@ -41,13 +55,13 @@
                             </h3>
                             <button id = "close-description-modal">Cancel</button>
                         </header>
-                            <label>Description: <input type="text" name="itemDescription" th:placeholder="${items.description}" /></label>
-			                <input type="submit" value="Submit" />
+                            <label>Description: <input type="text" name="itemDescription" th:placeholder="${item.description}" /></label>
+                            <button class="submitDescription">Save description</button>
                     </div>
                 </div>
             </li>
             <li>
-                <a class = "price" th:text="|Price: $${items.price}|"></a>
+                <p class = "price" th:text="|Price: $${item.price}|"></p>
                 <button id="editPriceBtn">Edit</button>
                 <div id = "price-modal-screen">
                     <div id = "price-modal-box">
@@ -57,13 +71,13 @@
                             </h3>
                             <button id = "close-price-modal">Cancel</button>
                         </header>
-                            <label>Price: <input type="text" name="itemPrice" th:placeholder="${items.price}" /></label>
-                            <input type="submit" value="Submit" />
+                            <label>Price: <input type="text" name="itemPrice" th:placeholder="${item.price}" /></label>
+                            <button class="submitEdit">Save changes</button>
                     </div>
                 </div>
             </li>
             <li>
-                <a class = "calories" th:text="|Calories: ${items.calories}|"></a>
+                <p class = "calories" th:text="|Calories: ${item.calories}|"></p>
                 <button id="editCaloriesBtn">Edit</button>
                 <div id = "calories-modal-screen">
                     <div id = "calories-modal-box">
@@ -73,13 +87,13 @@
                             </h3>
                             <button id = "close-calories-modal">Cancel</button>
                         </header>
-                            <label>Calories: <input type="text" name="itemCalories" th:placeholder="${items.calories}" /></label>
-                            <input type="submit" value="Submit" />
+                            <label>Calories: <input type="text" name="itemCalories" th:placeholder="${item.calories}" /></label>
+                            <button class="submitEdit">Save changes</button>
                     </div>
                 </div>
             </li>
             <li>
-                <a class = "ingredients" th:text="|Ingredients: ${items.ingredients}|"></a>
+                <p class = "ingredients" th:text="|Ingredients: ${item.ingredients}|"></p>
                 <button id="editIngredientsBtn">Edit</button>
                 <div id = "ingredients-modal-screen">
                     <div id = "ingredients-modal-box">
@@ -89,8 +103,8 @@
                             </h3>
                             <button id = "close-ingredients-modal">Cancel</button>
                         </header>
-                            <label>Ingredients: <input type="text" name="itemIngredients" th:placeholder="${items.ingredients}" /></label>
-                            <input type="submit" value="Submit" />
+                            <label>Ingredients: <input type="text" name="itemIngredients" th:placeholder="${item.ingredients}" /></label>
+                            <button class="submitEdit">Save changes</button>
                     </div>
                 </div>
             </li>        

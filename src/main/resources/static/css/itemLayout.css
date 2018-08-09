@@ -1,3 +1,24 @@
+/* Picture modal */
+body.picture-modal-open {
+    overflow: hidden;
+}
+#picture-modal-screen {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(100, 200, 100, .95);
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+body.picture-modal-open #picture-modal-screen {
+    display: flex;
+}
+
+
 /* Description modal */
 body.description-modal-open {
     overflow: hidden;
@@ -7,8 +28,7 @@ body.description-modal-open {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: yellow;
-    opacity: 0.7;
+    background: rgba(100, 200, 100, .95);
     top: 0;
     left: 0;
     justify-content: center;
@@ -28,8 +48,7 @@ body.price-modal-open {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: hotpink;
-    opacity: 0.7;
+    background: rgba(100, 200, 100, .95);
     top: 0;
     left: 0;
     justify-content: center;
@@ -50,8 +69,7 @@ body.calories-modal-open {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: lawngreen;
-    opacity: 0.7;
+    background: rgba(100, 200, 100, .95);
     top: 0;
     left: 0;
     justify-content: center;
@@ -71,8 +89,7 @@ body.ingredients-modal-open {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: powderblue;
-    opacity: 0.7;
+    background: rgba(100, 200, 100, .95);
     top: 0;
     left: 0;
     justify-content: center;
