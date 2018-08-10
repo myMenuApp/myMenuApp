@@ -20,19 +20,14 @@
 </header>
     <ul class= "menusList">
         <li th:each="menu : ${restaurant.menus}">
-             <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
+             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
                  th:text= "${menu.menuName}">
             </a> 
                <button class = "deleteMenuButton">Delete Menu</button>
         </li>
     </ul>
     
-    <h2>Add a menu for this restaurant</h2>
-        <section class="addMenu">
-            <label>Menu name: <input type="text" name="addMenuNameApi" placeholder="Name"/></label>
-            <input type="hidden" name="apiRestaurantName" th:value="${restaurant.restaurantName}"></input>
-            <button class="submitMenuButton">Submit</button>
-    	</section>
+   
     <a th:href="@{/index}">Go Back</a>
 <footer>Handcrest&reg;</footer>
 <script src="/js/javascript.js"></script>
@@ -40,4 +35,3 @@
 <script src="/js/addmenu.js"></script>
 </body>
 </html>
-

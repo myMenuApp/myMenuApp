@@ -11,13 +11,13 @@
     <nav>
         <ul>
             <li>
-                <a th:href="@{/index}">List of Restaurants</a>
+                <a th:href="@{/customer}">List of Restaurants</a>
             </li>    
 			      <li>
-                <a th:href="|@{/index/}${restaurantName}">List of Menus</a>
+                <a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
             </li> 
             <li>
-                <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Back to Menu</a>
+                <a th:href="|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Back to Menu</a>
             </li>
         </ul>
     </nav>

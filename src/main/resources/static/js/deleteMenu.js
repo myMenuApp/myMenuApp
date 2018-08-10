@@ -14,7 +14,7 @@ function removeMenu(event) {
 		
 		xhr.onreadystatechange = function(response) {
 			if(xhr.readyState == 4 && xhr.status == 200) {
-				const remainingMenus = JSON.parse(response.currentTarget.response);
+				const remainingMenus = JSON.parse(response.curretTarget.response);
 				let list = ''
 					remainingMenus.forEach(function(menu) {
 						list +=`

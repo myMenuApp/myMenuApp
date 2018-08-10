@@ -14,22 +14,27 @@ submitItemButton.addEventListener("click", function submitItem(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function (response){
         if(xhr.readyState == 4 && xhr.status == 200) {
-            console.log(response.currentTarget.response)
+           
             const items = JSON.parse(response.currentTarget.response)
             let list = '';
             items.forEach(item =>{
                 list += `
-                <li>
-                    <a href= "/index/${restaurantName.value}/menus/${menuId.value}/items/${item.itemId}">${item.itemName}
-                        <img src="${item.picture}" style="width:10vw" />
-                    </a>
-                    <button class="deleteItemButton">Delete Item</button> 
-                </li>    
-                `
+                			<li class="${item.enabled ? 'inStock' : 'outStock'}">
+								<input type="hidden" name="enabled" value="${item.enabled}"/>
+								<a href="/index/${restaurantName.value}/menus/${menuId.value}/items/${item.itemId}">
+									${item.itemName}
+									<img src="${item.picture}" style="width:10vw" />
+								</a>
+								<button class="soldOut">Sold Out</button>
+								<button class="deleteItemButton">Delete Item</button>
+							</li>	   
+                		`
             })
             itemsList.innerHTML = list;
         }
     })
     xhr.open("POST", `/api/menu/${menuId.value}/items?itemName=${addItemNameApi.value}&description=${addDescriptionApi.value}&price=${addPriceApi.value}&picture=${addImageApi.value}&calories=${addCaloriesApi.value}&ingredients=${addIngredientsApi.value}`, true);
     xhr.send();
+
 })
+

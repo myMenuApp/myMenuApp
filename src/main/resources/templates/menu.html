@@ -9,6 +9,7 @@
   
 </head>
 <body>
+
 	<nav>
 		<ul>
 			<li>
@@ -24,11 +25,13 @@
 </header>
 <main>
     <ul class= "itemsList">
-        <li th:each="item : ${menu.items}">
+        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
+        	<input type="hidden" name="enabled" th:value="${item.enabled}"/>
             <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
                 <img th:src="${item.picture}" style="width:10vw" />
             </a>
+            <button class="soldOut">SoldOut</button>
             <button class="deleteItemButton">Delete Item</button> 
         </li>
     </ul>
@@ -47,8 +50,9 @@
     
 </main>
     <footer>Handcrest&reg;</footer>
-    <script src="/js/deleteItem.js"></script>
-    <script src="/js/javascript.js"></script>
+ 
     <script src="/js/additem.js"></script>
+    <script src="/js/deleteItem.js"></script>
+    <script src="/js/freezeItem.js"></script>
 </body>
 </html>
