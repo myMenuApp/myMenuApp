@@ -1,5 +1,3 @@
-
-
 package com.HandCrest.myMenuApp;
 
 import java.math.BigDecimal;
