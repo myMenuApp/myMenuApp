@@ -1,3 +1,4 @@
+
 package com.HandCrest.myMenuApp;
 
 import java.util.Arrays;
@@ -17,6 +18,7 @@ public class Menu {
 	@GeneratedValue
 	private Long menuId;
 	private String menuName;
+	
 	@OneToMany(mappedBy = "menu")
 	private Collection<Item> items;
 
@@ -55,3 +57,4 @@ public class Menu {
 		return menuName;
 	}
 }
+

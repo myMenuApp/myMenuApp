@@ -1,12 +1,14 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title th:text="${items.itemName}"></title>
+    <title th:text="${item.itemName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/CSS/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/CSS/layout.css" />
+<!--     css file -->
 </head>
 
 <body>
@@ -75,11 +77,21 @@
     <aside class="flex-list-app-content">
         <h4>Leave a Comment about this item:</h4>
         
-        <div>
-            <ul>
-                <li><input type="text" placeholder="Comment"  /><button><span>Sumbit</span></button></li>
-            </ul>
-        </div>
+       <h5>Comments</h5>
+	<div>
+		<label>Your name : <input type="text" name="Creator"
+			placeholder="Enter Your Name Here " /></label> <label>Your Comment:
+			<input type="text" name="comment"
+			placeholder="Enter Your Comment Here" />
+		</label> <input type="hidden" name="itemId" th:value="${items.itemId}"></input>
+		<input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
+		<button id="submitComment">Submit</button>
+	</div>
+
+	<ul class="commentList">
+		<li th:each="comment : ${items.comments}"><span
+			th:text="|${comment.creator}: ${comment.comment}|"></span></li>
+	</ul>
         
     </aside>
 </div>
