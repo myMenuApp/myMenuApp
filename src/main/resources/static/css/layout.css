@@ -305,7 +305,7 @@
     border:2px solid rgb(119, 19, 36);
     font-size: 36px;
     color: aliceblue;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Arial, Arial, 'Arial', sans-serif;
     background-color: black;
 }
 .flex-container-menu{
@@ -456,7 +456,7 @@ ul{
 }
 .flex-list-title{
     font-size: 36px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Arial, Arial, 'Arial Narrow Bold', sans-serif;
     padding-right: 1rem;
 }
 .login-window{
