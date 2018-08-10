@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,6 +88,96 @@
 		<input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
 		<button id="submitComment">Submit</button>
 	</div>
+    <header>
+        <h1 th:text="${item.itemName}"></h1>
+        <input type="hidden" name="itemId" th:value="${item.itemId}" />
+        <input type="hidden" name="menuId" th:value="${menu.menuId}" />
+    </header>
+    <div>
+        <ul class="itemDetails">
+            <li>
+                <img class = "picture" th:src="${item.picture}" style="width:25vw" />
+                <button id="editPictureBtn">Edit</button>
+                <div id = "picture-modal-screen">
+                    <div id = "picture-modal-box">
+                        <header>
+                            <h3>
+                                Enter picture file path
+                                </h3>
+                                <button id = "close-picture-modal">Cancel</button>
+                            </header>
+                            <label>Picture: <input type="text" name="itemPicture" th:placeholder="${item.picture}" /></label>
+                                <button class="submitPictureBtn">Save changes</button>
+                            </div>
+                    </div>
+                </li>
+                <li class = "itemDescription">
+                    <p class = "description" th:text="|Description: ${item.description}|"></p>
+                    <button id ="editDescriptionBtn">Edit</button>
+                    <div id = "description-modal-screen">
+                        <div id = "description-modal-box">
+                            <header>
+                                <h3>
+                                    Edit description of this item
+                                </h3>
+                                <button id = "close-description-modal">Cancel</button>
+                            </header>
+                                <label>Description: <input type="text" name="itemDescription" th:placeholder="${item.description}" /></label>
+                                <button class="submitDescription">Save description</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p class = "price" th:text="|Price: $${item.price}|"></p>
+                    <button id="editPriceBtn">Edit</button>
+                    <div id = "price-modal-screen">
+                        <div id = "price-modal-box">
+                            <header>
+                                <h3>
+                                    Edit price of this item
+                                </h3>
+                                <button id = "close-price-modal">Cancel</button>
+                            </header>
+                                <label>Price: <input type="text" name="itemPrice" th:placeholder="${item.price}" /></label>
+                                <button class="submitEdit">Save changes</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p class = "calories" th:text="|Calories: ${item.calories}|"></p>
+                    <button id="editCaloriesBtn">Edit</button>
+                    <div id = "calories-modal-screen">
+                        <div id = "calories-modal-box">
+                            <header>
+                                <h3>
+                                    Edit calories of this item
+                                </h3>
+                                <button id = "close-calories-modal">Cancel</button>
+                            </header>
+                                <label>Calories: <input type="text" name="itemCalories" th:placeholder="${item.calories}" /></label>
+                                <button class="submitEdit">Save changes</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p class = "ingredients" th:text="|Ingredients: ${item.ingredients}|"></p>
+                    <button id="editIngredientsBtn">Edit</button>
+                    <div id = "ingredients-modal-screen">
+                        <div id = "ingredients-modal-box">
+                            <header>
+                                <h3>
+                                    Edit ingredients of this item
+                                </h3>
+                                <button id = "close-ingredients-modal">Cancel</button>
+                            </header>
+                                <label>Ingredients: <input type="text" name="itemIngredients" th:placeholder="${item.ingredients}" /></label>
+                                <button class="submitEdit">Save changes</button>
+                        </div>
+                    </div>
+                </li>        
+            </ul>
+        </div>
+
 
 	<ul class="commentList">
 		<li th:each="comment : ${items.comments}"><span
@@ -112,6 +203,8 @@
 </footer>
 </main> 
 </div>
+<script src="/js/javascript.js"></script>
+<script src="/js/editItem.js"></script>
 <script src="/js/OpenNav.js"></script>
 <script src="/js/carosule.js"></script>
     <!-- Fix "Go Back" button

@@ -88,11 +88,39 @@ public class Item {
 	public Collection<Comment> getComments() {
 		return comments;
 	}
+		public void setItemId(Long itemId) {
+		this.itemId = itemId;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
 	
 	@Override
 	public String toString() {
 		return itemName;
 	}
-
-
-}
