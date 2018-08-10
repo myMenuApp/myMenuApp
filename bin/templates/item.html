@@ -1,30 +1,59 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title th:text="${items.itemName}"></title>
+    <title th:text="${item.itemName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/projectstyles.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/CSS/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/CSS/layout.css" />
+<!--     css file -->
 </head>
-<body>    
-    <nav>
-        <ul>
-            <li>
-                <a th:href="@{/index}">Restaurants</a>
-            </li>
-            
-            <li>
-                <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a>
-            </li>
-        </ul>
-    </nav>
-<header>
-    <h1 th:text="${items.itemName}"></h1>
-</header>
-    <div>
+
+<body>
+<div class="grid-hack">      
+<main class="container">  
+
+        <header class="header">  
+                <div class="header-container">
+                    <img src="../static/img/logo.png" class="logo"  ></img>
+                    <h1>MyMenu</h1>
+                    <nav class="flex-navigation">
+                        <ul>
+                            <li><a href="#">Contact Us</a></li> 
+                            <li><a href="#">Our Partners</a></li> 
+                            <li><a href="#">Follow Us</a></li> 
+                            <li><a th:href="@{/index}">Restaurants</a></li>
+                            <li><a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="hero-image">
+                    <img class="slides" src="../img/dinnerlogin.jpg"  />
+                    <img class="slides" src="../img/dinnerstockbg.jpg"  />
+                    <img class="slides" src="../img/freshveg.jpg" />
+                    <img class="slides" src="../img/dinnerlogin.jpg" />      
+                    
+                    
+                </div>       
+                     
+        
+        
+
+<div class="flex-container-4">
+    <header>
+            <span>
+                    <h2 th:text="${restaurantName}"></h2>
+                    <h3 th:text="${items.itemName}"></h3>
+            </span> 
+    </header>
+    <section>
         <ul class="itemDetails">
+            <div class="flex-item-list">
+            <h3 th:text="${items.itemName}"></h3>
+    
             <li>
                 <a th:text="|Description: ${items.description}|"></a>
             </li>
@@ -39,12 +68,52 @@
             </li>
             <li>
                 <a th:text="|Ingredients: ${items.ingredients}|"></a>
-            </li>        
+            </li>
+        
+        </div>        
         </ul>
-    </div>
-<footer>Handcrest&reg;</footer>
+    </section>
+ 
+    <aside class="flex-list-app-content">
+        <h4>Leave a Comment about this item:</h4>
+        
+       <h5>Comments</h5>
+	<div>
+		<label>Your name : <input type="text" name="Creator"
+			placeholder="Enter Your Name Here " /></label> <label>Your Comment:
+			<input type="text" name="comment"
+			placeholder="Enter Your Comment Here" />
+		</label> <input type="hidden" name="itemId" th:value="${items.itemId}"></input>
+		<input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
+		<button id="submitComment">Submit</button>
+	</div>
+
+	<ul class="commentList">
+		<li th:each="comment : ${items.comments}"><span
+			th:text="|${comment.creator}: ${comment.comment}|"></span></li>
+	</ul>
+        
+    </aside>
+</div>
+    
    
-<script src="/js/javascript.js"></script>
+    
+
+
+<footer class="footer">
+        <h4>Handcrest&reg;</h4>
+   <nav class="flex-navigation"> 
+       <ul>
+        <li><a href="#">Contact Us</a> </li>
+        <li><a href="#">Our Partners</a> </li>
+        <li><a href="#">Follow Us</a> </li>
+        </ul>
+    </nav>
+</footer>
+</main> 
+</div>
+<script src="/js/OpenNav.js"></script>
+<script src="/js/carosule.js"></script>
     <!-- Fix "Go Back" button
     <a th:href="@{/menu}">Go Back</a> -->
 </body>
