@@ -7,7 +7,6 @@ submitMenuButton.addEventListener("click", function submitMenu(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function (response){
         if(xhr.readyState == 4 && xhr.status == 200) {
-            console.log(response.currentTarget.response)
             const menus = JSON.parse(response.currentTarget.response)
             let list = '';
             menus.forEach(menu =>{
