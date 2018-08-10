@@ -3,6 +3,7 @@ const addMenuNameApi = document.querySelector("[name='addMenuNameApi']");
 const restaurantName = document.querySelector("[name='apiRestaurantName']");
 const menusList = document.querySelector(".menusList");
 
+
 submitMenuButton.addEventListener("click", function submitMenu(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function (response){
@@ -26,6 +27,5 @@ submitMenuButton.addEventListener("click", function submitMenu(){
         }
     })
     xhr.open("POST", `/api/index/${restaurantName.value}/menus?menuName=${addMenuNameApi.value}`, true);
-    xhr.send();    
-
+    xhr.send();
 })
