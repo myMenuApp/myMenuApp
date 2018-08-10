@@ -98,7 +98,7 @@ submitDescriptionBtn.addEventListener("click", function saveChanges(){
             descriptions.forEach(description =>{
                 html+=`
                     <li class = "itemDescription">
-                        <p class = "description" th:text="|Description: ${item.description}|"></p>
+                        <p class = "description" text="|Description: ${item.description}|"></p>
                         <button id ="editDescriptionBtn">Edit</button>
                         <div id = "description-modal-screen">
                             <div id = "description-modal-box">
@@ -108,7 +108,7 @@ submitDescriptionBtn.addEventListener("click", function saveChanges(){
                                     </h3>
                                     <button id = "close-description-modal">Cancel</button>
                                 </header>
-                                    <label>Description: <input type="text" name="itemDescription" th:placeholder="${item.description}" /></label>
+                                    <label>Description: <input type="text" name="itemDescription" placeholder="${item.description}" /></label>
                                     <button class="submitDescription">Save description</button>
                             </div>
                         </div>
