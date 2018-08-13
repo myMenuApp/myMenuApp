@@ -5,25 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/CSS/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/CSS/layout.css" />
   
 </head>
 <body>
-
-	<nav>
-		<ul>
-			<li>
-				<a th:href="@{/index}">List of Restaurants</a>
-			</li>
-			<li>
-				<a th:href="|@{/index/}${restaurantName}">List of Menus</a>
-			</li>
-		</ul>
-	</nav>
-<header>
-    <h1 th:text="${menu.menuName}"></h1>
-</header>
-<main>
+<div class="grid-hack">
+    <main class="container">
+        <header class="header">  
+            <div class="header-container">
+                <img src="../img/logo.png" class="logo"  ></img>
+                        <h1>MyMenu</h1>
+                        <nav class="flex-navigation">
+                            <ul>
+                                <li><a href="#">Contact Us</a></li> 
+                                <li><a href="#">Our Partners</a></li> 
+                                <li><a href="#">Follow Us</a></li> 
+                                <li><a th:href="@{/index}">Home</a></li>
+                            </ul>
+                        </nav>
+                </div>
+        </header>
+        <section class="flex-container-4">
+            <span>
+                <h2 th:text="${restaurantName}"></h2>
+                <h3 th:text="${menu.menuName}"></h3>
+            </span>   
+        </section>
+<section class="flex-container-menu">
     <ul class= "itemsList">
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
         	<input type="hidden" name="enabled" th:value="${item.enabled}"/>
@@ -35,6 +44,9 @@
             <button class="deleteItemButton">Delete Item</button> 
         </li>
     </ul>
+</section>
+
+<div class="addItem flex-menu-manager">
     <h2>Add an item to this menu</h2>
     <section class="addItem">
             <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
@@ -47,10 +59,20 @@
             <input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
             <button class="submitItemButton">Submit</button>
     </section>
-    
+ </div>   
+
+ <footer class="footer">
+    <h4>Handcrest&reg;</h4>
+<nav class="flex-navigation"> 
+   <ul>
+    <li><a href="#">Contact Us</a> </li>
+    <li><a href="#">Our Partners</a> </li>
+    <li><a href="#">Follow Us</a> </li>
+    </ul>
+</nav>
+</footer>
 </main>
-    <footer>Handcrest&reg;</footer>
- 
+</div>
     <script src="/js/additem.js"></script>
     <script src="/js/deleteItem.js"></script>
     <script src="/js/freezeItem.js"></script>
