@@ -27,13 +27,13 @@ public class FreezeApiController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.PUT)
 	public Collection<Item> patchItem(
-//			@RequestParam(value = "menuId") Long menuId,
+			@RequestParam(value = "menuId") Long menuId,
 			@RequestParam(value = "itemId") Long itemId) {
 		Item itemToPatch = itemRepo.findOne(itemId);
 		if (itemToPatch != null) {
 			itemToPatch.toggleEnabled();
 			itemRepo.save(itemToPatch);
 		}
-		return (Collection<Item>) itemRepo.findAll();
+		return menuRepo.findOne(menuId).getItems();
 	}
 }
