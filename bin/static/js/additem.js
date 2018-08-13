@@ -1,4 +1,4 @@
-
+``
 //add item to current menu
 const submitItemButton = document.querySelector(".submitItemButton");
 const addItemNameApi = document.querySelector("[name='addItemNameApi']");

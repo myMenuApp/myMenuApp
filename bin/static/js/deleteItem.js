@@ -1,6 +1,5 @@
 const itemList = document.querySelector('.itemsList')
 
-
 itemList.addEventListener('click', removeItem)
 
 function removeItem(event) {
