@@ -10,7 +10,7 @@
 			const freezeContainer = soldOutBtn.parentElement
 			
 			const hrefArray = freezeContainer.querySelector('a').getAttribute('href').split("/")
-
+			const menuId = document.querySelector("[name='menuId']");
 			const itemId = hrefArray[6]
 			
 			const xhr = new XMLHttpRequest();
@@ -35,7 +35,7 @@
 					itemsList.innerHTML = html
 				}
 			})
-			xhr.open("PUT", `/api/index?itemId=${itemId}` ,true)
+			xhr.open("PUT", `/api/index?itemId=${itemId}&menuId=${menuId.value}` ,true)
 			xhr.send()
 		}
 		}

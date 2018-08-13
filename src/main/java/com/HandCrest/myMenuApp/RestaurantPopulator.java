@@ -28,16 +28,15 @@ public class RestaurantPopulator implements CommandLineRunner {
 		Restaurant burgerBar = restaurantRepo.save(new Restaurant("Burger Bar"));
 		Restaurant winery = restaurantRepo.save(new Restaurant("The Wine and Dine"));
 		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop"));
+		Restaurant domIan = restaurantRepo.save(new Restaurant("Dom & Ian's Place"));
+
 		Menu steakhouseAppetizers = menuRepo.save(new Menu("Appetizers", steakhouse));
+		Menu lunch = menuRepo.save(new Menu("Dom & Ians Lunch Menu", domIan));
+		
 		Item crabcakes = itemRepo.save(new Item("crabcakes", "cakes but made of crabs", BigDecimal.valueOf(786549.00),
 				"/img/crabcakes.jpg", 350000, "imitation crab, birthday cake mix", true, steakhouseAppetizers));
 		Item fishsticks = itemRepo.save(new Item("fishsticks", "fish in stick form", BigDecimal.valueOf(43520152.00),
-				"/img/fishsticks.jpg", 100000, "Alaskan cod", true, steakhouseAppetizers));
-			
-		Restaurant domIan = restaurantRepo.save(new Restaurant("Dom & Ian's Place"));
-		
-		Menu lunch = menuRepo.save(new Menu("Dom & Ians Lunch Menu", domIan));
-		
+				"/img/fishsticks.jpg", 100000, "Alaskan cod", true, steakhouseAppetizers));		
 		Item texasBurrito = itemRepo.save(new Item("Texas Burrito", "Large flour tortilla filled with taco meat topped with chilli con queso. Served with rice and  beans (with beef fajita/chicken fajita, add .75c)", BigDecimal.valueOf(8.25), "/img/texasburrito.jpg", 780,
 				"ground beef, cheese, rice and beans", true, lunch));
 		
