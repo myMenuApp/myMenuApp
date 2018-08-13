@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title th:text="${menu.menuName}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+  
+</head>
+<body>
+	<nav>
+		<ul>
+			<li>
+				<a th:href="@{/customer}">List of Restaurants</a>
+			</li>
+			<li>
+				<a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
+			</li>
+		</ul>
+	</nav>
+<header>
+    <h1 th:text="${menu.menuName}"></h1>
+</header>
+<main>
+    <ul class= "itemsList">
+        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : soldOut">
+            <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
+                <span th:text="${item.itemName}"></span>
+                <img th:src="${item.picture}" style="width:10vw" />
+            </a>
+      
+        </li>
+    </ul>
+ 
+    
+</main>
+    <footer>Handcrest&reg;</footer>
+
+
+</body>
+</html>

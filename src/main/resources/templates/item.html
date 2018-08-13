@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/CSS/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/CSS/layout.css" />
-<!--     css file -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/CSS/itemLayout.css" />
+
 </head>
 
 <body>
@@ -47,47 +48,84 @@
     <header>
             <span>
                     <h2 th:text="${restaurantName}"></h2>
-                    <h3 th:text="${items.itemName}"></h3>
+                    <h3 th:text="${item.itemName}"></h3>
             </span> 
     </header>
     <section>
         <ul class="itemDetails">
             <div class="flex-item-list">
-            <h3 th:text="${items.itemName}"></h3>
+            <h3 th:text="${item.itemName}"></h3>
     
             <li>
-                <a th:text="|Description: ${items.description}|"></a>
+                <a th:text="|Description: ${item.description}|"></a>
             </li>
             <li>
-                <img th:src="${items.picture}" style="width:25vw" />
+                <img th:src="${item.picture}" style="width:25vw" />
             </li>
             <li>
-                <a th:text="|Price: $${items.price}|"></a>
+                <a th:text="|Price: $${item.price}|"></a>
             </li>
             <li>
-                <a th:text="|Calories: ${items.calories}|"></a>
+                <a th:text="|Calories: ${item.calories}|"></a>
             </li>
             <li>
-                <a th:text="|Ingredients: ${items.ingredients}|"></a>
+                <a th:text="|Ingredients: ${item.ingredients}|"></a>
             </li>
         
         </div>        
         </ul>
     </section>
  
-    <aside class="flex-list-app-content">
+    
         <h4>Leave a Comment about this item:</h4>
         
+
        <h5>Comments</h5>
 	<div>
-		<label>Your name : <input type="text" name="Creator"
-			placeholder="Enter Your Name Here " /></label> <label>Your Comment:
-			<input type="text" name="comment"
-			placeholder="Enter Your Comment Here" />
-		</label> <input type="hidden" name="itemId" th:value="${items.itemId}"></input>
+		<label>Your name :
+			<input type="text" name="Creator" placeholder="Enter Your Name Here " />
+		</label>
+		<label>Your Comment:
+			<input type="text" name="comment" placeholder="Enter Your Comment Here" />
+		</label>
+			<input type="hidden" name="itemId" th:value="${item.itemId}"></input>
 		<input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
 		<button id="submitComment">Submit</button>
 	</div>
+
+ 
+	<ul class="commentList">
+		<li th:each="comment : ${item.comments}">
+		<span th:text="|${comment.creator}: ${comment.comment}|"></span></li>
+	</ul>
+       
+    
+</div>
+    
+   
+    
+
+
+<footer class="footer">
+        <h4>Handcrest&reg;</h4>
+   <nav class="flex-navigation"> 
+       <ul>
+        <li><a href="#">Contact Us</a> </li>
+        <li><a href="#">Our Partners</a> </li>
+        <li><a href="#">Follow Us</a> </li>
+        </ul>
+    </nav>
+</footer>
+</main> 
+</div>
+<script src="/js/OpenNav.js"></script>
+<script src="/js/carosule.js"></script>
+<script src="/js/comment.js"></script>
+    <!-- Fix "Go Back" button
+    <a th:href="@{/menu}">Go Back</a> -->
+</body>
+</html>
+
     <header>
         <h1 th:text="${item.itemName}"></h1>
         <input type="hidden" name="itemId" th:value="${item.itemId}" />
@@ -211,3 +249,4 @@
     <a th:href="@{/menu}">Go Back</a> -->
 </body>
 </html>
+

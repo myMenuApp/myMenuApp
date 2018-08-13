@@ -1,5 +1,3 @@
-
-
 package com.HandCrest.myMenuApp;
 
 import java.math.BigDecimal;
@@ -35,7 +33,7 @@ public class ApiController {
 			@RequestParam(value = "price") String price, @RequestParam(value = "picture") String picture,
 			@RequestParam(value = "calories") int calories, @RequestParam(value = "ingredients") String ingredients) {
 		BigDecimal bigDecimalPrice = new BigDecimal(price);
-		itemRepo.save(new Item(itemName, description, bigDecimalPrice, picture, calories, ingredients, menuRepo.findOne(menuId)));
+		itemRepo.save(new Item(itemName, description, bigDecimalPrice, picture, calories, ingredients, true,menuRepo.findOne(menuId)));
 		return menuRepo.findOne(menuId).getItems();
 	}
 

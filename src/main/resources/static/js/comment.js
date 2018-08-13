@@ -25,6 +25,6 @@ submitComment.addEventListener('click', function addComment(){
 		
 	})
 	
-	xhr.open("POST", `/api/menus/${menuId.value}/items/${item.value}?creator=${creator.value}&comment=${comment.value}&items=${item.value}`,true)
+	xhr.open("POST", `/api/menus/${menuId.value}/items/${item.value}?creator=${creator.value}&comment=${comment.value}&item=${item.value}`,true)
 	xhr.send();
 })

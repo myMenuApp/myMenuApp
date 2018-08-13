@@ -13,6 +13,8 @@ public class ItemTest {
 	private String picture;
 	private int calories;
 	private String ingredients;
+	boolean enabled;
+	private Menu menu;
 
 	@Test
 	public void testItemClassExistsButIsNotNull() {
@@ -23,7 +25,7 @@ public class ItemTest {
 	@Test
 	public void testItemHasNameDescriptionPricePictureCaloriesIngredients() {
 
-		Item testMenuItems = new Item(itemName, description, price, picture, calories, ingredients, null);
+		Item testMenuItems = new Item(itemName, description, price, picture, calories, ingredients, true, menu);
 
 		Assert.assertEquals(itemName, testMenuItems.getItemName());
 		Assert.assertEquals(description, testMenuItems.getDescription());

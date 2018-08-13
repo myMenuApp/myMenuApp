@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title th:text="${items.itemName}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+</head>
+<body>    
+    <nav>
+        <ul>
+            <li>
+                <a th:href="@{/customer}">List of Restaurants</a>
+            </li>    
+			      <li>
+                <a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
+            </li> 
+            <li>
+                <a th:href="|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Back to Menu</a>
+            </li>
+        </ul>
+    </nav>
+<header>
+    <h1 th:text="${items.itemName}"></h1>
+</header>
+    <div>
+        <ul class="itemDetails">
+            <li>
+                <a th:text="|Description: ${items.description}|"></a>
+            </li>
+            <li>
+                <img th:src="${items.picture}" style="width:25vw" />
+            </li>
+            <li>
+                <a th:text="|Price: $${items.price}|"></a>
+            </li>
+            <li>
+                <a th:text="|Calories: ${items.calories}|"></a>
+            </li>
+            <li>
+                <a th:text="|Ingredients: ${items.ingredients}|"></a>
+            </li>        
+        </ul>
+    </div>
+    
+<footer>Handcrest&reg;</footer>
+
+	<script src="/js/javascript.js"></script>
+
+</body>
+</html>

@@ -20,18 +20,21 @@ function removeItem(event) {
 				let html = ''
 					remainingItems.forEach(function(item) {
 					html += `
-						<li>
-							<a href="/index/${restaurantName}/menus/${menuId}/items/${item.itemId}">
-								${item.itemName}
-								<img src="${item.picture}" style="width:10vw" />
-							</a>
-							<button class="deleteItemButton">Delete Item</button>
-						</li>		
+							<li class="${item.enabled ? 'inStock' : 'outStock'}">
+								<input type="hidden" name="enabled" value="${item.enabled}"/>
+								<a href="/index/${restaurantName}/menus/${menuId}/items/${item.itemId}">
+									${item.itemName}
+									<img src="${item.picture}" style="width:10vw" />
+								</a>
+								<button class="soldOut">Sold Out</button>
+								<button class="deleteItemButton">Delete Item</button>
+							</li>			
 					`
 				})
 				itemList.innerHTML = html
 			}
 		}
+
 		xhr.open("DELETE",`/api/restaurants?restaurantName=${restaurantName}&menuId=${menuId}&itemId=${itemId}`, true )
 		xhr.send()
 	}
