@@ -17,6 +17,7 @@
     </nav>
 <header>
     <h1 th:text="${restaurantName}"></h1>
+    <a th:href="|@{/index/}${restaurant.restaurantName}/@{admin}|">Admin</a>
 </header>
     <ul class= "menusList">
         <li th:each="menu : ${restaurant.menus}">

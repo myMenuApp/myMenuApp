@@ -49,7 +49,7 @@ public class ApiController {
 	}
 	
 	//edit Item properties
-	@RequestMapping(value = "/menus/{menuID}/items/{itemId}", method = RequestMethod.PATCH)
+	@RequestMapping(value = "/menus/{menuId}/items/{itemId}", method = RequestMethod.PUT)
 	public Item editItem(@PathVariable(name = "menuId") Long menuId,
 						@PathVariable(name = "itemId") Long ItemId,
 						@RequestParam(value = "picture", required = false) String picture,
@@ -57,7 +57,6 @@ public class ApiController {
 						@RequestParam(value = "price", required = false) String price,
 						@RequestParam(value = "calories", required = false) Integer calories,
 						@RequestParam(value = "ingredients", required = false) String ingredients){
-		BigDecimal bigDecimalPrice = new BigDecimal(price);
 		Item item = itemRepo.findOne(ItemId);
 		if (picture != null) {
 			item.setPicture(picture);
@@ -66,6 +65,7 @@ public class ApiController {
 			item.setDescription(description);
 		}
 		if (price != null) {
+			BigDecimal bigDecimalPrice = new BigDecimal(price);
 			item.setPrice(bigDecimalPrice);
 		}
 		if (calories != null) {
@@ -74,6 +74,7 @@ public class ApiController {
 		if (ingredients != null) {
 			item.setIngredients(ingredients);
 		}
+		itemRepo.save(item);
 		return itemRepo.findOne(ItemId);
 	}
 									
