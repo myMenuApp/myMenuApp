@@ -20,7 +20,13 @@
             <ul>
                 <li><a href="#">Contact Us</a></li> 
                 <li><a href="#">Our Partners</a></li> 
-                <li><a href="#">Follow Us</a></li> 
+                <li><a href="#">Follow Us</a></li>
+                
+                <!--THIS IS THE LINK TO THE LOGIN PAGE--> 
+                <li><a th:href="@{/login}">Login</a></li>
+                
+                
+                
                 <button id="openModalBtn">
                         <span>Login</span>
                     </button>
@@ -29,13 +35,17 @@
                         <div class="flex-login">
                             <span id="close-modal">X
                             </span>
+                            
                             <span class="login-window">
+                            <form th:action="@{/admin}">
                                 <h4>Login:</h4>
                                 <p>Username:</p>
                                 <input type="text" placeholder="login" class="flex-1" />
                                 <p>Password:</p>
                                 <input type="text" placeholder="login password" class="flex-2" /><br/>
                                 <button class="mainBtn"><span>Login</span></button>
+                             </form>
+                                
                                 <a href="#" class="questions">Forgot Username?</a>
                                 <a href="#" class="questions">Forgot Password?</a>
                             </span>
