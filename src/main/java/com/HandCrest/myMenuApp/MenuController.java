@@ -36,10 +36,10 @@ public class MenuController {
 		return "index";
 	}
 	
-	@RequestMapping("/index/login")
+	@RequestMapping("/index/admin")
 	public String getLogin(Model model) {
-		model.addAttribute("login");
-		return "login";
+		model.addAttribute("admin");
+		return "admin";
 	}
 	
 	@RequestMapping("/index/{restaurantName}")

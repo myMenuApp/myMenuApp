@@ -21,9 +21,7 @@
                 <li><a href="#">Contact Us</a></li> 
                 <li><a href="#">Our Partners</a></li> 
                 <li><a href="#">Follow Us</a></li>
-                
-                <!--THIS IS THE LINK TO THE LOGIN PAGE--> 
-                <li><a th:href="@{/login}">Login</a></li>
+             
                 
                 
                 
@@ -37,7 +35,8 @@
                             </span>
                             
                             <span class="login-window">
-                            <form th:action="@{/admin}">
+                            
+                            <form th:action="@{/index/admin}">
                                 <h4>Login:</h4>
                                 <p>Username:</p>
                                 <input type="text" placeholder="login" class="flex-1" />
