@@ -1,3 +1,4 @@
+
 package com.HandCrest.myMenuApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,13 @@ public class MenuController {
 		model.addAttribute("restaurants", restaurantRepo.findAll());
 		return "index";
 	}
+	
+	@RequestMapping("/index/admin")
+	public String getLogin(Model model) {
+		model.addAttribute("admin");
+		return "admin";
+	}
+	
 	@RequestMapping("/index/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));

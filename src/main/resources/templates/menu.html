@@ -6,63 +6,91 @@
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menuLayout.css" />
-    
 </head>
 <body>
-	<nav>
-		<ul>
-			<li>
-				<a th:href="@{/index}">List of Restaurants</a>
-			</li>
-			<li>
-				<a th:href="|@{/index/}${restaurantName}">List of Menus</a>
-			</li>
-		</ul>
-    </nav>
-    <header>
-        <h1 th:text="${menu.menuName}"></h1>
-        <input type="hidden" name="menuId" th:value="${menu.menuId}" />
-        <button id="renameMenuBtn">Rename</button>
-        <div id = "menuName-modal-screen">
-            <div id = "menuName-modal-box">
-                <header>
-                    <h3>Rename menu</h3>
-                    <button id = "close-menuName-modal">Cancel</button>
-                </header>
-                <label>Picture: <input type="text" name="menuRename" th:placeholder="${menu.menuName}" /></label>
-                <button class="submitMenuNameBtn">Save changes</button>
-            </div>
+<div class="grid-hack">
+
+<main class="container">
+    <header class="header">  
+        <div class="header-container">
+                        <img src="../img/logo.png" class="logo"  ></img>
+                        <h1>MyMenu</h1>
+            <nav class="flex-navigation">
+                            <ul>
+                                <li><a href="#">Contact Us</a></li> 
+                                <li><a href="#">Our Partners</a></li> 
+                                <li><a href="#">Follow Us</a></li> 
+                                <li><a th:href="@{/index}">Home</a></li>
+                            </ul>
+            </nav>
         </div>
     </header>
-<main>
+
+    <div class="flex-container-4">
+        <span>
+            <h2 th:text="${restaurantName}"></h2>
+            <h3 th:text="${menu.menuName}"></h3>
+            <input type="hidden" name="menuId" th:value="${menu.menuId}" />
+            <button id="renameMenuBtn">Rename</button>
+            <div id = "menuName-modal-screen">
+                <div id = "menuName-modal-box">
+                    <header>
+                        <h3>Rename menu</h3>
+                        <button id = "close-menuName-modal">Cancel</button>
+                    </header>
+                    <label>Picture: <input type="text" name="menuRename" th:placeholder="${menu.menuName}" /></label>
+                    <button class="submitMenuNameBtn">Save changes</button>
+                </div>
+            </div>
+        </span>    
+    </div>
+    
+<section class="flex-container-menu">
     <ul class= "itemsList">
-        <li th:each="item : ${menu.items}">
+        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
+        	<input type="hidden" name="enabled" th:value="${item.enabled}"/>
             <a th:href= "|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
                 <img th:src="${item.picture}" style="width:10vw" />
             </a>
+            <button class="soldOut">SoldOut</button>
             <button class="deleteItemButton">Delete Item</button> 
         </li>
     </ul>
+</section>
+
+<section class="addItem flex-menu-manager">
     <h2>Add an item to this menu</h2>
-    <section class="addItem">
+    <aside class="addItem flex-menu-manager">
             <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
             <label>Description: <input type="text" name="addDescriptionApi" placeholder="Description" /></label>
             <label>Price: <input type="text" name="addPriceApi" placeholder="0.00" /></label>
             <label>Image URL: <input type="text" name="addImageApi" placeholder="URL" /></label>
             <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
             <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
-            <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}"></input>
-            <input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
+            <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}"  />
+            <input type="hidden" name="menuId" th:value="${menu.menuId}"  />
             <button class="submitItemButton">Submit</button>
-    </section>
-    
+    </aside>
+</section>
+<footer class="footer">
+        <h4>Handcrest&reg;</h4>
+   <nav class="flex-navigation"> 
+       <ul>
+        <li><a href="#">Contact Us</a> </li>
+        <li><a href="#">Our Partners</a> </li>
+        <li><a href="#">Follow Us</a> </li>
+        </ul>
+    </nav>
+</footer>
 </main>
-    <footer>Handcrest&reg;</footer>
-    <script src="/js/deleteItem.js"></script>
-    <script src="/js/javascript.js"></script>
+</div>
+
     <script src="/js/additem.js"></script>
+    <script src="/js/deleteItem.js"></script>
+    <script src="/js/freezeItem.js"></script>
     <script src="/js/editMenu.js"></script>
 </body>
 </html>

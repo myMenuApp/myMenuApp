@@ -26,6 +26,19 @@ public class ApiController {
 	@Autowired
 	ReviewRepository reviewRepo;
 
+	
+	@RequestMapping(value = "/index/admin", method = RequestMethod.GET)
+	public String managerLogin(@RequestParam(value = "userName") String userName,
+							   @RequestParam (value = "password") String password) {
+		Manager manager = managerRepo.findByUserName(userName);
+		if (userName == "admin" && password =="admin1") {
+			return "redirect:/ admin";
+		}
+		else {
+			return "index";
+		}
+	}
+	
 	// add item to current menu
 	@RequestMapping(value = "/menu/{menuId}/items", method = RequestMethod.POST)
 	public Collection<Item> addItem(@PathVariable(name = "menuId") Long menuId,
@@ -33,8 +46,7 @@ public class ApiController {
 			@RequestParam(value = "price") String price, @RequestParam(value = "picture") String picture,
 			@RequestParam(value = "calories") int calories, @RequestParam(value = "ingredients") String ingredients) {
 		BigDecimal bigDecimalPrice = new BigDecimal(price);
-		itemRepo.save(new Item(itemName, description, bigDecimalPrice, picture, calories, ingredients,
-				menuRepo.findOne(menuId)));
+		itemRepo.save(new Item(itemName, description, bigDecimalPrice, picture, calories, ingredients, true,menuRepo.findOne(menuId)));
 		return menuRepo.findOne(menuId).getItems();
 	}
 
@@ -55,6 +67,7 @@ public class ApiController {
 			@RequestParam(value = "price", required = false) String price,
 			@RequestParam(value = "calories", required = false) Integer calories,
 			@RequestParam(value = "ingredients", required = false) String ingredients) {
+		
 		Item item = itemRepo.findOne(ItemId);
 		if (itemName != null) {
 			item.setItemName(itemName);

@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title th:text="|Admin: ${restaurantName}|"></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"  />
+    <title th:text="${restaurantName}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"  />
 </head>
+
 <body>
-    <header>
-        <h1 th:text="|Admin page for ${restaurantName}|"></h1>
-    </header>
+<header>
+   <!-- <h1 th:text="${restaurantName}"></h1> -->
+    <h2>Manager Interface</h2>
+</header>
 
-    <main>
-        <h2>Menus</h2>
-        <ul class="listOfMenus">
-            <li class="menu">
-                <a th:href= "|@{/index/}${restaurantName}/@{menus}/${menuId}|" th:text="${menuName}"></a>
-            </li>
-        </ul>
-    </main>
+<h1>THIS IS A TEST PAGE</h1>
 
-    <footer>
-
-    </footer>
+<a th:href="@{/index}">Return to Index</a>
+<h3> Add Menu </h3>
+	<input> </input><button>Edit</button> <button>Delete</button> <button>Sold Out</button>
+<h3> Add Item </h3>
+	<input> </input><button>Edit</button> <button>Delete</button> <button>Sold Out</button>
+<footer>Handcrest&reg;</footer>
 </body>
 </html>
