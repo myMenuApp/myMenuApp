@@ -110,3 +110,7 @@ a:hover{
     font-size: 12px;
     font-weight: 400;
 }
+
+.outStock {
+    opacity: .4;
+}

@@ -366,7 +366,7 @@ ul{
     transform: rotate(45deg) translate(-8px, -8px);
 }
 .modal{
-    display: flex;
+    display: none;
     justify-content: center;
     position: fixed;
     z-index: 1;
@@ -383,6 +383,9 @@ ul{
     width: 80%;
     height:60vh;
     border: 2px solid white;
+}
+#close-modal {
+    align-self: flex-end;
 }
 .close{
     float:right;
