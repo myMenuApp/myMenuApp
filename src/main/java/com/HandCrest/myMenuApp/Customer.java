@@ -47,6 +47,11 @@ public class Customer {
 		this.avatar = avatar;
 		this.email = email;
 	}
+	
+	public Customer(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
