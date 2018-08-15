@@ -29,7 +29,9 @@ public class RestaurantPopulator implements CommandLineRunner {
 		Restaurant winery = restaurantRepo.save(new Restaurant("The Wine and Dine"));
 		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop"));
 		Restaurant domIan = restaurantRepo.save(new Restaurant("Dom & Ian's Place"));
-		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Steakhouse"));
+//		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Steakhouse"));
+		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Smith & Wollensky"));
+		Restaurant chinese = restaurantRepo.save(new Restaurant("Taste of Orient"));
 		
 		Menu steakhouseAppetizers = menuRepo.save(new Menu("Appetizers", steakhouse));
 		Menu pvAppetizers = menuRepo.save(new Menu("Pizza", pastaVilla));
@@ -39,8 +41,21 @@ public class RestaurantPopulator implements CommandLineRunner {
 		Menu lunch = menuRepo.save(new Menu("Dom & Ians Lunch Menu", domIan));
 		Menu fmDinner = menuRepo.save(new Menu("Dinner", fishMarket));
 		Menu fmSalad = menuRepo.save(new Menu("Salad", fishMarket));
+		Menu lunchChinese = menuRepo.save(new Menu("Lunch", chinese));
+		Menu dSteakhouse = menuRepo.save(new Menu("Dinner", steakhouse));
 		
-		
+		Item padThai = itemRepo.save(new Item("Pad Thai", "Stir fried rice noodles with bean sprouts, green onion, egg,and ground peanuts.", BigDecimal.valueOf(7.15),
+                "/img/crabcakes.jpg", 940, "Nut, Gluten, Egg", true, lunchChinese));
+        Item mongolian = itemRepo.save(new Item("Mongolian Beef", "Sauteed with spanish onion and green onion in a sweet garlic sauce.", BigDecimal.valueOf(7.35),
+                "/img/crabcakes.jpg", 940, "Meat, Sugar", true, lunchChinese));
+        Item szechuan = itemRepo.save(new Item("Szechuan Chicken", "Sauteed with mix vegetables in a spicy brown sauce.", BigDecimal.valueOf(6.95),
+                "/img/crabcakes.jpg", 940, "Dairy, Gluten, Sugar", true, lunchChinese));
+        Item ribEye = itemRepo.save(new Item("USDA Prime Boneless Rib Eye", "Pan Seared Then Smoked Rib Eye", BigDecimal.valueOf(55.00),
+                "/img/crabcakes.jpg", 1320, "Beef", true, dSteakhouse));    
+        Item nYStrip = itemRepo.save(new Item("USDA Prime Boneless New York Strip", "Grilled New York Strip Steak", BigDecimal.valueOf(54.00),
+                "/img/crabcakes.jpg", 464, "Beef", true, dSteakhouse));    
+        Item mignot = itemRepo.save(new Item("Signature Fillet Mignon", "Choice cuts of steak seared in butter", BigDecimal.valueOf(44.00),
+                "/img/crabcakes.jpg", 757, "Beef, Dairy", true, dSteakhouse));
 		
 		Item springSalad = itemRepo.save(new Item("Spring Salad", "Romaine Lettuce, Oil, Crutons, Cheese, Carrots, Eggs", BigDecimal.valueOf(45.00), 
 				"/img/crabcakes.jpg", 145, "Egg, Dairy, Oil, Gluten",true, fmSalad));
