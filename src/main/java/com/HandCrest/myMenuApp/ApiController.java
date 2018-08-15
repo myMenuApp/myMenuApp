@@ -56,17 +56,22 @@ public class ApiController {
 			@RequestParam(value = "menuName") String menuName) {
 		menuRepo.save(new Menu(menuName, restaurantRepo.findByRestaurantName(restaurantName)));
 		return restaurantRepo.findByRestaurantName(restaurantName).getMenus();
-	}// edit Item properties
-	@RequestMapping(value = "/menus/{menuID}/items/{itemId}", method = RequestMethod.PATCH)
-	public Item editItem(@PathVariable(name = "menuId") Long menuId,
-			@PathVariable(name = "itemId") Long ItemId,
+	}
+
+	// edit Item properties
+	@RequestMapping(value = "/menus/{menuId}/items/{itemId}", method = RequestMethod.PUT)
+	public Item editItem(@PathVariable(name = "menuId") Long menuId, @PathVariable(name = "itemId") Long ItemId,
+			@RequestParam(value = "itemName", required = false) String itemName,
 			@RequestParam(value = "picture", required = false) String picture,
 			@RequestParam(value = "description", required = false) String description,
 			@RequestParam(value = "price", required = false) String price,
 			@RequestParam(value = "calories", required = false) Integer calories,
 			@RequestParam(value = "ingredients", required = false) String ingredients) {
-		BigDecimal bigDecimalPrice = new BigDecimal(price);
+		
 		Item item = itemRepo.findOne(ItemId);
+		if (itemName != null) {
+			item.setItemName(itemName);
+		}
 		if (picture != null) {
 			item.setPicture(picture);
 		}
@@ -74,6 +79,7 @@ public class ApiController {
 			item.setDescription(description);
 		}
 		if (price != null) {
+			BigDecimal bigDecimalPrice = new BigDecimal(price);
 			item.setPrice(bigDecimalPrice);
 		}
 		if (calories != null) {
@@ -82,7 +88,19 @@ public class ApiController {
 		if (ingredients != null) {
 			item.setIngredients(ingredients);
 		}
+		itemRepo.save(item);
 		return itemRepo.findOne(ItemId);
 	}
 
+	// edit Menu properties
+	@RequestMapping(value = "menus/{menuId}", method = RequestMethod.PUT)
+	public Menu editMenu(@PathVariable(name = "menuId") Long menuId,
+						@RequestParam(value = "menuName") String menuName) {
+		Menu menu = menuRepo.findOne(menuId);
+		if (menuName != null) {
+			menu.setMenuName(menuName);
+		}
+		menuRepo.save(menu);
+		return menuRepo.findOne(menuId);
+	}
 }
