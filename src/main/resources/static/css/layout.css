@@ -255,17 +255,7 @@
     padding: 1.5rem;
     border:2px solid black;
 }
-.flex-container-comments{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 40%;
-    height: auto;
-    margin: 1.5rem;
-    padding: 1.5rem;
-    border: 2px solid brown;
-}
+
 .flex-container-login{
     display: flex;
     flex-direction: column;
@@ -320,7 +310,77 @@
     padding: 2rem;
     background-color: white;
 }
+.flex-container-comments{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    margin: 1.5rem;
+    padding: 1.5rem;
+    
+}
+.flex-comment-header{
+    border: 1px solid black;
+    padding: 1rem;
+}
+.flex-name-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+.flex-name-container button{
+    width:100px;
+    padding:10px 15px;
+    border: .5px solid red;
+    background-color: greenyellow;
+}
+.flex-comment-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 650px;
+    justify-content: center;
+    border: 1px solid black; 
+}
+.flex-comment-list li{
+    display: inline-block;
+    padding: .5rem;
+    border: 1px solid green;
+}
+.flex-comment-list li span{
+    font-size: 16px;
+    word-wrap: inherit;
+
+}
+.flex-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: .5rem;
+    font-size: 16px;
+}
+.flex-name input{
+    margin-left:38px;
+}
+.flex-comment{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
+    font-size: 16px;
+}
+.flex-comment input{
+    align-content: flex-start;
+    word-wrap: break-word;
+   margin: .5rem;
+   width: 200px;
+   overflow: auto;
+}
 .flex-1{
+    
     border: 1px solid blue;
 }
 .flex-2{
