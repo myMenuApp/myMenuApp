@@ -6,7 +6,8 @@
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
-  
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menuLayout.css" />
+    
 </head>
 <body>
 	<nav>
@@ -18,10 +19,22 @@
 				<a th:href="|@{/index/}${restaurantName}">List of Menus</a>
 			</li>
 		</ul>
-	</nav>
-<header>
-    <h1 th:text="${menu.menuName}"></h1>
-</header>
+    </nav>
+    <header>
+        <h1 th:text="${menu.menuName}"></h1>
+        <input type="hidden" name="menuId" th:value="${menu.menuId}" />
+        <button id="renameMenuBtn">Rename</button>
+        <div id = "menuName-modal-screen">
+            <div id = "menuName-modal-box">
+                <header>
+                    <h3>Rename menu</h3>
+                    <button id = "close-menuName-modal">Cancel</button>
+                </header>
+                <label>Picture: <input type="text" name="menuRename" th:placeholder="${menu.menuName}" /></label>
+                <button class="submitMenuNameBtn">Save changes</button>
+            </div>
+        </div>
+    </header>
 <main>
     <ul class= "itemsList">
         <li th:each="item : ${menu.items}">
@@ -50,5 +63,6 @@
     <script src="/js/deleteItem.js"></script>
     <script src="/js/javascript.js"></script>
     <script src="/js/additem.js"></script>
+    <script src="/js/editMenu.js"></script>
 </body>
 </html>
