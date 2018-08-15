@@ -5,16 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" media="screen"
-    href="/css/style.css" />
-<link rel="stylesheet" type="text/css" media="screen"
-    href="/css/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
   
 </head>
 <body>
 <div class="grid-hack">
-<main class="container">
 
+<main class="container">
     <header class="header">  
         <div class="header-container">
                         <img src="../img/logo.png" class="logo"  ></img>
@@ -39,6 +37,7 @@
     
 <section class="flex-container-menu">
 
+
     <ul class= "itemsList">
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
         	<input type="hidden" name="enabled" th:value="${item.enabled}"/>
@@ -50,6 +49,9 @@
             <button class="deleteItemButton">Delete Item</button> 
         </li>
     </ul>
+</section>
+
+<div class="addItem flex-menu-manager">
     <h2>Add an item to this menu</h2>
     <section class="addItem flex-menu-manager">
             <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
@@ -62,8 +64,6 @@
             <input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
             <button class="submitItemButton">Submit</button>
     </section>
-
-</section>
 <footer class="footer">
         <h4>Handcrest&reg;</h4>
    <nav class="flex-navigation"> 
@@ -76,7 +76,7 @@
 </footer>
 </main>
 </div>
- 
+
     <script src="/js/additem.js"></script>
     <script src="/js/deleteItem.js"></script>
     <script src="/js/freezeItem.js"></script>

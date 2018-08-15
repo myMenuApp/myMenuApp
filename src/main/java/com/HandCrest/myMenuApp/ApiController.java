@@ -26,6 +26,19 @@ public class ApiController {
 	@Autowired
 	ReviewRepository reviewRepo;
 
+	
+	@RequestMapping(value = "/index/admin", method = RequestMethod.GET)
+	public String managerLogin(@RequestParam(value = "userName") String userName,
+							   @RequestParam (value = "password") String password) {
+		Manager manager = managerRepo.findByUserName(userName);
+		if (userName == "admin" && password =="admin1") {
+			return "redirect:/ admin";
+		}
+		else {
+			return "index";
+		}
+	}
+	
 	// add item to current menu
 	@RequestMapping(value = "/menu/{menuId}/items", method = RequestMethod.POST)
 	public Collection<Item> addItem(@PathVariable(name = "menuId") Long menuId,

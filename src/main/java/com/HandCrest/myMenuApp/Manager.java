@@ -26,6 +26,11 @@ public class Manager {
 		this.restaurant = restaurant;
 
 	}
+	
+	public Manager(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
 
 	public Long getId() {
 		return id;

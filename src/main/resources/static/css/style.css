@@ -1,5 +1,4 @@
 *{
-    font-family: Arial, Arial, 'Arial Narrow Bold', sans-serif;
     
 }
 a:link{
@@ -110,4 +109,8 @@ a:hover{
 .questions{
     font-size: 12px;
     font-weight: 400;
+}
+
+.outStock {
+    opacity: .4;
 }
