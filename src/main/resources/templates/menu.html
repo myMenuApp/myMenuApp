@@ -30,14 +30,12 @@
 
     <div class="flex-container-4">
         <span>
-                <h2 th:text="${restaurantName}"></h2>
-                <h3 th:text="${menu.menuName}"></h3>
-            </span>    
+            <h2 th:text="${restaurantName}"></h2>
+            <h3 th:text="${menu.menuName}"></h3>
+        </span>    
     </div>
     
 <section class="flex-container-menu">
-
-
     <ul class= "itemsList">
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
         	<input type="hidden" name="enabled" th:value="${item.enabled}"/>
@@ -51,19 +49,20 @@
     </ul>
 </section>
 
-<div class="addItem flex-menu-manager">
+<section class="addItem flex-menu-manager">
     <h2>Add an item to this menu</h2>
-    <section class="addItem flex-menu-manager">
+    <aside class="addItem flex-menu-manager">
             <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
             <label>Description: <input type="text" name="addDescriptionApi" placeholder="Description" /></label>
             <label>Price: <input type="text" name="addPriceApi" placeholder="0.00" /></label>
             <label>Image URL: <input type="text" name="addImageApi" placeholder="URL" /></label>
             <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
             <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
-            <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}"></input>
-            <input type="hidden" name="menuId" th:value="${menu.menuId}"></input>
+            <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}"  />
+            <input type="hidden" name="menuId" th:value="${menu.menuId}"  />
             <button class="submitItemButton">Submit</button>
-    </section>
+    </aside>
+</section>
 <footer class="footer">
         <h4>Handcrest&reg;</h4>
    <nav class="flex-navigation"> 
