@@ -22,12 +22,11 @@
                     <h1>MyMenu</h1>
                     <nav class="flex-navigation">
                         <ul>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a th:href="@{/index/contact}">Contact Us</a></li>
                             <li><a href="#">Our Partners</a></li>
-                            <li><a href="#">Follow Us</a></li>
+                            <li><a th:href="@{/index/aboutus}">Follow Us</a></li>
                             <li><a th:href="@{/index}">Restaurants</a></li>
-                            <li><a
-                                th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a></li>
+                            <li><a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Menu</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -35,9 +34,10 @@
             <div class="hero-image">
                 <img class="slides" src="../img/dinnerlogin.jpg" /> <img
                     class="slides" src="../img/dinnerstockbg.jpg" /> <img
-                    class="slides" src="../img/freshveg.jpg" /> <img class="slides"
-                    src="../img/dinnerlogin.jpg" />
+                    class="slides" src="../img/freshveg.jpg" /> 
+                    <img class="slides" src="../img/dinnerlogin.jpg" />
             </div>
+
             <div class="flex-container-4">
                 <header>
                     <span>
@@ -45,6 +45,7 @@
                         <h3 th:text="${item.itemName}"></h3>
                     </span>
                 </header>
+
                 <section>
                     <div class="flex-item-list">
                         <h3 th:text="${item.itemName}"></h3>
@@ -154,7 +155,8 @@
             </div>
         </div>
 
-        <a th:href="@{/menu}">Go Back</a> --> <footer class="footer">
+        <a th:href="@{/menu}">Go Back</a> 
+         <footer class="footer">
             <h4>Handcrest&reg;</h4>
             <nav class="flex-navigation">
                 <ul>

@@ -42,6 +42,11 @@ public class MenuController {
 		return "admin";
 	}
 	
+	@RequestMapping("/index/contact")
+	public String getContact(Model model) {
+		return "contact";
+	}
+	
 	@RequestMapping("/index/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));

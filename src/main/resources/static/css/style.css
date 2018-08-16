@@ -1,6 +1,4 @@
-*{
-    
-}
+/* Anchor Styling */
 a:link{
     text-decoration: none;
     color: #000000;
@@ -12,6 +10,8 @@ a:hover{
     background-color: black;
     color: aliceblue;
 }
+
+/* Back Ground May need deleted*/
 .container{
     background-color: black;
 }
@@ -19,6 +19,9 @@ a:hover{
     background-color: aquamarine;
     background-size: cover;
 }
+
+/* Navigation Fonts */
+
 .flex-navigation li{
     font-size: 24px;
     font-weight: bold;
@@ -31,10 +34,11 @@ a:hover{
 .flex-list-restaurants li{
     background-color: aliceblue;
 }
+
+/* Modal */
 .modal-content{
     background-image: url('../img/dinnerlogin.jpg');
 }
-
 #openModalBtn{
   display: inline-block;
   background-color: #000000;
@@ -67,6 +71,16 @@ a:hover{
     opacity: 1;
     right: 0;
 }
+.flex-login{
+    color:black;
+    font-weight: bold;
+    font-size: 24px;
+    border: 2px solid black;
+    background-color: whitesmoke;
+}
+
+/* Login / Submit Buttons */
+
 .mainBtn{
     display: inline-block;
     background-color: #000000;
@@ -79,38 +93,32 @@ a:hover{
     margin: 5px;
     border: 2px solid whitesmoke;
   }
-  .mainBtn span{
-      display: inline-block;
-      position: relative;
-      transition: 0.5s;
+.mainBtn span{
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
   }
-  .mainBtn span::after{
-      content: '\00bb';
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -30px;
-      transition: 0.5s;
-  }
-  .mainBtn:hover span{
-      padding-right: 25px;
-  }
-  .mainBtn:hover span:after{
-      opacity: 1;
-      right: 0;
-  }
-.flex-login{
-    color:black;
-    font-weight: bold;
-    font-size: 24px;
-    border: 2px solid black;
-    background-color: whitesmoke;
+.mainBtn span::after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
 }
+.mainBtn:hover span{
+    padding-right: 25px;
+}
+.mainBtn:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+
 .questions{
     font-size: 12px;
     font-weight: 400;
 }
-
+ /* Item Specific */
 .outStock {
     opacity: .4;
 }

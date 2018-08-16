@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Contact My Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" media="screen"
+    href="/css/style.css" />
+<link rel="stylesheet" type="text/css" media="screen"
+    href="/css/layout.css" />
+<link rel="stylesheet" type="text/css" media="screen"
+    href="/css/itemLayout.css" />
+</head>
+<body>
+        <div class="grid-hack">
+                <main>
+                <div class="container">
+                    <header class="header">
+                        <div class="header-container">
+                            <img src="../static/img/logo.png" class="logo"></img>
+                            <h1>MyMenu</h1>
+                            <nav class="flex-navigation">
+                                <ul>
+                                    <li><a href="#">Our Partners</a></li>
+                                    <li><a th:href="@{/index/aboutus}">Follow Us</a></li>
+                                    <li><a th:href="@{/index}">Restaurants</a></li>
+                                    <li><a th:href="|@{/index/}">Return Home</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+
+
+
+                    
+                </div>
+            </main>
+                <a th:href="@{/menu}">Go Back</a> 
+                <footer class="footer">
+                   <h4>Handcrest&reg;</h4>
+                   <nav class="flex-navigation">
+                       <ul>
+                           <li><a href="#">Contact Us</a></li>
+                           <li><a href="#">Our Partners</a></li>
+                           <li><a href="#">Follow Us</a></li>
+                       </ul>
+                   </nav>
+               </footer> 
+        </div>
+        </body>
+</html>
