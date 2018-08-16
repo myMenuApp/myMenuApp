@@ -18,7 +18,6 @@ public class Menu {
 	@GeneratedValue
 	private Long menuId;
 	private String menuName;
-	
 	@OneToMany(mappedBy = "menu")
 	private Collection<Item> items;
 
@@ -43,9 +42,9 @@ public class Menu {
 	}
 
 	public Menu() {
-		
+
 	}
-	
+
 	public Menu(String menuName, Restaurant restaurant, Item... items) {
 		this.menuName = menuName;
 		this.restaurant = restaurant;
@@ -56,5 +55,9 @@ public class Menu {
 	public String toString() {
 		return menuName;
 	}
-}
 
+	public void setMenuName(String menuName) {
+		this.menuName = menuName;
+	}
+
+}

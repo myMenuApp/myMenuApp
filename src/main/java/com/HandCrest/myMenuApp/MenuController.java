@@ -70,5 +70,11 @@ public class MenuController {
 		return "item";
 	}
 	
+/*	@RequestMapping("index/{restaurantName}/admin")
+		public String getRestaurantAdmin(@PathVariable(name = "restaurantName") String restaurantName, Model model) {
+			return "admin";
+		
+	}*/
+	
 }
 	

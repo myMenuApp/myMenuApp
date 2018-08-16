@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menuLayout.css" />
 
   
 </head>
@@ -33,6 +34,18 @@
         <span>
                 <h2 th:text="${restaurantName}"></h2>
                 <h3 th:text="${menu.menuName}"></h3>
+                <input type="hidden" name="menuId" th:value="${menu.menuId}" />
+                <button id="renameMenuBtn">Rename menu</button>
+                <div id = "menuName-modal-screen">
+                    <div id = "menuName-modal-box">
+                        <header>
+                            <h3>Rename menu</h3>
+                            <button id = "close-menuName-modal">Cancel</button>
+                        </header>
+                        <label>Picture: <input type="text" name="menuRename" th:placeholder="${menu.menuName}" /></label>
+                        <button class="submitMenuNameBtn">Save changes</button>
+                    </div>
+                </div>
             </span>    
     </div>
     
@@ -79,5 +92,7 @@
     <script src="/js/additem.js"></script>
     <script src="/js/deleteItem.js"></script>
     <script src="/js/freezeItem.js"></script>
+    <script src="/js/editMenu.js"></script>
 </body>
 </html>
+>>>>>>> master
