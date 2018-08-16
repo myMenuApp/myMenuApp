@@ -1,52 +1,100 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Contact My Menu</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" type="text/css" media="screen"
-    href="/css/style.css" />
-<link rel="stylesheet" type="text/css" media="screen"
-    href="/css/layout.css" />
-<link rel="stylesheet" type="text/css" media="screen"
-    href="/css/itemLayout.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Contact My Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/itemLayout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
 </head>
+
 <body>
-        <div class="grid-hack">
-                <main>
-                <div class="container">
-                    <header class="header">
-                        <div class="header-container">
-                            <img src="../static/img/logo.png" class="logo"></img>
-                            <h1>MyMenu</h1>
-                            <nav class="flex-navigation">
-                                <ul>
-                                    <li><a href="#">Our Partners</a></li>
-                                    <li><a th:href="@{/index/aboutus}">Follow Us</a></li>
-                                    <li><a th:href="@{/index}">Restaurants</a></li>
-                                    <li><a th:href="|@{/index/}">Return Home</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </header>
+    <div class="grid-hack">
+        
+            <div class="container">
+                <header class="header">
+                    <div class="header-container">
+                        <img src="../static/img/logo.png" class="logo"></img>
+                        <h1>MyMenu</h1>
+                        <input id="burger" type="checkbox" />
+
+<label for="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+                        <nav class="flex-navigation">
+                            <ul>
+                                <li>
+                                    <a href="#">Our Partners</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/index/aboutus}">Follow Us</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/index}">Restaurants</a>
+                                </li>
+                                <li>
+                                    <a th:href="|@{/index/}">Return Home</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+        <main>
 
 
-
+                <div class="flex-container-4">
+                           
+                    </div>
                     
-                </div>
-            </main>
-                <a th:href="@{/menu}">Go Back</a> 
-                <footer class="footer">
-                   <h4>Handcrest&reg;</h4>
-                   <nav class="flex-navigation">
-                       <ul>
-                           <li><a href="#">Contact Us</a></li>
-                           <li><a href="#">Our Partners</a></li>
-                           <li><a href="#">Follow Us</a></li>
-                       </ul>
-                   </nav>
-               </footer> 
-        </div>
-        </body>
+                <section class="flex-container-menu">
+                    <ul class= "itemsList">
+                        <li>
+                            <button class="soldOut">SoldOut</button>
+                            <button class="deleteItemButton">Delete Item</button> 
+                        </li>
+                    </ul>
+                </section>
+                
+                <section class="addItem flex-menu-manager">
+                    <h2>Add an item to this menu</h2>
+                    <aside class="addItem flex-menu-manager">
+                            <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
+                            <label>Description: <input type="text" name="addDescriptionApi" placeholder="Description" /></label>
+                            <label>Price: <input type="text" name="addPriceApi" placeholder="0.00" /></label>
+                            <label>Image URL: <input type="text" name="addImageApi" placeholder="URL" /></label>
+                            <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
+                            <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
+        
+                            <button class="submitItemButton">Submit</button>
+                    </aside>
+                </section>
+
+        </main>
+    </div>
+        <a th:href="@{/menu}">Go Back</a>
+        <footer class="footer">
+            <h4>Handcrest&reg;</h4>
+            <nav class="flex-navigation">
+                <ul>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Partners</a>
+                    </li>
+                    <li>
+                        <a href="#">Follow Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+
 </html>
