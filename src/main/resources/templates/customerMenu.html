@@ -9,33 +9,49 @@
   
 </head>
 <body>
-	<nav>
-		<ul>
-			<li>
-				<a th:href="@{/customer}">List of Restaurants</a>
-			</li>
-			<li>
-				<a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
-			</li>
-		</ul>
-	</nav>
-<header>
-    <h1 th:text="${menu.menuName}"></h1>
+    <div class="grid-hack">
+        <main class="container">
+            <header class="header">
+                <div class="header-container">
+        <img src="../img/logo.png" class="logo"></img>
+        <h1>MyMenu</h1>
+        <input id="burger" type="checkbox" />
+        <label for="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    <nav class="flex-navigation">
+        <ul>
+            <li>
+                <a th:href="@{/index}">List of Restaurants</a>
+            </li>
+            <li>
+                <a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
+            </li>
+        </ul>
+    </nav>
+</div>
 </header>
-<main>
+
+<section>
+    <h1 th:text="${menu.menuName}"></h1>
+</section>
+    <section>
     <ul class= "itemsList">
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : soldOut">
             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
                 <img th:src="${item.picture}" style="width:10vw" />
             </a>
-      
         </li>
     </ul>
+</section>
  
     
-</main>
     <footer>Handcrest&reg;</footer>
+</main>
+</div>
 
 
 </body>

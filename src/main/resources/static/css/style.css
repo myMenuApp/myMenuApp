@@ -35,10 +35,13 @@ a:hover{
     background-color: aliceblue;
 }
 
-/* Modal */
+/* Modal 
+
 .modal-content{
     background-image: url('../img/dinnerlogin.jpg');
 }
+
+*/
 #openModalBtn{
   display: inline-block;
   background-color: #000000;

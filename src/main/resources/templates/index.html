@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
 </head>
 
 <body>
@@ -15,8 +16,15 @@
         <main class="container">
             <header class="header">
                 <div class="header-container">
+
                     <img src="../img/logo.png" class="logo"></img>
                     <h1>MyMenu</h1>
+                    <input id="burger" type="checkbox" />
+                    <label for="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
                     <nav class="flex-navigation">
                         <ul>
                             <li>
@@ -28,6 +36,7 @@
                             <li>
                                 <a href="#">Follow Us</a>
                             </li>
+                        
                             <button id="openModalBtn">
                                 <span>Login</span>
                             </button>
@@ -41,7 +50,7 @@
                                                 <p>Username:</p>
                                                 <input type="text" placeholder="login" class="flex-1" />
                                                 <p>Password:</p>
-                                                <input type="text" placeholder="login password" class="flex-2" />
+                                                <input type="password" placeholder="login password" class="flex-2" />
                                                 <br/>
                                                 <button class="mainBtn">
                                                     <span>Login</span>
@@ -71,7 +80,7 @@
 
                 <ul class="flex-list-restaurants">
                     <li th:each="restaurant : ${restaurants}">
-                        <a th:href="|@{/index/}${restaurant.restaurantName}|">
+                        <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
                             <span th:text="${restaurant.restaurantName}"></span>
                         </a>
                         <img src="../img/dinnerlogin.jpg" class="restaurant-card-picture" />

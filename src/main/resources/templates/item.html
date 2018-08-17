@@ -11,6 +11,7 @@
     href="/css/layout.css" />
 <link rel="stylesheet" type="text/css" media="screen"
     href="/css/itemLayout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
 </head>
 <body>
     <div class="grid-hack">
@@ -20,6 +21,12 @@
                 <div class="header-container">
                     <img src="../static/img/logo.png" class="logo"></img>
                     <h1>MyMenu</h1>
+                    <input id="burger" type="checkbox" />
+                    <label for="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
                     <nav class="flex-navigation">
                         <ul>
                             <li><a th:href="@{/index/contact}">Contact Us</a></li>
@@ -160,7 +167,7 @@
             </div>
                 <ul class="commentList flex-comment-list">
                     <li th:each="comment : ${item.comments}">
-                        <span th:text="|${comment.creator}: ${comment.comment}|"></span>
+                        <span th:text="|${comment.creator} : ${comment.comment}|"></span>
                     </li>
                 </ul>
             </section>
