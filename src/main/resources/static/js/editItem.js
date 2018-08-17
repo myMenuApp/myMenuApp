@@ -87,18 +87,16 @@ closeIngredientsModalBtn.addEventListener('click', closeIngredientsModal);
 
 const submitDescriptionBtn = document.querySelector('.submitDescription');
 const itemDescription = document.querySelector('[name="itemDescription"]')
-const menuId = document.querySelector("[name='menuId']");
-const itemId = document.querySelector("[name='itemId']");
+const menuIdApi = document.querySelector("[name='menuId']");
+const itemIdApi = document.querySelector("[name='itemId']");
 submitDescriptionBtn.addEventListener("click", function saveChanges(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function (response){
         if(xhr.readyState == 4 && xhr.status == 200) {
-            const descriptions = JSON.parse(response.currentTarget.response)
-            let html = '';
-            descriptions.forEach(description =>{
-                html+=`
+            const description = JSON.parse(response.currentTarget.response)
+            let html=`
                     <li class = "itemDescription">
-                        <p class = "description" text="|Description: ${item.description}|"></p>
+                        <p class = "description" th:text="|Description: ${description.description}|"></p>
                         <button id ="editDescriptionBtn">Edit</button>
                         <div id = "description-modal-screen">
                             <div id = "description-modal-box">
@@ -108,19 +106,171 @@ submitDescriptionBtn.addEventListener("click", function saveChanges(){
                                     </h3>
                                     <button id = "close-description-modal">Cancel</button>
                                 </header>
-                                    <label>Description: <input type="text" name="itemDescription" placeholder="${item.description}" /></label>
+                                    <label>Description: <input type="text" name="itemDescription" th:placeholder="${description.description}" /></label>
                                     <button class="submitDescription">Save description</button>
                             </div>
                         </div>
                     </li>
                 
                 `
-                })
+                
             itemDescription.innerHTML = html;
         }
     })
-    xhr.open("PATCH", `/api/menus/${menuId.value}/items/${itemId.value}?description=${itemDescription.value}`, true);
+    xhr.open("PATCH", `/api/menus/${menuIdApi.value}/items/${itemIdApi.value}?description=${itemDescription.value}`, true);
     xhr.send();
 
 })
 
+
+//save Picture
+
+const submitPictureBtn = document.querySelector('.submitPictureBtn');
+const itemPicture = document.querySelector('[name="itemPicture"]')
+submitPictureBtn.addEventListener("click", function saveChanges(){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function (response){
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            const picture = JSON.parse(response.currentTarget.response)
+            let html=`
+                    <li class = "itemPicture">
+                        <img class = "picture" th:src="${picture.picture}"></img>
+                        <button id ="editPictureBtn">Edit</button>
+                        <div id = "picture-modal-screen">
+                            <div id = "picture-modal-box">
+                                <header>
+                                    <h3>
+                                        Enter picture file path
+                                    </h3>
+                                    <button id = "close-picture-modal">Cancel</button>
+                                </header>
+                                    <label>Picture: <input type="text" name="itemPicture" th:placeholder="${picture.picture}" /></label>
+                                    <button class="submitPictureBtn">Save picture</button>
+                            </div>
+                        </div>
+                    </li>
+                
+                `
+                
+            itemPicture.innerHTML = html;
+        }
+    })
+    xhr.open("PATCH", `/api/menus/${menuIdApi.value}/items/${itemIdApi.value}?picture=${itemPicture.value}`, true);
+    xhr.send();
+
+})
+
+
+
+//save Price
+
+const submitPriceBtn = document.querySelector('.submitPrice');
+const itemPrice = document.querySelector('[name="itemPrice"]')
+submitPriceBtn.addEventListener("click", function saveChanges(){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function (response){
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            const price = JSON.parse(response.currentTarget.response)
+            let html=`
+            		<li class = "itemPrice">
+	                <p class = "price" th:text="|Price: $${price.price}|"></p>
+	                <button id="editPriceBtn">Edit</button>
+	                <div id = "price-modal-screen">
+	                    <div id = "price-modal-box">
+	                        <header>
+	                            <h3>
+	                                Edit price of this item
+	                            </h3>
+	                            <button id = "close-price-modal">Cancel</button>
+	                        </header>
+	                            <label>Price: <input type="text" name="itemPrice" th:placeholder="${price.price}" /></label>
+	                            <button class="submitPrice">Save changes</button>
+	                    </div>
+	                </div>
+	            </li>
+                
+                `
+                
+            itemPrice.innerHTML = html;
+        }
+    })
+    xhr.open("PATCH", `/api/menus/${menuIdApi.value}/items/${itemIdApi.value}?price=${itemPrice.value}`, true);
+    xhr.send();
+
+})
+
+
+//save Calories
+
+const submitCaloriesBtn = document.querySelector('.submitCalories');
+const itemCalories = document.querySelector('[name="itemCalories"]')
+submitCaloriesBtn.addEventListener("click", function saveChanges(){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function (response){
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            const calories = JSON.parse(response.currentTarget.response)
+            let html=`
+	            <li class="itemCalories">
+	                <p class = "calories" th:text="|Calories: ${calories.calories}|"></p>
+	                <button id="editCaloriesBtn">Edit</button>
+	                <div id = "calories-modal-screen">
+	                    <div id = "calories-modal-box">
+	                        <header>
+	                            <h3>
+	                                Edit calories of this item
+	                            </h3>
+	                            <button id = "close-calories-modal">Cancel</button>
+	                        </header>
+	                            <label>Calories: <input type="text" name="itemCalories" th:placeholder="${calories.calories}" /></label>
+	                            <button class="submitCalories">Save changes</button>
+	                    </div>
+	                </div>
+		            </li>
+                
+                `
+                
+            itemCalories.innerHTML = html;
+        }
+    })
+    xhr.open("PATCH", `/api/menus/${menuIdApi.value}/items/${itemIdApi.value}?calories=${itemCalories.value}`, true);
+    xhr.send();
+
+})
+
+
+//save Price
+
+const submitIngredientsBtn = document.querySelector('.submitIngredients');
+const itemIngredients = document.querySelector('[name="itemIngredients"]')
+submitIngredientsBtn.addEventListener("click", function saveChanges(){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function (response){
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            const ingredients = JSON.parse(response.currentTarget.response)
+            let html=`
+	            <li class="itemIngredients">
+	                <p class = "ingredients" th:text="|Ingredients: ${ingredients.ingredients}|"></p>
+	                <button id="editIngredientsBtn">Edit</button>
+	                <div id = "ingredients-modal-screen">
+	                    <div id = "ingredients-modal-box">
+	                        <header>
+	                            <h3>
+	                                Edit ingredients of this item
+	                            </h3>
+	                            <button id = "close-ingredients-modal">Cancel</button>
+	                        </header>
+	                            <label>Ingredients: <input type="text" name="itemIngredients" th:placeholder="${ingredients.ingredients}" /></label>
+	                            <button class="submitIngredients">Save changes</button>
+	                    </div>
+	                </div>
+	            </li>
+                
+                `
+                
+            itemIngredients.innerHTML = html;
+        }
+    })
+    xhr.open("PATCH", `/api/menus/${menuIdApi.value}/items/${itemIdApi.value}?ingredients=${itemIngredients.value}`, true);
+    xhr.send();
+
+})

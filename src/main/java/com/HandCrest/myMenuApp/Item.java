@@ -28,6 +28,7 @@ public class Item {
 	private BigDecimal price;
 	private String picture;
 	private int calories;
+	private boolean enabled;
 
 	@Lob
 	private String ingredients;
@@ -35,7 +36,7 @@ public class Item {
 	@ManyToOne
 	@JsonIgnore
 	private Menu menu;
-	
+
 	@OneToMany(mappedBy = "item")
 	private Collection<Comment> comments;
 
@@ -43,7 +44,7 @@ public class Item {
 	}
 
 	public Item(String itemName, String description, BigDecimal price, String picture, int calories, String ingredients,
-			Menu menu) {
+			boolean enabled, Menu menu) {
 		this.itemName = itemName;
 		this.description = description;
 		this.price = price;
@@ -51,14 +52,31 @@ public class Item {
 		this.calories = calories;
 		this.ingredients = ingredients;
 		this.menu = menu;
+		this.enabled = enabled;
 	}
 
 	public Long getItemId() {
 		return itemId;
 	}
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public void toggleEnabled() {
+		enabled = !enabled;
+	}
+
 	public Menu getMenu() {
 		return menu;
+	}
+
+	public boolean getIsEnabled() {
+		return false;
 	}
 
 	public String getItemName() {
@@ -88,7 +106,8 @@ public class Item {
 	public Collection<Comment> getComments() {
 		return comments;
 	}
-		public void setItemId(Long itemId) {
+
+	public void setItemId(Long itemId) {
 		this.itemId = itemId;
 	}
 
@@ -119,9 +138,10 @@ public class Item {
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
-	
+
 	@Override
 	public String toString() {
 		return itemName;
 	}
+
 }

@@ -12,7 +12,7 @@ public class Review {
 	@GeneratedValue
 	private Long id;
 	private String creator;
-	
+
 	@Lob
 	private String review;
 	private String rating;
@@ -28,11 +28,10 @@ public class Review {
 		this.rating = rating;
 	}
 
-	
 	public Long getId() {
 		return id;
 	}
-	
+
 	public Object getCreator() {
 		return creator;
 	}

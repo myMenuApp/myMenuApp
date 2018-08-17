@@ -19,19 +19,56 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class ApiControllerTest {
 	@Resource
 	TestRestTemplate restTemplate;
+		
+	String restaurantName = "The Steakhouse";
+	Long menuId = (long) 1;
+	Long itemId = (long) 1;
+	String picture = "/img/milk.jpg";
 
-	@Test
-	public void canary() {
+	@Test public void canary() { // test we can find localhost:8080/
 		ResponseEntity<String> response = restTemplate.getForEntity("/", String.class);
 		HttpStatus status = response.getStatusCode();
 		assertThat(status, is(HttpStatus.OK));
 	}
-
-	@Test
-	public void shouldBeOkForMenu() {
-		ResponseEntity<String> response = restTemplate.getForEntity("/api/index/steakhouse/menus/1", String.class);
+	
+	@Test public void shouldFindHomePage() { // test to show a path to the home page
+		ResponseEntity<String> response = restTemplate.getForEntity("/index", String.class);
 		HttpStatus status = response.getStatusCode();
 		assertThat(status, is(HttpStatus.OK));
 	}
-
+	@Test public void shouldNotFindHomePage() { // test to show a path to the home page is broken
+		ResponseEntity<String> response = restTemplate.getForEntity("/inde", String.class);
+		HttpStatus status = response.getStatusCode();
+		assertThat(status, is(HttpStatus.NOT_FOUND));
+	}
+	
+	@Test public void shouldFindRestaurantPage() {  // test to show a path to the restaurant page
+		ResponseEntity<String> response = restTemplate.getForEntity("/index/{restaurantName}", String.class, restaurantName);
+		HttpStatus status = response.getStatusCode();
+		assertThat(status, is(HttpStatus.OK));
+	}	
+	
+	@Test public void shouldNotFindRestaurantBecauseItHasASpellingMistake() { // test to show that wrong spelling will show NOT_FOUND error
+		ResponseEntity<String> response = restTemplate.getForEntity("/index/The Steakhous", String.class, restaurantName);
+		HttpStatus status = response.getStatusCode();
+		assertThat(status, is(HttpStatus.NOT_FOUND));
+	}
+		
+	@Test public void shouldFindMenu() { // test to show a path to restaurant menu
+		ResponseEntity<String> response = restTemplate.getForEntity("/index/{restaurantName}/menus/{menuId}", String.class, restaurantName, menuId);
+		HttpStatus status = response.getStatusCode();
+		assertThat(status, is(HttpStatus.OK));
+	}
+	
+	@Test public void shouldFindItem() { // test to show a path to the restaurants / menu / item 
+		ResponseEntity<String> response = restTemplate.getForEntity("/index/{restaurantName}/menus/{menuId}/items/{itemId}", String.class, restaurantName, menuId, itemId);
+		HttpStatus status = response.getStatusCode();
+		assertThat(status, is(HttpStatus.OK));
+	}
+	
+	@Test public void shouldFindPicture() { // test to show a path to the restaurants menu / item / picture
+		ResponseEntity<String> response = restTemplate.getForEntity("/index/{restaurantName}/menus/{menuId}/items/{itemId}?picture={picture}", String.class, restaurantName, menuId, itemId, picture);
+		HttpStatus status = response.getStatusCode();
+		assertThat(status, is(HttpStatus.OK));
+	}
 }

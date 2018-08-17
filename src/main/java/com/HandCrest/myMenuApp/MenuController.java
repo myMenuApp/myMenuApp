@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MenuController {
-	
+
 	@Autowired
 	ItemRepository itemRepo;
 	@Autowired
@@ -22,41 +22,51 @@ public class MenuController {
 	ReviewRepository reviewRepo;
 	@Autowired
 	RestaurantRepository restaurantRepo;
-	
-	
-	@RequestMapping ("/")
+
+	@RequestMapping("/")
 	public String home(Model model) {
 		return "redirect:/index";
 	}
-	
-	
+
 	@RequestMapping("/index")
 	public String getRestaurants(Model model) {
 		model.addAttribute("restaurants", restaurantRepo.findAll());
 		return "index";
 	}
-	@RequestMapping("/index/{restaurantName}")
-	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
-		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
-		return "restaurant";
+
+	@RequestMapping("/index/admin")
+	public String getLogin(Model model) {
+		model.addAttribute("admin");
+		return "admin";
 	}
+
+	@RequestMapping("/index/{restaurantName}")
+	public String getRestaurant(@PathVariable(name = "restaurantName") String restaurantName, Model model)
+			throws NotFoundException {
+		Restaurant restaurant = restaurantRepo.findByRestaurantName(restaurantName);
+		if (restaurant != null) {
+			model.addAttribute("restaurant", restaurant);
+			return "restaurant";
+		}
+		throw new NotFoundException();
+	}
+
 	@RequestMapping("/index/{restaurantName}/menus/{menuId}")
-	public String getMenu(@PathVariable(name = "restaurantName")String restaurantName,
-							@PathVariable(name = "menuId") Long menuId, Model model) {
+	public String getMenu(@PathVariable(name = "restaurantName") String restaurantName,
+													@PathVariable(name = "menuId") Long menuId, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		model.addAttribute("menu", menuRepo.findOne(menuId));
 		return "menu";
 	}
 
 	@RequestMapping("/index/{restaurantName}/menus/{menuId}/items/{itemId}")
-		public String getItem(@PathVariable(name = "restaurantName")String restaurantName,
-								@PathVariable(name = "menuId")Long menuId,
-								@PathVariable(name = "itemId")Long itemId, Model model) {
+	public String getItem(@PathVariable(name = "restaurantName") String restaurantName,
+													@PathVariable(name = "menuId") Long menuId, 
+													@PathVariable(name = "itemId") Long itemId, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		model.addAttribute("menu", menuRepo.findOne(menuId));
 		model.addAttribute("item", itemRepo.findOne(itemId));
 		return "item";
 	}
-	
+
 }
-	

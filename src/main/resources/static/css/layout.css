@@ -1,4 +1,4 @@
-.grid-hack{
+* .grid-hack{
     margin-top: 5.5rem;
     width: 100%;
 }
@@ -146,35 +146,35 @@
     border: 1px solid red;
     background-color: aliceblue;
     color:red;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; Safari
     transition-duration: 0.4s;
 }
 
 .remove-button:hover {
-    background-color: red; /* Green */
+    background-color: red; Green
     color: white;
 }
 .edit-button {
     border: 1px solid yellowgreen;
     background-color: aliceblue;
     color:black;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; Safari
     transition-duration: 0.4s;
 }
 .freeze-button {
     border: 1px solid darkblue;
     background-color: aliceblue;
     color:darkblue;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; Safari
     transition-duration: 0.4s;
 }
 
 .freeze-button:hover {
-    background-color: darkblue; /* Green */
+    background-color: darkblue; Green
     color: white;
 }
 .edit-button:hover {
-    background-color: yellowgreen; /* Green */
+    background-color: yellowgreen; Green
     color: black;
 }
 .flex-item-list{
@@ -477,4 +477,4 @@ ul{
     *{
       width: 100%;
     }
-}
+} 

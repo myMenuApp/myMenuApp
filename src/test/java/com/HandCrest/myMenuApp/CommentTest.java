@@ -1,7 +1,5 @@
 package com.HandCrest.myMenuApp;
 
-import java.util.Date;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,7 +8,7 @@ public class CommentTest {
 	private Long id;
 	private String creator;
 	private String comment;
-	private Date date;
+
 	
 	@Test
 	public void testCommentClassExistsButIsNotNull() {
