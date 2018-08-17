@@ -12,12 +12,22 @@
 <header>
     <H1 th:text="${restaurant.restaurantName}"></H1>
 </header>
-
 	<ul class="menus">
         <li th: each ="menu : {menus}">
             <a th: href="|@{/menus/}${menu.menuName}|">
                 <span th:text="${menu.menuName}"></span>
             </a>
+        </li>
+    </ul>
+    <h2>Menu Editor</h2>
+    <span type="hidden" name="itemId" th:value="${itemId}"  ></span>
+    <ul class="menusList flex-list-menu">
+        <li th:each="menu : ${restaurant.menus}">
+            <a th:href="|@{/index/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|" th:text="${menu.menuName}">
+            </a>
+            <button class="deleteMenuButton">Delete Menu</button>
+            <div class="button-group">   
+            </div>
         </li>
     </ul>
 

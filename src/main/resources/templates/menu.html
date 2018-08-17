@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,9 +17,15 @@
         <div class="header-container">
                         <img src="../img/logo.png" class="logo"  ></img>
                         <h1>MyMenu</h1>
+                        <input id="burger" type="checkbox" />
+                    <label for="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
             <nav class="flex-navigation">
                             <ul>
-                                <li><a href="#">Contact Us</a></li> 
+                                    <li><a th:href="@{/index/contact}">Contact Us</a></li>
                                 <li><a href="#">Our Partners</a></li> 
                                 <li><a href="#">Follow Us</a></li> 
                                 <li><a th:href="@{/index}">Home</a></li>
@@ -94,3 +100,4 @@
     <script src="/js/editMenu.js"></script>
 </body>
 </html>
+

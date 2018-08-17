@@ -42,11 +42,30 @@ public class MenuController {
 		return "admin";
 	}
 	
+	@RequestMapping("/index/contact")
+	public String getContact(Model model) {
+		return "contact";
+	}
+	
 	@RequestMapping("/index/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		return "restaurant";
 	}
+//	@RequestMapping("/index/{restaurantName}/customerRestaurant")
+//	public String getCustomerRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
+//		model.addAttribute("customerRestaurant", restaurantRepo.findByRestaurantName(restaurantName));
+//		return "customerRestaurant";
+//	}
+//	
+//	@RequestMapping("/index/{restaurantName}/customerRestaurant/customerMenu")
+//	public String getCustomerMenu(@PathVariable(name = "restaurantName")String restaurantName, 
+//									 Model model) {
+//		model.addAttribute("customerRestaurant", restaurantRepo.findByRestaurantName(restaurantName));
+//		
+//		return "customerMenu";
+//	}
+//	
 	@RequestMapping("/index/{restaurantName}/menus/{menuId}")
 	public String getMenu(@PathVariable(name = "restaurantName")String restaurantName,
 							@PathVariable(name = "menuId") Long menuId, Model model) {

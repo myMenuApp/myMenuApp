@@ -39,7 +39,7 @@ public class CustomerController {
 		model.addAttribute("items", itemRepo.findOne(itemId));
 		return "CustomerItem";
 	}
-	@RequestMapping("/customer/{restaurantName}")
+	@RequestMapping("index/customer/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		return "customerRestaurant";
