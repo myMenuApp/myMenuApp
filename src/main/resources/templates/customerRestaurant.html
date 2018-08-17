@@ -1,83 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>customer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="/CSS/layout.css" />
-    <link rel="stylesheet" href="/CSS/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title th:text="${restaurantName}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
 </head>
-<body>
-        <div class="grid-hack">
-                <main class="container">
-                    <header class="header">
-                        <div class="header-container">
-        <img src="../img/logo.png" class="logo"></img>
-        <h1>MyMenu</h1>
-        <input id="burger" type="checkbox" />
-        <label for="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-    <nav class="flex-navigation">
-        <ul>
-            <li>
-                <a th:href="@{/index}">List of Restaurants</a>
-            </li>
-        </ul>
-    </nav>
-</div>
-</header>
-    <section class="flex-container-4">
-            <section class="flex-restaurant-line">
-                <div class="flex-title">
-                    <h1 th:text="${restaurantName}"></h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit totam, debitis a placeat eveniet hic
-                        quod, modi quia illum labore saepe nam ducimus quaerat nemo repellat, ullam eius libero rem!</p>
-                </div>
-            </section>
-            
 
-           <ul class="menusList flex-list-menu">
+<body>
+    <div class="grid-hack">
+        <main class="container">
+            <header class="header">
+                <div class="header-container">
+                    <img src="../img/logo.png" class="logo"></img>
+                    <h1>MyMenu</h1>
+                    <input id="burger" type="checkbox" />
+                    <label for="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <nav class="flex-navigation">
+                        <ul>
+                            <li>
+                                <a th:href="@{/index}">List of Restaurants</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <section class="flex-container-4">
+                <h2 th:text="${restaurantName}"></h2>
+                <p> Restaurant Logo or picture</p> <p>Restaurant Description</p> <p> Hours of Operation Reservations yes or no</p> <p> Google Maps location </p>
+                <ul class="menusList flex-list-menu">
                     <li th:each="menu : ${restaurant.menus}">
-                        <a th:href="|@{/index/}${restaurant.restaurantName}@{/customerMenus/}${menu.menuId}|" th:text="${menu.menuName}">
+                        <a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|" th:text="${menu.menuName}">
                         </a>
-            </li>
-            </ul>    
-    </section>
-    <ul>
-        <li th:each="menu : ${restaurant.menus}">
-             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
-                 th:text= "${menu.menuName}">
-            </a>
-        </li>
-    </ul> 
-    
-   
-    <a th:href="@{/index}">Go Back</a>
-    <footer class="footer">
-            <h4>Handcrest&reg;</h4>
-            <nav class="flex-navigation">
-                <ul>
-                    <li>
-                        <a href="#">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Our Partners</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow Us</a>
                     </li>
                 </ul>
-            </nav>
-        </footer>
-</main>
-</div>
-<script src="/js/javascript.js"></script>
-<script src="/js/deleteMenu.js"></script>
-<script src="/js/addmenu.js"></script>
+            </section>
+
+            <footer class="footer">
+                <h4>Handcrest&reg;</h4>
+                
+                <nav class="flex-navigation">
+                    <ul>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Our Partners</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/index}">Go Back</a>
+                        </li>
+                        <li>
+                            <a href="#">Follow Us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
+        </main>
+    </div>
+    <script src="/js/deleteMenu.js"></script>
+    <script src="/js/addmenu.js"></script>
 </body>
+
 </html>
