@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>customer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="/CSS/layout.css" />
-    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
 </head>
 <body>
@@ -34,7 +34,7 @@
     <section class="flex-container-4">
             <section class="flex-restaurant-line">
                 <div class="flex-title">
-                    <h1 th:text="${restaurantName}"></h1>
+                    <h1 th:text="${restaurant.restaurantName}"></h1>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit totam, debitis a placeat eveniet hic
                         quod, modi quia illum labore saepe nam ducimus quaerat nemo repellat, ullam eius libero rem!</p>
                 </div>
@@ -43,14 +43,14 @@
 
            <ul class="menusList flex-list-menu">
                     <li th:each="menu : ${restaurant.menus}">
-                        <a th:href="|@{/index/}${restaurant.restaurantName}@{/customerMenus/}${menu.menuId}|" th:text="${menu.menuName}">
+                        <a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|" th:text="${menu.menuName}">
                         </a>
             </li>
             </ul>    
     </section>
     <ul>
         <li th:each="menu : ${restaurant.menus}">
-             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
+             <a th:href= "|'@{/index/customer/}' + '${restaurant.restaurantName} ' + '@{/menus/}' +' ${menu.menuId}'|"
                  th:text= "${menu.menuName}">
             </a>
         </li>
