@@ -6,9 +6,10 @@ body {
     top: 40px;
     left: 40px;
     z-index: 6;
-    font-size: 20px;
+    
     font-weight: 900;
-    font-family: sans-serif;
+    font-family: 'Limelight', cursive;
+    font-size: 36px;
     text-transform: uppercase;
   }
   body h1 > span {
@@ -67,6 +68,7 @@ body {
     z-index: 3;
     transition: 0.5s;
     transition-delay: 0.5s;
+    box-shadow:   0 4px 8px 0 lightgray;
     overflow: hidden;
   }
   body input ~ nav > ul {
