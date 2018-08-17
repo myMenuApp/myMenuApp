@@ -1,5 +1,4 @@
 const menuList = document.querySelector('.menusList')
-
 menuList.addEventListener('click', removeMenu)
 
 function removeMenu(event) {
@@ -32,7 +31,7 @@ function removeMenu(event) {
 					menuList.innerHTML = list
 			}
 		}
-		xhr.open("DELETE",`/api/menus?menuId=${menuId}&restaurantName=${restaurantName}`,true)
+		xhr.open("DELETE",`/api/menus?menuId=${menuId}&restaurantName=${restaurantName}&itemId=${itemId.value}`,true)
 		xhr.send()
 	}
 	

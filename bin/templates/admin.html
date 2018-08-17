@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title th:text="|Admin: ${restaurantName}|"></title>
+</head>
+<body>
+    <header>
+        <h1 th:text="|Admin page for ${restaurantName}|"></h1>
+    </header>
+
+    <main>
+        <h2>Menus</h2>
+        <ul class="listOfMenus">
+            <li class="menu">
+                <a th:href= "|@{/index/}${restaurantName}/@{menus}/${menuId}|" th:text="${menuName}"></a>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

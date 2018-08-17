@@ -3,33 +3,79 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title th:text="${restaurantName}"></title>
+    <title>customer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" href="/CSS/layout.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
 </head>
 <body>
-    <nav>
+        <div class="grid-hack">
+                <main class="container">
+                    <header class="header">
+                        <div class="header-container">
+        <img src="../img/logo.png" class="logo"></img>
+        <h1>MyMenu</h1>
+        <input id="burger" type="checkbox" />
+        <label for="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    <nav class="flex-navigation">
         <ul>
             <li>
                 <a th:href="@{/index}">List of Restaurants</a>
             </li>
         </ul>
     </nav>
-<header>
-    <h1 th:text="${restaurantName}"></h1>
+</div>
 </header>
-    <ul class= "menusList">
+    <section class="flex-container-4">
+            <section class="flex-restaurant-line">
+                <div class="flex-title">
+                    <h1 th:text="${restaurantName}"></h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit totam, debitis a placeat eveniet hic
+                        quod, modi quia illum labore saepe nam ducimus quaerat nemo repellat, ullam eius libero rem!</p>
+                </div>
+            </section>
+            
+
+           <ul class="menusList flex-list-menu">
+                    <li th:each="menu : ${restaurant.menus}">
+                        <a th:href="|@{/index/}${restaurant.restaurantName}@{/customerMenus/}${menu.menuId}|" th:text="${menu.menuName}">
+                        </a>
+            </li>
+            </ul>    
+    </section>
+    <ul>
         <li th:each="menu : ${restaurant.menus}">
              <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|"
                  th:text= "${menu.menuName}">
-            </a> 
-               <button class = "deleteMenuButton">Delete Menu</button>
+            </a>
         </li>
-    </ul>
+    </ul> 
     
    
     <a th:href="@{/index}">Go Back</a>
-<footer>Handcrest&reg;</footer>
+    <footer class="footer">
+            <h4>Handcrest&reg;</h4>
+            <nav class="flex-navigation">
+                <ul>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Partners</a>
+                    </li>
+                    <li>
+                        <a href="#">Follow Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+</main>
+</div>
 <script src="/js/javascript.js"></script>
 <script src="/js/deleteMenu.js"></script>
 <script src="/js/addmenu.js"></script>

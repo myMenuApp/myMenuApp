@@ -27,7 +27,6 @@ public class MenuApiController {
 	@Autowired
 	CommentRepository commentRepo;
 
-
 	@RequestMapping(value = "/restaurants", method = RequestMethod.DELETE)
 	public Collection<Item> deleteItem(@RequestParam(value = "restaurantName") String restaurantName,
 			@RequestParam(value = "menuId") Long menuId, @RequestParam(value = "itemId") Long itemId) {
@@ -46,10 +45,12 @@ public class MenuApiController {
 				commentRepo.delete(comment);
 			}
 			itemRepo.delete(item);
+			}
+			
 		}
 		menuRepo.delete(menuRepo.findOne(menuId));
 		return restaurantRepo.findByRestaurantName(restaurantName).getMenus();
 	}
 
 
-}
+
