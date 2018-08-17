@@ -22,7 +22,7 @@ public class CustomerController {
 	@Autowired
 	RestaurantRepository restaurantRepo;
 	
-	@RequestMapping("/customer/{restaurantName}/menus/{menuId}")
+	@RequestMapping("index/customer/{restaurantName}/menus/{menuId}")
 	public String getCustomerMenu(@PathVariable(name = "restaurantName")String restaurantName,
 							@PathVariable(name = "menuId") Long menuId, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
