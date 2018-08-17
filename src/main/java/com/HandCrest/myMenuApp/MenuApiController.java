@@ -46,11 +46,9 @@ public class MenuApiController {
 			}
 			itemRepo.delete(item);
 			}
-			
-		}
 		menuRepo.delete(menuRepo.findOne(menuId));
 		return restaurantRepo.findByRestaurantName(restaurantName).getMenus();
 	}
-
+}
 
 
