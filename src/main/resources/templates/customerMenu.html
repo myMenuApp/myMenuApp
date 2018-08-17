@@ -6,6 +6,7 @@
     <title th:text="${menu.menuName}"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
   
 </head>
 <body>
@@ -24,7 +25,7 @@
 </header>
 <main>
     <ul class= "itemsList">
-        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : soldOut">
+        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
                 <img th:src="${item.picture}" style="width:10vw" />

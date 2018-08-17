@@ -1,10 +1,11 @@
 const menuList = document.querySelector('.menusList')
+
 menuList.addEventListener('click', removeMenu)
 
 function removeMenu(event) {
 	if (event.target.classList.contains('deleteMenuButton')) {
 		const deleteMenuButton = event.target
-		const menuContainer = deleteMenuButton.parentElement
+		const menuContainer = deleteMenuButton.parentElement.parentElement
 		
 		const hrefArray = menuContainer.querySelector('a').getAttribute('href').split("/")
 		const restaurantName = hrefArray[2]
@@ -22,8 +23,10 @@ function removeMenu(event) {
 								<a href= "/index/${restaurantName}/menus/${menu.menuId}">
 									${menu.menuName}
 								</a> 
-								<button class = "deleteMenuButton">Delete Menu</button>
-							</li>	
+								 <div class="button-group">
+									<button class = "deleteMenuButton">Delete Menu</button>
+								</div>
+							</li>
 						`		
 					})
 					menuList.innerHTML = list

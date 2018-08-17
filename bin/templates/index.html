@@ -5,16 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>My Menu App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="./css/layout.css"  />
-    <link rel="stylesheet" href="./css/style.css"  />
-
-=======
      <link rel="stylesheet" href="./CSS/layout.css"  />
     <link rel="stylesheet" href="./CSS/style.css"  />
->>>>>>> d5b4477d6d7921715394c40148656d1b96ff5a98
 </head>
-
 <body>
 <div class="grid-hack">
 <main class="container"> 
@@ -26,22 +19,15 @@
             <ul>
                 <li><a href="#">Contact Us</a></li> 
                 <li><a href="#">Our Partners</a></li> 
-                <li><a href="#">Follow Us</a></li>
-             
-                
-                
-                
-                <button id="openModalBtn">
+                <li><a href="#">Follow Us</a></li>                                          
+                <button id="openModalBtn">			
                         <span>Login</span>
                     </button>
                 <div id="loginModal" class="modal">
                     <div class="modal-content flex-container-login">
                         <div class="flex-login">
-                            <span id="close-modal">X
-                            </span>
-                            
+                            <span id="close-modal">X</span>
                             <span class="login-window">
-                            
                             <form th:action="@{/index/admin}">
                                 <h4>Login:</h4>
                                 <p>Username:</p>
@@ -49,8 +35,7 @@
                                 <p>Password:</p>
                                 <input type="text" placeholder="login password" class="flex-2" /><br/>
                                 <button class="mainBtn"><span>Login</span></button>
-                             </form>
-                                
+                             </form>                     
                                 <a href="#" class="questions">Forgot Username?</a>
                                 <a href="#" class="questions">Forgot Password?</a>
                             </span>
@@ -66,16 +51,11 @@
         <img class="slides" src="../img/dinnerstockbg.jpg"  />
         <img class="slides" src="../img/freshveg.jpg" />
         <img class="slides" src="../img/dinnerlogin.jpg" />      
-        
-        
     </div> 
-
 <section class="flex-container-4">
 <div class="flex-login-line">
-    <h3 class="flex-list-title"> Restaurant List:</h3>
-    
+    <h3 class="flex-list-title"> Restaurant List:</h3> 
 </div>       
-   
     <ul class="flex-list-restaurants">
         <li th:each="restaurant : ${restaurants}">
             <a th:href="|@{/index/}${restaurant.restaurantName}|">
@@ -86,31 +66,24 @@
         </li>
     </ul>
     <div class="flex-list-restaurants">
-    
     <span class="flex-list-app-content">
         <h3> Our Goal:</h3>
         <p>Here at My Menu our goal is to provide an elegant ordering experience through modern integration.We strive to bring our clients the best dining experience through our state of the art menu, ordering, and pay systems</p>
     </span>
-
     <span class="flex-list-app-content">
         <h3>The Question:</h3>
         <p>Have you ever stopped to think about how much paper is used yearly by a restuarant?</p>
     </span>
-
     <span class="flex-list-app-content">
         <h3>Our Solution</h3>
         <p>Our application helps in reducing the amount of paper waste restaurants generate yearly. Our app will allow the management team to handle their menus digitally. Management will be able to change daily features or specials, without printing new menus daily. </p>
     </span>
-
     <span class="flex-list-app-content">
         <h3>Reasons to join the revolution</h3>
         <p>As if the paper waste isn't enough of a reason to join the my menu revolution, guests will be able to utilize the app. Guest will be able to view pictures of items, descriptions, allergy inforamtion and other functionallity.</p>
     </span>
-
     </div>
 </section>
-
-
 <footer class="footer">
         <h4>Handcrest&reg;</h4>
    <nav class="flex-navigation"> 
@@ -121,14 +94,11 @@
         </ul>
     </nav>
 </footer>
-
-
 </main>
 </div>
 <script src="/js/loginModal.js"></script>
 <script src="/js/carosule.js"></script>
 <script src="/js/opennav.js"></script>
 <script src="/js/javascript.js"></script>
-
 </body>
 </html>

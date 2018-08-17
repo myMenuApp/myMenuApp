@@ -1,7 +1,5 @@
 package com.HandCrest.myMenuApp;
 
-import java.util.Collection;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -61,7 +59,7 @@ public class AdminController {
 		return "admin";
 	}
 
-////	@RequestMapping(value="/admin")
+
 	
 	
 }

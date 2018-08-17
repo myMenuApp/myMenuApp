@@ -24,10 +24,16 @@ public class MenuApiController {
 	CustomerRepository customerRepo;
 	@Autowired
 	ReviewRepository reviewRepo;
+	@Autowired
+	CommentRepository commentRepo;
+
 
 	@RequestMapping(value = "/restaurants", method = RequestMethod.DELETE)
 	public Collection<Item> deleteItem(@RequestParam(value = "restaurantName") String restaurantName,
 			@RequestParam(value = "menuId") Long menuId, @RequestParam(value = "itemId") Long itemId) {
+		for (Comment comment : itemRepo.findOne(itemId).getComments()) {
+			commentRepo.delete(comment);
+		}
 		itemRepo.delete(itemId);
 		return menuRepo.findOne(menuId).getItems();
 	}
@@ -36,10 +42,14 @@ public class MenuApiController {
 	public Collection<Menu> deleteMenu(@RequestParam(value = "restaurantName") String restaurantName,
 			@RequestParam(value = "menuId") Long menuId) {
 		for (Item item : ((Menu) menuRepo.findOne(menuId)).getItems()) {
+			for (Comment comment : item.getComments()) {
+				commentRepo.delete(comment);
+			}
 			itemRepo.delete(item);
 		}
-		menuRepo.delete(menuId);
+		menuRepo.delete(menuRepo.findOne(menuId));
 		return restaurantRepo.findByRestaurantName(restaurantName).getMenus();
 	}
+
 
 }
