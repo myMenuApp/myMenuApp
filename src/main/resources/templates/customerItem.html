@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
 </head>
 
 <body>
@@ -51,29 +52,35 @@
                     </nav>
                 </div>
             </header>
-            <section>
-                <h1 th:text="${items.itemName}"></h1>
-            </section>
-            <div>
-                <ul class="itemDetails">
+
+            <div class="flex-container-4">
+            <span class="flex-menu-title">
+                    <h2 th:text="|${restaurantName} : ${menu.menuName}"></h2>
+                    
+            </span>
+            <div class="flex-item-box">
+                <span class="flex-22">
+                    <h3 th:text="${items.itemName}"></h3>
+                <img th:src="${items.picture}" class="item-image" />
+            </span>
+                <ul class="itemDetails flex-item-list">
                     <li>
-                        <a th:text="|Description: ${items.description}|"></a>
                     </li>
                     <li>
-                        <img th:src="${items.picture}" style="width:25vw" />
+                        <span th:text="|Description: ${items.description}|"></span>
                     </li>
                     <li>
-                        <a th:text="|Price: $${items.price}|"></a>
+                        <span th:text="|Price: $${items.price}|"></span>
                     </li>
                     <li>
-                        <a th:text="|Calories: ${items.calories}|"></a>
+                        <span th:text="|Calories: ${items.calories}|"></span>
                     </li>
                     <li>
-                        <a th:text="|Ingredients: ${items.ingredients}|"></a>
+                        <span th:text="|Ingredients: ${items.ingredients}|"></span>
                     </li>
                 </ul>
             </div>
-
+        </div>
             <footer class="footer">
                 <h4>Handcrest&reg;</h4>
                 <nav class="flex-navigation">
