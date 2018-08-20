@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
 </head>
 
 <body>
@@ -65,16 +66,29 @@
                 </div>
             </header>
             
-            <div class="hero-image">
-                <img class="slides" src="../img/dinnerlogin.jpg" />
+            <section class="overlay">
+                    
+                <div class="slides hero-one">
+                    <span class="hero-text">
+                        <h1>Welcome to myMenu</h1>
+                        <h2>The Menu Revolution Starts Here!</h2>
+                        <p> Here at My Menu our goal is to provide</p><p> an elegant ordering experience through modern integration.</p><p>We
+                                strive to bring our clients the best dining experience</p><p>through our state of the art menu, ordering,
+                                and pay systems</p>
+                        <button><a href="#sec1"> View Our Restaurants </a></button>
+                    </span>
+                </div>
+            
+            
+                
                 <img class="slides" src="../img/dinnerstockbg.jpg" />
                 <img class="slides" src="../img/freshveg.jpg" />
                 <img class="slides" src="../img/dinnerlogin.jpg" />
-            </div>
+            </section>
 
-            <section class="flex-container-4">
-                <div class="flex-login-line">
-                    <h3 class="flex-list-title"> Restaurant List:</h3>
+            <section class="flex-container-4" >
+                <div class="flex-login-line" id="sec1">
+                    <h3 class="flex-list-title" > Restaurant List:</h3>
 
                 </div>
 
@@ -83,10 +97,8 @@
                         <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
                             <span th:text="${restaurant.restaurantName}"></span>
                         </a>
-                        <img src="../img/dinnerlogin.jpg" class="restaurant-card-picture" />
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit, magnam, dolores deserunt
-                            rem rerum asperiores nesciunt, ea quisquam tenetur tempora neque optio quod corrupti delectus
-                            perferendis unde sunt? Earum?</span>
+                        <img th:src="${restaurant.restaurantLogo}" class="restaurant-card-picture restaurantLogo" />
+                        <span th:text="${restaurant.restaurantDescription}"></span>
                     </li>
                 </ul>
                 <div class="flex-list-restaurants">

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
 </head>
 <body>
     <div class="grid-hack">
@@ -28,17 +29,18 @@
                 <a th:href="@{/index}">List of Restaurants</a>
             </li>
             <li>
-                <a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
+                <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">List of Menus</a>
             </li>
         </ul>
     </nav>
 </div>
 </header>
-
-<section>
-    <h1 th:text="${menu.menuName}"></h1>
-</section>
-    <section>
+<div class="flex-container-4">
+    <span>
+            <h2 th:text="${restaurantName}"></h2>
+            <h3 th:text="${menu.menuName}"></h3>
+</span>
+    <section class="flex-container-menu">
     <ul class= "itemsList">
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : soldOut">
             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
@@ -48,9 +50,25 @@
         </li>
     </ul>
 </section>
- 
+
+</div>
     
-    <footer>Handcrest&reg;</footer>
+<footer class="footer">
+        <h4>Handcrest&reg;</h4>
+        <nav class="flex-navigation">
+            <ul>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+                <li>
+                    <a href="#">Our Partners</a>
+                </li>
+                <li>
+                    <a href="#">Follow Us</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 </main>
 </div>
 
