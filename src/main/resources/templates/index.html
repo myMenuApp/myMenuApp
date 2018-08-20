@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
-    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" />
 </head>
-
 <body>
     <div class="grid-hack">
         <main class="container">
@@ -31,20 +30,23 @@
                             <li>
                                 <a th:href="@{/index/contact}">Contact Us</a>
                             </li>
-                            <li><a th:href="@{/index/aboutUs}">About My Menu</a></li>
+                            <li>
+                                <a th:href="@{/index/aboutUs}">About My Menu</a>
+                            </li>
                             <li>
                                 <a href="#">Follow Us</a>
                             </li>
-                        
-                            <button id="openModalBtn">
-                                <span>Login</span>
-                            </button>
+                            <li>
+                                <button id="openModalBtn">
+                                    <span>Login</span>
+                                </button>
+                            </li>
                             <div id="loginModal" class="modal">
                                 <div class="modal-content flex-container-login">
                                     <div class="flex-login">
                                         <span id="close-modal">X</span>
                                         <span class="login-window">
-                                            <form th:action="@{/index/admin}">
+                                            <form th:action="|@{/index/admin}|">
                                                 <h4>Login:</h4>
                                                 <p>Username:</p>
                                                 <input type="text" placeholder="login" class="flex-1" />
@@ -63,46 +65,53 @@
                     </nav>
                 </div>
             </header>
-            
+
             <section class="overlay">
-                    
-                <div class="slides hero-one">
-                    <span class="hero-text">
-                        <h1>Welcome to myMenu</h1>
-                        <h2>The Menu Revolution Starts Here!</h2>
-                        <p> Here at My Menu our goal is to provide</p><p> an elegant ordering experience through modern integration.</p><p>We
-                                strive to bring our clients the best dining experience</p><p>through our state of the art menu, ordering,
-                                and pay systems</p>
-                        <button><a href="#sec1"> View Our Restaurants </a></button>
-                    </span>
+                <div class="hero-image">
+                    <div class="slides hero-one">
+                        <span class="hero-text">
+                            <h1>Welcome to myMenu</h1>
+                            <h2>The Menu Revolution Starts Here!</h2>
+                            <p> Here at My Menu our goal is to provide</p>
+                            <p> an elegant ordering experience through modern integration.</p>
+                            <p>We strive to bring our clients the best dining experience</p>
+                            <p>through our state of the art menu, ordering, and pay systems</p>
+                            <button>
+                                <a href="#sec1"> View Our Restaurants </a>
+                            </button>
+                        </span>
+                    </div>
+
+
+                    <img class="slides" src="../img/coffee.jpeg" />
+                    <img class="slides" src="../img/breakfast.jpeg" />
+                    <img class="slides" src="../img/salad.jpeg" />
+                    <img class="slides" src="../img/wineanddine.jpg" />
+                    <img class="slides" src="../img/drinks.jpeg" />
+                    <img class="slides" src="../img/brownie.jpeg" />
+                    <img class="slides" src="../img/bar.jpg" />
                 </div>
-            
-            
-                
-                <img class="slides" src="../img/dinnerstockbg.jpg" />
-                <img class="slides" src="../img/freshveg.jpg" />
-                <img class="slides" src="../img/dinnerlogin.jpg" />
             </section>
 
             <section class="flex-container-4" id="top">
                 <div class="flex-login-line" id="sec1">
-                    <h3 class="flex-list-title" > Restaurant List:</h3>
-
+                    <h3 class="flex-list-title"> Restaurant List:</h3>
                 </div>
-
-                <ul class="flex-list-restaurants">
-                    <li th:each="restaurant : ${restaurants}">
-                        <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
-                            <span th:text="${restaurant.restaurantName}"></span>
-                        </a>
-                        <img th:src="${restaurant.restaurantLogo}" class="restaurant-card-picture restaurantLogo" />
-                        <span th:text="${restaurant.restaurantDescription}"></span>
-                    </li>
-                </ul>
+                <div class="flex-item-box">
+                    <ul class="flex-list-restaurants">
+                        <li th:each="restaurant : ${restaurants}">
+                            <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
+                                <span th:text="${restaurant.restaurantName}"></span>
+                            </a>
+                            <img th:src="${restaurant.restaurantLogo}" class="restaurant-card-picture restaurantLogo" />
+                            <span th:text="${restaurant.restaurantDescription}"></span>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
 
-            <footer class="footer">
+            <footer class="footer hero-img">
                 <h4>Handcrest&reg;</h4>
                 <nav class="flex-navigation">
                     <ul>
