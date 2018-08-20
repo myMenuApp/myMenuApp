@@ -84,7 +84,7 @@
                 <img class="slides" src="../img/dinnerlogin.jpg" />
             </section>
 
-            <section class="flex-container-4" >
+            <section class="flex-container-4" id="top">
                 <div class="flex-login-line" id="sec1">
                     <h3 class="flex-list-title" > Restaurant List:</h3>
 
@@ -107,13 +107,13 @@
                 <nav class="flex-navigation">
                     <ul>
                         <li>
-                            <a href="#">Contact Us</a>
+                            <a th:href="@{/index/contact}">Contact Us</a>
                         </li>
                         <li>
-                            <a href="#">Our Partners</a>
+                            <a th:href="@{/index/aboutUs}">About Us</a>
                         </li>
                         <li>
-                            <a href="#">Follow Us</a>
+                            <a href="#top">Back to the Top</a>
                         </li>
                     </ul>
                 </nav>
