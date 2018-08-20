@@ -47,10 +47,10 @@ ul{
     padding: 4px;
 }
 .logo{
-    background-image: url('../img/logo.png');
     height: 50px;
     width: 50px;
-    padding-left: 1rem;
+    left: 1rem;
+    top: 1rem;
 }
 
 /* Hero Image*/
