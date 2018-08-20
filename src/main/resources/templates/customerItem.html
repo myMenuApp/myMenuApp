@@ -45,9 +45,9 @@
                             <li>
                                 <a th:href="|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Back to Menu</a>
                             </li>
-                        </li>
-                        <a href="#">Follow Us</a>
                         <li>
+                        <a href="#">Follow Us</a>
+                        </li>
                         </ul>
                     </nav>
                 </div>
@@ -55,8 +55,8 @@
 
             <div class="flex-container-4">
             <span class="flex-menu-title">
-                    <button class="back">Back</button>
-                    <h2 th:text="|${restaurantName} : ${menu.menuName}"></h2>
+                <h2 th:text="|${restaurantName} : ${menu.menuName}"></h2>
+                <button><a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|">Back to Menu</a></button>
                     
             </span>
             <div class="flex-item-box">
@@ -87,7 +87,7 @@
                 <nav class="flex-navigation">
                     <ul>
                         <li>
-                            <a href="#">Contact Us</a>
+                            <a th:href="@{/index/contact}">Contact Us</a>
                         </li>
                         <li>
                             <a href="#">Our Partners</a>

@@ -31,21 +31,25 @@
             <li>
                 <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">List of Menus</a>
             </li>
+            <li>
+                <a th:href="@{/index/contact}">Contact Us</a>
+            </li>
         </ul>
     </nav>
 </div>
 </header>
 <div class="flex-container-4">
-    <span>
-            <h2 th:text="${restaurantName}"></h2>
-            <h3 th:text="${menu.menuName}"></h3>
-</span>
-    <section class="flex-container-menu">
-    <ul class= "itemsList">
-        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : soldOut">
+    <span class="flex-thing">
+        <h2 th:text="${restaurantName}"></h2>
+            <button><a th:href="|@{/index/customer/}${restaurant.restaurantName}|">Back to Menus</a></button>
+        </span>
+        <h3 th:text="${menu.menuName}"></h3>
+    <section class="flex-container-items-menu">
+    <ul class= "itemsList"> <!--Java script for freeze item-->
+        <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
             <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
-                <img th:src="${item.picture}" style="width:10vw" />
+                <img th:src="${item.picture}" style="width:20vw" />
             </a>
         </li>
     </ul>
@@ -53,19 +57,19 @@
 
 </div>
     
-<footer class="footer">
+<footer class="footer hero-img">
         <h4>Handcrest&reg;</h4>
         <nav class="flex-navigation">
             <ul>
                 <li>
-                    <a href="#">Contact Us</a>
+                    <a th:href="@{/index/contact}">Contact Us</a>
                 </li>
                 <li>
                     <a href="#">Our Partners</a>
                 </li>
                 <li>
-                    <a href="#">Follow Us</a>
-                </li>
+                        <a href="#top">Back to the Top</a>
+                    </li>
             </ul>
         </nav>
     </footer>
