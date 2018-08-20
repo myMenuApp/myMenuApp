@@ -29,7 +29,7 @@
                 <a th:href="@{/index}">List of Restaurants</a>
             </li>
             <li>
-                <a th:href="|@{/customer/}${restaurantName}">List of Menus</a>
+                <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">List of Menus</a>
             </li>
         </ul>
     </nav>

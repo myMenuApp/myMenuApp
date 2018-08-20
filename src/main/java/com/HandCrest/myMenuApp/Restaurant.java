@@ -14,7 +14,10 @@ public class Restaurant {
 	@GeneratedValue
 	private Long restaurantId;
 	private String restaurantName;
-
+	private String restaurantDescription;
+	private String restaurantHours;
+	private String restaurantLogo;
+	
 	@OneToMany(mappedBy = "restaurant")
 	private Collection<Menu> menus;
 
@@ -26,6 +29,13 @@ public class Restaurant {
 		this.restaurantName = restaurantName;
 		this.menus = Arrays.asList(menus);
 	}
+	public Restaurant(String restaurantName, String restaurantDescription, String restaurantHours, String restaurantLogo, Menu... menus) {
+		this.restaurantName = restaurantName;
+		this.restaurantDescription = restaurantDescription;
+		this.restaurantHours = restaurantHours;
+		this.restaurantLogo = restaurantLogo;
+		this.menus = Arrays.asList(menus);
+	}
 
 	public Long getRestaurantId() {
 		return restaurantId;
@@ -33,6 +43,19 @@ public class Restaurant {
 
 	public String getRestaurantName() {
 		return restaurantName;
+	}
+
+	
+	public String getRestaurantDescription() {
+		return restaurantDescription;
+	}
+
+	public String getRestaurantHours() {
+		return restaurantHours;
+	}
+
+	public String getRestaurantLogo() {
+		return restaurantLogo;
 	}
 
 	public Collection<Menu> getMenus() {

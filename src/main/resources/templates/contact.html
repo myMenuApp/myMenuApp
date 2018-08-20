@@ -14,70 +14,179 @@
 
 <body>
     <div class="grid-hack">
-        
-            <div class="container">
-                <header class="header">
-                    <div class="header-container">
-                        
-                        <img src="../static/img/logo.png" class="logo"></img>
-                        <h1>MyMenu</h1>
-                        <input id="burger" type="checkbox" />
-
-<label for="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-</label>
-                        <nav class="flex-navigation">
-                            <ul>
-                                <li>
-                                    <a href="#">Our Partners</a>
-                                </li>
-                                <li>
-                                    <a th:href="@{/index/aboutus}">Follow Us</a>
-                                </li>
-                                <li>
-                                    <a th:href="@{/index}">Restaurants</a>
-                                </li>
-                                <li>
-                                    <a th:href="|@{/index/}">Return Home</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-        <main>
-
-
-                <div class="flex-container-4">
-                           
-                    </div>
-                    
-                <section class="flex-container-menu">
-                    <ul class= "itemsList">
-                        <li>
-                            <button class="soldOut">SoldOut</button>
-                            <button class="deleteItemButton">Delete Item</button> 
-                        </li>
-                    </ul>
-                </section>
+        <main class="container">
+            <header class="header">
+                                <div class="header-container">
+                                    <img src="../img/logo.png" class="logo"></img>
+                                    <h1>MyMenu</h1>
+                                    <input id="burger" type="checkbox" />
+                                    <label for="burger">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </label>
+                                    <nav class="flex-navigation">
+                                        <ul>
+                                                <li>
+                                                        <a th:href="@{/index}">Home</a>
+                                                    </li>
+                                            <li>
+                                                <a th:href="@{/index/contact}">Contact Us</a>
+                                            </li>
+                                            <li>
+                                                    <a th:href="@{/customer}">List of Restaurants</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Our Partners</a>
+                                            </li>    
+                                        <li>
+                                            <a href="#">Follow Us</a>
+                                        </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+        </header>
                 
-                <section class="addItem flex-menu-manager">
-                    <h2>Add an item to this menu</h2>
-                    <aside class="addItem flex-menu-manager">
-                            <label>Item name: <input type="text" name="addItemNameApi" placeholder="Name"/></label>
-                            <label>Description: <input type="text" name="addDescriptionApi" placeholder="Description" /></label>
-                            <label>Price: <input type="text" name="addPriceApi" placeholder="0.00" /></label>
-                            <label>Image URL: <input type="text" name="addImageApi" placeholder="URL" /></label>
-                            <label>Calories: <input type="text" name="addCaloriesApi" placeholder="Calories" /></label>
-                            <label>Ingredient warnings: <input type="text" name="addIngredientsApi" placeholder="Contains allergens, etc." /></label>
-        
-                            <button class="submitItemButton">Submit</button>
-                    </aside>
-                </section>
+<section class="flex-container-4">
+    <span class="flex-menu-title">
+        <h2>Meet the Developer Team of the My Menu App</h2>
+    </span>
+    <div class="flex-container-7">
+        <div class="flex-personal">
+                <h3>John Baltes</h3>
+                <h5>Project Creator &amp; Frontend Design</h5>
+                <img src="/img/john.jpeg" />
+                <button class="collapse">About John:</button> 
+                <div class="inner-text">         
+                    <p>My Name is John Baltes</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                        <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                        <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                        <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                        <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Maulik Patel</h3>
+                <h5>Backend &amp; Ajax</h5>
+                <img src="../img/maulik.jpg" />
+                <button class="collapse">About Maulik:</button> 
+                <div class="inner-text">         
+                    <p>Currently, I am enrolled at We Can Code It, as a Junior Developer. Prior to this I have worked in retail banking for the past 15 years. Starting as a Teller, and ending most recently as a Financial Services Representitive. I found intrest in coding after talking to some of the developers working on a platform change at my previous employer, and talking with a co-worker who went through the WCCI bootcamp.</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Andrew Padula</h3>
+                <h5>Backend &amp; Ajax</h5>
+                <img src="../img/andy.jpg" />
+                <button class="collapse">About Andrew:</button> 
+                <div class="inner-text">         
+                    <p>CA full-stack developer with experience in financial services and customer service. Always ready for the next challenge.</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Joanne Kelly</h3>
+                <h5>TDD</h5>
+                <img src="../img/joanne-.jpg" />
+                <button class="collapse">About Joanne:</button> 
+                <div class="inner-text">         
+                    <p>I Love TDD more than horses!!!</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Dominick Hemphill</h3>
+                <h5>Backend &amp; Frontend Design</h5>
+                <img src="../img/dominick.jpg" />
+                <button class="collapse">About Dom:</button> 
+                <div class="inner-text">         
+                    <p>I love Giant Eagle!</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Ian Pelow</h3>
+                <h5>Frontend Design</h5>
+                <img src="../img/ian.jpg" />
+                <button class="collapse">About Ian:</button> 
+                <div class="inner-text">         
+                    <p>No, im out of cigs!</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Nate Norris</h3>
+                <h5>Trello Blocker</h5>
+                <img src="../img/nate.jpg" />
+                <button class="collapse">About Nate:</button> 
+                <div class="inner-text">         
+                    <p>Will Remain a Blocker on Trello til the end of days</p>
+                    <blockquote>skier, dreamer, ukulelist, vintage furniture lover and growth hacker. producing at the sweet spot between modernism and sustainability to create not just a website, but a feeling. German award winning designer raised in austria and currently living in columbus ohio</blockquote>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+        <div class="flex-personal">
+                <h3>Aaron Smith</h3>
+                <h5>Scrum Master</h5>
+                <img src="../img/aaron.png" />
+                <button class="collapse">About Aaron:</button> 
+                <div class="inner-text">         
+                    <p>Instructor at WCCI</p>
+                    <p>Follow me on my sites</p>
+                    <div class="badges">
+                    <a href="github.com/retrojb"><img src="../img/github.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/codepen.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
+                    <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+
 
         </main>
-    </div>
         <a th:href="@{/menu}">Go Back</a>
         <footer class="footer">
             <h4>Handcrest&reg;</h4>
@@ -97,5 +206,6 @@
         </footer>
     </div>
 </body>
+<script src="../js/collapsable.js"></script>
 
 </html>

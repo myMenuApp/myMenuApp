@@ -156,6 +156,14 @@ ul{
     padding: 2rem;
     background-color: white;
 }
+.flex-container-7{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    padding: 1rem;
+}
 .flex-1{
     border: 1px solid blue;
 }
@@ -363,7 +371,6 @@ ul{
     display: flex;
     flex-direction: column;
     font-size: 24px;
-    
 }
 
 /* Item Page */
@@ -458,7 +465,61 @@ ul{
    width: 200px;
    overflow: auto;
 }
+/* About us cards */
 
+.flex-personal{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    margin:1rem;
+    box-shadow:  0 4px 8px 0 lightgrey;
+    background-color: rgb(243, 243, 243); 
+}
+.flex-personal img{
+    width: 200px;
+    height: auto;
+    border-radius: 20rem;
+}
+.collapse{
+    margin-top:1rem;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-left:4px solid rgba(220, 20, 60, 0.644);
+    color:black;
+}
+.collapse:hover{
+    transform: scale(1.3);
+}
+
+.inner-text{
+    padding: 0 18px;
+    width: 300px;
+    display: none;
+    overflow: hidden; 
+}
+.badges{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row wrap;
+    justify-content: center;
+    padding: .3rem;
+    height: auto;
+}
+.badges img{
+    width: 60px;
+    height: auto;
+}
+
+.badges a:hover{
+    background-color: white;
+    transform: rotate(365deg);
+    overflow: hidden;
+    
+}
 /* Modal Window */
 .modal{
     display: none;

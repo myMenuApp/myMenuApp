@@ -23,11 +23,16 @@ public class RestaurantPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Restaurant pastaVilla = restaurantRepo.save(new Restaurant("Pasta Villa"));
-		Restaurant fishMarket = restaurantRepo.save(new Restaurant("Mitchell's Fish Market"));
-		Restaurant burgerBar = restaurantRepo.save(new Restaurant("Burger Bar"));
-		Restaurant winery = restaurantRepo.save(new Restaurant("The Wine and Dine"));
-		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop"));
+		Restaurant pastaVilla = restaurantRepo.save(new Restaurant("Pasta Villa","An Fine Italian Restaurant in the OSU Campus area, owned and operated by the same family that owned Verdi in the Powell area. Delicious Food for a very reasonable price.",
+				"Monday - Sunday 10AM to 10PM", "/img/pastavilla.png"));
+		Restaurant fishMarket = restaurantRepo.save(new Restaurant("Mitchell's Fish Market","The Best SeaFood in Columbus, If shrimp cocktails, shrimp tartar, shrimp gumbo, shrimp and grits is your thing. This is the place to be.",
+				"Monday - Sunday 11AM to 11PM", "/img/fishMarket.jpg"));
+		Restaurant burgerBar = restaurantRepo.save(new Restaurant("Burger Bar", "The Burger Bar is the place to be. A casual burger concept in the Short North, that offers gourmet burgers at a casual price", 
+				"Monday - Sunday 11AM to 9:30PM", "/img/burgerbar.jpg"));
+		Restaurant winery = restaurantRepo.save(new Restaurant("Eleven Wine Bar", "Eleven Wine Bar, The premier wine bar in the Short North. Artisian Cooktails such as Barrel Aged Manhattan's, wines from all over the world, and a mwnu crafted by the chef's of Hyde Park.",
+				"Friday & Saturday 4PM to 1AM", "/img/DEleven.jpg"));
+		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop", "The finest Ramen shop in all of New Zeland. Our chefs use only the freshest imported foods, to make an esquised ramen.", 
+				"Monday  - Saturaday 11AM - 8PM", "/img/ramen.png"));
 		Restaurant domIan = restaurantRepo.save(new Restaurant("Dom & Ian's Place"));
 //		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Steakhouse"));
 		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Smith & Wollensky"));
@@ -43,6 +48,12 @@ public class RestaurantPopulator implements CommandLineRunner {
 		Menu fmSalad = menuRepo.save(new Menu("Salad", fishMarket));
 		Menu lunchChinese = menuRepo.save(new Menu("Lunch", chinese));
 		Menu dSteakhouse = menuRepo.save(new Menu("Dinner", steakhouse));
+		Menu bBApps = menuRepo.save(new Menu("Appetizers", burgerBar));
+		Menu bBBurgers = menuRepo.save(new Menu("Burgers", burgerBar));
+		Menu bBShakes = menuRepo.save(new Menu("Milk Shakes", burgerBar));
+		Menu elevenWine = menuRepo.save(new Menu("Wine List", winery));
+		Menu elevenCocktails = menuRepo.save(new Menu("Cocktails", winery));
+		Menu elevenFood = menuRepo.save(new Menu("Menu", winery));
 		
 		Item padThai = itemRepo.save(new Item("Pad Thai", "Stir fried rice noodles with bean sprouts, green onion, egg,and ground peanuts.", BigDecimal.valueOf(7.15),
                 "/img/crabcakes.jpg", 940, "Nut, Gluten, Egg", true, lunchChinese));
@@ -98,6 +109,19 @@ public class RestaurantPopulator implements CommandLineRunner {
 				"chicken, cheese, rice and beans", true, lunch));
 		Item hounddogs = itemRepo.save(new Item("Hounddogs", "Our Traditional thin crust served square cut.  Your choice of three of three mouth watering sauces-ORIGINAL, SPICE or HOWLIN' HOT.", BigDecimal.valueOf(15.99), "/img/elSabino.jpg", 2976,
 				"chicken, cheese, rice and beans", true, lunch));
+		
+		Item bigStack = itemRepo.save(new Item("Big Stack", " Three 3oz locally sourced beef patties with American cheese, lettuce, dill pickle and our house made Special Sauce", BigDecimal.valueOf(13.00), "/img/bigstack.jpg", 1000,
+				"ground beef, lettuce, special sauce, dill pickles", true, bBBurgers));
+		Item buffNacho = itemRepo.save(new Item("Buffalo Chicken Nachos", " Nachos stacked tall with a buffalo cheese fondue, layered with chicken and topped with bleu cheese crumbles and celery", BigDecimal.valueOf(8.00), "/img/buffnacho.jpeg", 900,
+				"cream cheese, buffalo, chicken, tri-colored chips", true, bBApps));
+		Item buckeyeShake= itemRepo.save(new Item("Buckeye Shake", "The milkshake of the great state of Ohio, inspired by the buckeye candy. This shake will make any Xichigan fan reconsider!", BigDecimal.valueOf(7.00), "/img/buckShake.jpeg", 1000,
+		"vanilla ice cream with peanut butter, cream, whip cream, peanuts", true, bBShakes));
+		
+		Item wine= itemRepo.save(new Item("Chardonnay", "A dry white wine, with hints of oak", BigDecimal.valueOf(13.00), "/img/chard.jpg", 300,
+				"grapes", true, elevenWine));
+		Item manhattan= itemRepo.save(new Item("Barrel Age Manhattan", " Woodford barrel aged manhattans, the perfect drink for a Friday evening", BigDecimal.valueOf(12.00), "/img/manhattan.jpg", 1000,
+				"Woodford Burbon, orange, cherries and bitters", true, elevenCocktails));
+				
 		
 //		Item tacoLaco = itemRepo.save(new Item("Taco Laco", "Large flour tortilla filled with taco meat topped with chilliA fried flour tortilla shaped like a bowl, filled with choice of ground beef or shredded chicken, topped with lettuce, sliced tomatoes, sour cream and shredded cheese.", BigDecimal.valueOf(8.25), "/img/.jpg", 780,
 //				"ground beef, cheese, rice and beans", true, lunch));
