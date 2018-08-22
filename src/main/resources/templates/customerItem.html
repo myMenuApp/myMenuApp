@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"  />
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <header class="header">
                 <div class="header-container">
                     <img src="../img/logo.png" class="logo"></img>
-                    <h1>MyMenu</h1>
+                    <h1>&copy;MyMenu</h1>
                     <input id="burger" type="checkbox" />
                     <label for="burger">
                         <span></span>
@@ -54,9 +55,9 @@
             </header>
 
             <div class="flex-container-4">
-            <span class="flex-menu-title">
-                <h2 th:text="|${restaurantName} : ${menu.menuName}"></h2>
-                <button><a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|">Back to Menu</a></button>
+            <span class="flex-thing">
+                <button class="back-button"><i class="fas fa-angle-double-left"></i><a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|">Back to Menu</a></button>
+                <h2 th:text="|${restaurantName}"></h2> <h3 th:text="${menu.menuName}"></h3>
                     
             </span>
             <div class="flex-item-box">
@@ -81,6 +82,25 @@
                     </li>
                 </ul>
             </div>
+        <!--    <section>
+                    <div class="flex-container-comments">
+                        <h2>Leave a Comment:</h2>
+                        <div class="flex-name-container">
+                        
+                        <label class="flex-name">Your name: <input type="text" name="Creator"
+                            placeholder="Enter Your Name Here "  /></label> 
+    
+                        <label class="flex-comment">Your Comment: <input type="text" name="comment"
+                            placeholder="Enter Your Comment Here" /></label>
+                            <button id="submitComment" class="">Submit</button>
+                        </div>
+                </div>
+                    <ul class="commentList flex-comment-list">
+                        <li th:each="comment : ${items.comments}">
+                            <span th:text="|${comment.creator} : ${comment.comment}|"></span>
+                        </li>
+                    </ul>
+            </section>  -->
         </div>
             <footer class="footer hero-img">
                 <h4>Handcrest&reg;</h4>
@@ -100,7 +120,7 @@
             </footer>
         </main>
     </div>
-    <script src="/js/javascript.js"></script>
+    <script src="/js/comment.js"></script> 
 
 </body>
 

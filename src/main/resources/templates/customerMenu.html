@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"  />
 </head>
 <body>
     <div class="grid-hack">
@@ -24,26 +25,36 @@
             <span></span>
         </label>
     <nav class="flex-navigation">
-        <ul>
-            <li>
-                <a th:href="@{/index}">List of Restaurants</a>
-            </li>
-            <li>
-                <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">List of Menus</a>
-            </li>
-            <li>
-                <a th:href="@{/index/contact}">Contact Us</a>
-            </li>
-        </ul>
+            <ul>
+                    <li>
+                        <a th:href="@{/index}">Home</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/index/contact}">Contact Us</a>
+                    </li>
+                    <li>
+                            <a th:href="@{/index/aboutUs}">About My Menu</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/index#sec1}">List of Restaurants</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Partners</a>
+                    </li>    
+                    <li>
+                        <a href="#">Follow Us</a>
+                    </li>
+                </ul>
     </nav>
 </div>
 </header>
 <div class="flex-container-4">
     <span class="flex-thing">
-        <h2 th:text="${restaurantName}"></h2>
-            <button><a th:href="|@{/index/customer/}${restaurant.restaurantName}|">Back to Menus</a></button>
+        <button class="back-button"><i class="fas fa-angle-double-left"></i><a th:href="|@{/index/customer/}${restaurant.restaurantName}|">Back to Menus</a></button>
+        <h2 th:text="${restaurantName}"></h2><br/>
+            <h3 th:text="${menu.menuName}"></h3>
         </span>
-        <h3 th:text="${menu.menuName}"></h3>
+
     <section class="flex-container-items-menu">
     <ul class= "itemsList"> <!--Java script for freeze item-->
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
@@ -60,17 +71,17 @@
 <footer class="footer hero-img">
         <h4>Handcrest&reg;</h4>
         <nav class="flex-navigation">
-            <ul>
-                <li>
-                    <a th:href="@{/index/contact}">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#">Our Partners</a>
-                </li>
-                <li>
-                        <a href="#top">Back to the Top</a>
-                    </li>
-            </ul>
+                <ul>
+                        <li>
+                            <a th:href="@{/index/contact}">Contact Us</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/index/aboutUs}">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#sec1">Back to Restaurants</a>
+                        </li>
+                    </ul>
         </nav>
     </footer>
 </main>

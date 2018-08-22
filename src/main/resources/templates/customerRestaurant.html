@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"  />
 </head>
 
 <body>
@@ -26,32 +27,40 @@
                         <span></span>
                     </label>
                     <nav class="flex-navigation">
-                        <ul>
-                            <li>
-                                <a th:href="@{/index}">List of Restaurants</a>
-                            </li>
-                            <li>
-                                    <a th:href="@{/index}">Contact </a>
-                                </li>
-                                <li>
-                                        <a th:href="@{/index}">List of Restaurants</a>
+                            <ul>
+                                    <li>
+                                        <a th:href="@{/index}">Home</a>
                                     </li>
                                     <li>
-                                            <a th:href="@{/index}">List of Restaurants</a>
-                                        </li>
-                        </ul>
+                                        <a th:href="@{/index/contact}">Contact Us</a>
+                                    </li>
+                                    <li>
+                                            <a th:href="@{/index/aboutUs}">About My Menu</a>
+                                    </li>
+                                    <li>
+                                        <a th:href="@{/index#sec1}">List of Restaurants</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Our Partners</a>
+                                    </li>    
+                                    <li>
+                                        <a href="#">Follow Us</a>
+                                    </li>
+                                </ul>
                     </nav>
                 </div>
             </header>
             <section class="flex-container-4">
-                <h2 th:text="${restaurantName}"></h2>              
-                <img class="restaurantLogo" th:src="${restaurant.restaurantLogo}"></img>            	
+                <span class="flex-thing">
+                        <button class="back-button"><i class="fas fa-angle-double-left"></i><a th:href="@{/index#sec1}">Back to Restaurants</a></button>
+                <h2 th:text="${restaurant.restaurantName}"></h2>
+                </span>
+                <img class="restaurantLogo" th:src="${restaurant.restaurantLogo}"></img> 
                 <p th:text="${restaurant.restaurantDescription}"></p>
-                 <p th:text="${restaurant.restaurantHours}"></p>
-                 <p th:text="${restaurant.restaurantPhone}"></p>
-                 <p th:text="${restaurant.restaurantAddress}"></p>
-                 <p><a th:text="${restaurant.restaurantMap}">Google Map Directions</a>
-                 </p>
+                <p th:text="${restaurant.restaurantHours}"></p>
+                <p th:text="${restaurant.restaurantPhone}"></p>           	
+                <p th:text="${restaurant.restaurantAddress}"></p>
+                
                 <ul class="menusList flex-list-menu">
                     <li th:each="menu : ${restaurant.menus}">
                         <a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|" th:text="${menu.menuName}">
@@ -64,20 +73,26 @@
                 <h4>Handcrest&reg;</h4>
                 
                 <nav class="flex-navigation">
-                    <ul>
-                        <li>
-                            <a th:href="@{/index/contact}">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="#">Our Partners</a>
-                        </li>
-                        <li>
-                            <a th:href="@{/index}">Go Back</a>
-                        </li>
-                        <li>
-                            <a href="#">Follow Us</a>
-                        </li>
-                    </ul>
+                        <ul>
+                                <li>
+                                    <a th:href="@{/index}">Home</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/index/contact}">Contact Us</a>
+                                </li>
+                                <li>
+                                        <a th:href="@{/index/aboutUs}">About My Menu</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/index#sec1}">List of Restaurants</a>
+                                </li>
+                                <li>
+                                    <a href="#">Our Partners</a>
+                                </li>    
+                                <li>
+                                    <a href="#">Follow Us</a>
+                                </li>
+                            </ul>
                 </nav>
             </footer>
         </main>

@@ -48,12 +48,10 @@
 
             <div class="flex-container-4">
                 <header>
-                    <span>
-                        <h2 th:text="${restaurantName}"></h2>
-                        <h3 th:text="${item.itemName}"></h3>
+                    <span class="flex-thing">
                         <input type="hidden" name="itemId" th:value="${item.itemId}" />
                         <input type="hidden" name="menuId" th:value="${menu.menuId}" />
-                        <button id="renameItemBtn">Rename</button>
+                        <button id="renameItemBtn" class="back-button">Rename</button>
                         <div id = "itemName-modal-screen">
                             <div id = "itemName-modal-box">
                                 <header>
@@ -64,6 +62,8 @@
                                 <button class="submitRenameBtn">Save changes</button>
                             </div>
                         </div>
+                        <h2 th:text="${restaurantName}"></h2>
+                        <h3 th:text="${item.itemName}"></h3>
                     </span>
                 </header>
 
@@ -196,7 +196,5 @@
     <script src="/js/OpenNav.js"></script>
     <script src="/js/carosule.js"></script>
     <script src="/js/editItem.js"></script>
-    <!-- Fix "Go Back" button
-    <a th:href="@{/menu}">Go Back</a> -->
 </body>
 </html>

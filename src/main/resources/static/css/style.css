@@ -8,7 +8,10 @@ a:visited{
 }
 a:hover{
     background-color: black;
+    padding: .4rem;
     color: aliceblue;
+    -webkit-transition: 0.5s all ease;
+  transition: 0.5s ease all;
 }
 
 /* Back Ground May need deleted*/
@@ -77,8 +80,8 @@ a:hover{
 .flex-login{
     color:black;
     font-weight: bold;
-    font-size: 24px;
-    border: 2px solid black;
+    font-size: 20px;
+    border: 1px solid black;
     background-color: whitesmoke;
 }
 
@@ -121,8 +124,74 @@ a:hover{
     font-size: 12px;
     font-weight: 400;
 }
+
+/* Back Buttons*/
+
+.back-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 1rem ;
+    border: 3px solid  rgba(172, 0, 0, 0.651);
+}
+.back-button i {
+    padding: .3rem;
+}
+.back-button a{
+    background-color: transparent;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s ease all;
+}
+.back-button:hover{
+    text-decoration: none;
+    color: white;
+    border: 3px solid  rgba(172, 0, 0, 0.651);
+    background-color: rgba(172, 0, 0, 0.651);
+    -webkit-transition: 0.5s all ease;
+  transition: 0.5s ease all;
+}
+.back-button:hover a{
+    text-decoration: none;
+    color: white;
+    background-color:transparent;
+    -webkit-transition: 0.5s all ease;
+  transition: 0.5s ease all;
+}
+.back-button:focus{
+    text-decoration: none;
+    color: white;
+    border: 3px solid  rgba(172, 0, 0, 0.651);
+    background-color: rgba(172, 0, 0, 0.651);
+}
+.back-button:before{
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+}
+.back-button:hover:before{
+    -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.back-button::after{
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+
  /* Item Specific */
 .outStock {
+	background-image: url('../img/SOLD-OUT.jpg');
     opacity: .4;
     background-image: url(/img/soldout.jpg)
    

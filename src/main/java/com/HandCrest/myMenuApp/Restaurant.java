@@ -44,6 +44,24 @@ public class Restaurant {
 		this.restaurantAddress = restaurantAddress; 
 		this.RestaurantMap = restaurantMap;
 	}
+	
+
+
+	public String getRestaurantPhone() {
+		return restaurantPhone;
+	}
+
+	public String getRestaurantWeb() {
+		return restaurantWeb;
+	}
+
+	public String getRestaurantAddress() {
+		return restaurantAddress;
+	}
+
+	public String getRestaurantMap() {
+		return RestaurantMap;
+	}
 
 	public Long getRestaurantId() {
 		return restaurantId;
@@ -65,19 +83,7 @@ public class Restaurant {
 		return restaurantLogo;
 	}
 	
-	public String getRestaurantPhone() {
-		return restaurantPhone;
-	}
-	public String getRestaurantWeb() {
-		return restaurantWeb;
-	}
-	public String getRestaurantAddress() {
-		return restaurantAddress;
-	}
 	
-	public String getRestaurantMap() {
-		return RestaurantMap;
-	}
 	public Collection<Menu> getMenus() {
 		return menus;
 	}

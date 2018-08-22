@@ -19,6 +19,7 @@ public class AdminController {
 	@Autowired
 	MenuRepository menuRepo;
 
+
 	@RequestMapping("/login")
 	public String adminLoginPage() {
 		return "login";
@@ -36,12 +37,19 @@ public class AdminController {
 	@RequestMapping("/admin/logout")
 	public String adminLogin(HttpServletRequest request, HttpServletResponse response) {
 		Cookie[] cookies = request.getCookies();
+		if(cookies != null)
+		{
+
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equals("role")) {
 				cookie.setMaxAge(0);
 				response.addCookie(cookie);
 				break;
 			}
+		}
+		}else
+		{
+			System.out.println("COOKIES ARE NULL GROOT");
 		}
 		return "redirect:/admin";
 	}
@@ -58,7 +66,6 @@ public class AdminController {
 		model.addAttribute("menus", menus);
 		return "admin";
 	}
-
 
 	
 	

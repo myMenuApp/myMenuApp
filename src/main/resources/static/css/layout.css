@@ -26,12 +26,14 @@ ul{
     width: 100%;
     z-index: 999;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    border: 3px solid green;
 }
   .header-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
 }
   .flex-navigation{
     display: flex;
@@ -130,8 +132,14 @@ ul{
 }
 .flex-container-3{
     display: flex;
-    justify-content: flex-start;
-    background-color: aliceblue;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-left: 10px solid rgba(172, 0, 0, 0.651);
+    overflow: auto;
+    height: auto;
+    background-color: rgb(243, 243, 243);
 }
 .flex-container-4{
     display: flex;
@@ -148,7 +156,6 @@ ul{
     display: grid;
     grid-template-columns: 1fr;
     border:2px solid pink;
-
     background-color: aliceblue;
 }
 .flex-container-6{
@@ -171,6 +178,17 @@ ul{
     align-items: space-evenly;
     padding: 1rem;
 }
+.flex-4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-left: 10px solid rgba(172, 0, 0, 0.651);
+    overflow: auto;
+    height: auto;
+    background-color: rgb(243, 243, 243);
+}
 .flex-5{
     display: flex;
     flex-direction: row;
@@ -186,19 +204,24 @@ ul{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
     width:30%;
     height:auto;
-    padding: 2rem;
+    margin-top: 3rem;
     margin:1rem;
-    box-shadow:  0 4px 8px 0 lightgray;
-    background: aliceblue;
-    border-radius: 3rem; 
 }
-
+.flex-list-app-content h3{
+    font-size: 30px;
+    
+}
 .flex-list-app-content p{
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    line-height: 1.9rem;
+}
+.about-us-images{
+    width:300px;
+    height: 300px;
 }
 /* Restaurant List */
 
@@ -210,6 +233,7 @@ ul{
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem;
+    
 }
 .flex-list-restaurants li{
     display: flex;
@@ -221,14 +245,14 @@ ul{
     margin:.3rem;
     margin-top: 2rem;
     box-shadow:  0 4px 8px 0 lightgrey;
-     
+    background-color: rgb(243, 243, 243);
 }
 .flex-list-restaurants li a{
     font-size: 24px;
     margin: .3rem auto .5rem auto;
 }
-.flex-list-restaurants li span{
-    line-height: 1.6rem;
+.flex-list-restaurants span{
+    line-height: 2rem;
 }
 .restaurant-card-picture{
     width:200px;
@@ -245,7 +269,6 @@ ul{
 }
 .flex-container-4 h2{
     font-size: 36px;
-    font-family: 'Limelight', cursive;
 }
 
 /* Menu Page */
@@ -293,17 +316,16 @@ ul{
     cursor: pointer;
 }
 .flex-container-4 p{
-    
     padding:0 2rem;
 }
 
 /* Buttons on Menu Page */
 .button-group{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
 }
 .remove-button {
     border: 1px solid red;
@@ -364,12 +386,10 @@ ul{
     flex-wrap: row wrap;
     justify-content: flex-start;
     align-items: center;
-    width:80%;
+    width:100%;
     height:auto;
-    padding: 2rem;
+    padding: 1rem;
     margin:1rem;
-    box-shadow:  0 4px 8px 0 lightgrey;
-    
 }
 .item-image{
     width:25vw;
@@ -430,17 +450,17 @@ ul{
 .flex-thing{
     display: flex;
     flex-direction: row;
-    border: 1px solid forestgreen;
     width: 100%;
     padding-top: 1rem;
-    justify-content: space-between;
+    padding-right: 2rem;
+    padding-left:2rem;
+    justify-content: space-evenly;
     align-items: center;
 }
-.flex-thing button{
-    
-    height:40px;
-    width: 80px;
+.flex-thing h3{
+    font-size: 24px;
 }
+
 /* Comment Section on Item Page */
 
 .flex-container-comments{
@@ -520,13 +540,18 @@ ul{
     align-items: center;
     padding: 2rem;
     margin:1rem;
-    box-shadow:  0 4px 8px 0 lightgrey;
     background-color: rgb(243, 243, 243); 
 }
 .flex-personal img{
     width: 200px;
-    height: auto;
+    height: 200px;
     border-radius: 20rem;
+}
+.flex-personal h3{
+    font-size: 28px;
+}
+.flex-personal h5{
+    font-size: 22px;
 }
 .collapse{
     margin-top:1rem;
@@ -616,7 +641,6 @@ ul{
 }
 .flex-list-title{
     font-size: 42px;
-    font-family: Arial, Arial, 'Arial Narrow Bold', sans-serif;
     padding-right: 1rem;
 }
 
@@ -630,11 +654,41 @@ ul{
     align-items: center;
     width: 40%;
     height:auto;
-    padding: 2rem;
+    padding: 0;
     margin:1rem;
-    box-shadow:  0 4px 8px 0 black;
-    background: lightblue;
-    border-radius: 3rem;
+}
+.flex-menu-manager label{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: .5rem;
+}
+.flex-menu-food{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row wrap;
+
+}
+.flex-menu-food li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: .5rem;
+}
+.flex-rename{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width:80%;
+}
+.editor {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 /* Misc / Can not find */
@@ -652,6 +706,7 @@ ul{
 .flex-container-menu{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
     width: 80%;
     overflow: auto;
@@ -681,5 +736,10 @@ ul{
 @media screen and (max-width: 800px) {
     *{
       width: 100%;
+    }
+}
+@media screen and (max-width: 640px){
+    img{
+        width: 100%;
     }
 }
