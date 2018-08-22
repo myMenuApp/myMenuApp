@@ -35,8 +35,14 @@
                 </div>
             </header>
             <section class="flex-container-4">
-                <h2 th:text="${restaurantName}"></h2>
-                <p> Restaurant Logo or picture</p> <p>Restaurant Description</p> <p> Hours of Operation Reservations yes or no</p> <p> Google Maps location </p>
+                <h2 th:text="${restaurantName}"></h2>              
+                <img class="restaurantLogo" th:src="${restaurant.restaurantLogo}"></img>            	
+                <p th:text="${restaurant.restaurantDescription}"></p>
+                 <p th:text="${restaurant.restaurantHours}"></p>
+                 <p th:text="${restaurant.restaurantPhone}"></p>
+                 <p th:text="${restaurant.restaurantAddress}"></p>
+                 <p><a th:text="${restaurant.restaurantMap}">Google Map Directions</a>
+                 </p>
                 <ul class="menusList flex-list-menu">
                     <li th:each="menu : ${restaurant.menus}">
                         <a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|" th:text="${menu.menuName}">

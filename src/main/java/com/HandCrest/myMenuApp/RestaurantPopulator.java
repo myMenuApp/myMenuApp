@@ -23,8 +23,10 @@ public class RestaurantPopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Restaurant pastaVilla = restaurantRepo.save(new Restaurant("Pasta Villa"));
-		Restaurant fishMarket = restaurantRepo.save(new Restaurant("Mitchell's Fish Market"));
+		Restaurant pastaVilla = restaurantRepo.save(new Restaurant("Pasta Villa","An Fine Italian Restaurant in the OSU Campus area, owned and operated by the same family that owned Verdi in the Powell area. Delicious Food for a very reasonable price.",
+				"Monday - Sunday 10AM - 10Pm", "/img/pastavilla.png","(614)914-8803","www.pastavillabuckeyes.com","2475 N. High St.; Columbus, OH 43202","https://www.google.com/maps/place/2475+N+High+St,+Columbus,+OH+43202/@40.0127282,-83.0133679,17z/data=!3m1!4b1!4m5!3m4!1s0x88388ea16d325569:0x9a54205952c5f05b!8m2!3d40.0127241!4d-83.0111792"));
+		Restaurant fishMarket = restaurantRepo.save(new Restaurant("Mitchell's Fish Market","The Best SeaFood in Columbus, If shrimp cocktails, shrimp tartar, shrimp gumbo, shrimp and grits is your thing. This is the place to be.",
+				"Monday-Sunday 11AM to 11PM", "/img/fishMarket.jpg","(614)291-3474","www.mitchellsfishmarket.com","1245 Olentangy River Rd.; Columbus, OH 43212","https://www.google.com/maps/place/1245+Olentangy+River+Rd,+Columbus,+OH+43212/@39.9853673,-83.0259481,17z/data=!3m1!4b1!4m5!3m4!1s0x88388ee514a17c47:0x3084a096ae8f4dbd!8m2!3d39.9853632!4d-83.0237594"));
 		Restaurant burgerBar = restaurantRepo.save(new Restaurant("Burger Bar"));
 		Restaurant winery = restaurantRepo.save(new Restaurant("The Wine and Dine"));
 		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop"));
@@ -34,15 +36,16 @@ public class RestaurantPopulator implements CommandLineRunner {
 		Restaurant chinese = restaurantRepo.save(new Restaurant("Taste of Orient"));
 		
 		Menu steakhouseAppetizers = menuRepo.save(new Menu("Appetizers", steakhouse));
-		Menu pvAppetizers = menuRepo.save(new Menu("Pizza", pastaVilla));
+		Menu pvAppetizers = menuRepo.save(new Menu("Appetizers", pastaVilla));
 		Menu pvDinner = menuRepo.save(new Menu("Dinner", pastaVilla));
-		Menu specialitypizza = menuRepo.save(new Menu("Specialty Pizza", pastaVilla));
+//		Menu specialitypizza = menuRepo.save(new Menu("Specialty Pizza", pastaVilla));
 		Menu sandwichesDinner = menuRepo.save(new Menu("Sandwiches & Dinners", steakhouse));
 		Menu lunch = menuRepo.save(new Menu("Dom & Ians Lunch Menu", domIan));
+		Menu dSteakhouse = menuRepo.save(new Menu("Dinner", steakhouse));
+		Menu lunchChinese = menuRepo.save(new Menu("Lunch", chinese));
+		
 		Menu fmDinner = menuRepo.save(new Menu("Dinner", fishMarket));
 		Menu fmSalad = menuRepo.save(new Menu("Salad", fishMarket));
-		Menu lunchChinese = menuRepo.save(new Menu("Lunch", chinese));
-		Menu dSteakhouse = menuRepo.save(new Menu("Dinner", steakhouse));
 		
 		Item padThai = itemRepo.save(new Item("Pad Thai", "Stir fried rice noodles with bean sprouts, green onion, egg,and ground peanuts.", BigDecimal.valueOf(7.15),
                 "/img/crabcakes.jpg", 940, "Nut, Gluten, Egg", true, lunchChinese));
@@ -57,32 +60,82 @@ public class RestaurantPopulator implements CommandLineRunner {
         Item mignot = itemRepo.save(new Item("Signature Fillet Mignon", "Choice cuts of steak seared in butter", BigDecimal.valueOf(44.00),
                 "/img/crabcakes.jpg", 757, "Beef, Dairy", true, dSteakhouse));
 		
+        
 		Item springSalad = itemRepo.save(new Item("Spring Salad", "Romaine Lettuce, Oil, Crutons, Cheese, Carrots, Eggs", BigDecimal.valueOf(45.00), 
-				"/img/crabcakes.jpg", 145, "Egg, Dairy, Oil, Gluten",true, fmSalad));
+				"/img/springSalad.jpg", 145, "Egg, Dairy, Oil, Gluten",true, fmSalad));
 		Item wedge = itemRepo.save(new Item("Titanic Wedge of Iceburg", "Iceburg Lettuce, Tomato, BlueCheese, Eggs", BigDecimal.valueOf(28.00), 
-				"/img/crabcakes.jpg", 404, "Egg, Dairy",true, fmSalad));
-		Item spinachGoat = itemRepo.save(new Item("Spinach and Goat Cheese Saladz	", "Iceburg Lettuce, Tomato, BlueCheese, Eggs", BigDecimal.valueOf(28.00), 
-				"/img/crabcakes.jpg", 404, "Egg, Dairy",true, fmSalad));
+				"/img/wedge.jpg", 404, "Egg, Dairy",true, fmSalad));
+		Item spinachGoat = itemRepo.save(new Item("Spinach and Goat Cheese Salad", "Iceburg Lettuce, Tomato, BlueCheese, Eggs", BigDecimal.valueOf(28.00), 
+				"/img/spinachGoat.jpg", 404, "Egg, Dairy",true, fmSalad));
+		Item clamChowder = itemRepo.save(new Item("New England Clam Chowder", "Traditional Clam Chowder", BigDecimal.valueOf(13.00), 
+				"/img/clamChowder.jpg", 404, "clams, dairy",true, fmSalad));
+		Item caesar = itemRepo.save(new Item("Classic Ceasar Salad", "with grilled or crispy chicken", BigDecimal.valueOf(16.00), 
+				"/img/ceasar.jpg", 404, "gluten, dairy",true, fmSalad));
+		Item cobb = itemRepo.save(new Item("Ocean Cobb", "chilled lobster, shrimp + crab, bacon, avocado, egg, blue cheese, white balsamic vinaigrette", BigDecimal.valueOf(15.00), 
+				"/img/cobb.jpg", 404, "clams, dairy",true, fmSalad));
+		Item lobsterBisque = itemRepo.save(new Item("Maine Lobster Bisque", "chilled lobster, shrimp + crab, bacon, avocado, egg, blue cheese, white balsamic vinaigrette", BigDecimal.valueOf(15.00), 
+				"/img/lobsterBisque.jpg", 404, "clams, dairy",true, fmSalad));
+		
 		Item tuna = itemRepo.save(new Item("Seared Ahi Tuna", "Tuna, Oil", BigDecimal.valueOf(28.00), 
-				"/img/crabcakes.jpg", 404, "Seafood, Oil",true, fmDinner));
-		
-		Item crispyCalamari = itemRepo.save(new Item("Chili Soy Dipping Sauce", "Soy, Chili", BigDecimal.valueOf(12.99), 
-				"/img/crabcakes.jpg", 404, "Seafood, Oil",true, fmDinner));
+				"/img/tuna.jpg", 404, "Seafood, Oil",true, fmDinner));
+		Item shrimpCocktail = itemRepo.save(new Item("Jumbo Shrimp Cocktail", "House Sauces: Classic Cocktail or Creamy Louie", BigDecimal.valueOf(20.00), 
+				"/img/shrimpCocktail.jpg", 908, "Seafood, Shellfish",true, fmDinner));
 		Item baconShrimp = itemRepo.save(new Item("Applewood Bacon Wrapped BBQ Shrimp", "Applewood Bacon, Shrimp, BBQ, Sticky Rice", BigDecimal.valueOf(24.00), 
-				"/img/crabcakes.jpg", 908, "Seafood, Bacon, Shellfish, BBQ",true, fmDinner));
-		Item calamri = itemRepo.save(new Item("Fried Calamari", "Squid, breaded and fried", BigDecimal.valueOf(4.99),
-				"/img/crabcakes.jpg", 149, "seafood, seasame oil", true, pvAppetizers));
-		Item cheeseBread = itemRepo.save(new Item("Cheese Bread", "Italian Baguette with Mozzarella Cheese", BigDecimal.valueOf(3.99),
-				"/img/crabcakes.jpg", 225, "Gluten, Dairy", true, pvAppetizers));
-		Item ravioli = itemRepo.save(new Item("Fried Ravioli", "Italian Sausage wrapped in pasta", BigDecimal.valueOf(4.99),
-				"/img/crabcakes.jpg", 257, "Meat, Pasta, Oil", true, pvAppetizers));
-		Item chickenparm = itemRepo.save(new Item("Chicken Parmigiana", "Breadded Chicken with Pizza Sauce and Mozzarella", BigDecimal.valueOf(13.99),
-				"/img/crabcakes.jpg", 1200, "Gluten, Chicken, Oil, Tomato", true, pvDinner));
-		Item veal = itemRepo.save(new Item("Veal Marasala", "Calf Cutlets, Pan Seared with Mushroom Sauce", BigDecimal.valueOf(13.00),
-				"/img/crabcakes.jpg",525, "Meat, Mushroom", true, pvDinner));
-		Item marcecata = itemRepo.save(new Item("Seafood Marcecata", "Angel Hair Pasta with Shirmp,Crab Meat, and Mussels", BigDecimal.valueOf(14.99),
-				"/img/crabcakes.jpg", 857, "Seafood, Shell Fish, Oil, Pasta, Sauce", true, pvDinner));
+				"/img/baconShrimp.jpg", 908, "Seafood, Bacon, Shellfish, BBQ",true, fmDinner));
+		Item fmCrabCake = itemRepo.save(new Item("Jumbo Lump Crab Cake", "roasted corn, tabasco mash remoulade, traditional tartar", BigDecimal.valueOf(24.00), 
+				"/img/fmCrabCake.jpg", 908, "Seafood, Shellfish",true, fmDinner));
+		Item crispyCalamari = itemRepo.save(new Item("Chili Soy Dipping Sauce", "Soy, Chili", BigDecimal.valueOf(12.99), 
+				"/img/crispyCalamari.jpg", 404, "Seafood, Oil",true, fmDinner));
+		Item dumplings = itemRepo.save(new Item("Shrimp and Crab Dumplings", "basil pesto, blistered tomatoes, pistachios", BigDecimal.valueOf(12.99), 
+				"/img/dumplings.jpg", 404, "Seafood, Shellfish",true, fmDinner));
+		Item mussels = itemRepo.save(new Item("P.E.I. Mussels Provencal", "white wine, garlic butter, roma tomatoes", BigDecimal.valueOf(12.99), 
+				"/img/mussels.jpg", 404, "Seafood, Shellfish",true, fmDinner));
+		Item oysters = itemRepo.save(new Item("Charbroiled Oysters", "freshly shucked on the half shell, sizzling platter, hot bayou butter, grilled bread, 1/2 dozen", BigDecimal.valueOf(19.00), 
+				"/img/oysters.jpg", 404, "clams, dairy",true, fmDinner));
+		Item spicyShrimp = itemRepo.save(new Item("Spicy Crispy Shrimp", "creamy chili glaze, sticky rice, pickled cucumbers", BigDecimal.valueOf(22.00), 
+				"/img/spicyShrimp.jpg", 404, "Seafood, Shellfish",true, fmDinner));
+		Item filetMignon = itemRepo.save(new Item("Filet Mignon", "char-grilled, smashed redskins, asparagus", BigDecimal.valueOf(26.00), 
+				"/img/filetMignon.jpg", 404, "Steak",true, fmDinner));
 		
+		
+		Item calamri = itemRepo.save(new Item("Fried Calamari", "Squid, breaded and fried", BigDecimal.valueOf(4.99),
+				"/img/calamari.jpg", 149, "seafood, seasame oil", true, pvAppetizers));
+		Item cheeseBread = itemRepo.save(new Item("Cheese Bread", "Italian Baguette with Mozzarella Cheese", BigDecimal.valueOf(3.99),
+				"/img/cheeseBread.jpg", 225, "Gluten, Dairy", true, pvAppetizers));
+		Item ravioli = itemRepo.save(new Item("Fried Ravioli", "Italian Sausage wrapped in pasta", BigDecimal.valueOf(4.99),
+				"/img/ravioli.jpg", 257, "Meat, Pasta, Oil", true, pvAppetizers));
+		Item mozzSticks = itemRepo.save(new Item("Mozzarella Cheese Sticks", "Fried Mozzarella Sticks", BigDecimal.valueOf(4.99),
+				"/img/mozzSticks.jpg", 257, "Meat, Pasta, Oil", true, pvAppetizers));
+		Item butterMussels = itemRepo.save(new Item("Mussels in White Wine Lemon Butter", "Mussels in White Wine Lemon Butter Sauce", BigDecimal.valueOf(8.99),
+				"/img/butterMussels.jpg", 257, "Seafood ", true, pvAppetizers));
+		Item cickenQuesadilla = itemRepo.save(new Item("Chicken Quesadilla", "Flour Tortillas, chiken, onion, peppers, cheese, salsa", BigDecimal.valueOf(7.99),
+				"/img/chickenQuesadilla.jpg", 257, "Meat, Pasta, Oil", true, pvAppetizers));
+		
+		Item spaghetti = itemRepo.save(new Item("spaghetti & Meatballs", "Traditional favorite, large portion of spaghetti, topped with delicious marinara sauce and hearty Italian meatball", BigDecimal.valueOf(11.99),
+				"/img/spaghetti.jpg", 1200, "Gluten, Oil, Tomato", true, pvDinner));
+		Item fettuccine = itemRepo.save(new Item("Fettuccine Alfredo", "Fettuccine folded into a heavy parmesan-garlic sauce – simple and elegant pasta", BigDecimal.valueOf(8.99),
+				"/img/fettuccine.jpg", 1200, "Gluten, Oil, Tomato", true, pvDinner));
+		Item lasagna = itemRepo.save(new Item("Baked Lasagna", "An old family recipe of ricotta and provolone cheese and meat sauce layered with pasta sheets topped with romano cheese baked four times in marinara sauce", BigDecimal.valueOf(9.99),
+				"/img/lasagna.jpg", 1200, "Gluten, Tomato", true, pvDinner));
+		
+		Item chickenparm = itemRepo.save(new Item("Chicken Parmigiana", "Breadded Chicken with Pizza Sauce and Mozzarella", BigDecimal.valueOf(13.99),
+				"/img/chickenparm.jpg", 1200, "Gluten, Chicken, Oil, Tomato", true, pvDinner));
+		Item veal = itemRepo.save(new Item("Veal Marasala", "Calf Cutlets, Pan Seared with Mushroom Sauce", BigDecimal.valueOf(13.00),
+				"/img/veal.jpg",525, "Meat, Mushroom", true, pvDinner));
+		Item marcecata = itemRepo.save(new Item("Seafood Marcecata", "Angel Hair Pasta with Shirmp,Crab Meat, and Mussels", BigDecimal.valueOf(14.99),
+				"/img/marcecata.jpg", 857, "Seafood, Shell Fish, Oil, Pasta, Sauce", true, pvDinner));
+		Item pvZiti = itemRepo.save(new Item("Baked Ziti", "Penne pasta with marinara sauce, ricotta and mozzarella cheese with fresh basil oven baked", BigDecimal.valueOf(9.99),
+				"/img/veal.jpg",525, "gluten", true, pvDinner));
+		Item pvVealParm = itemRepo.save(new Item("Veal Parmigiana", "Veal sauteed in italian seasoning, topped w/ our homemade marinara sauce and melted provolon cheese", BigDecimal.valueOf(13.99),
+				"/img/pvVealParm.jpg",525, "gluten", true, pvDinner));
+		Item chickenMarsala = itemRepo.save(new Item("Chicken Marsala", "Boneless chicken breast pan-seared w/ fresh mushrooms in a marsala cream sauce", BigDecimal.valueOf(12.99),
+				"/img/chickenMarsala.jpg",525, "gluten, mushrooms", true, pvDinner));
+		Item chickenPicatta = itemRepo.save(new Item("Chicken Picatta", "Boneless chicken breast pan-seared, fresh lemon, garlic, parsley, butter capes w/ white wine sauce.", BigDecimal.valueOf(10.99),
+				"/img/chickenPicatta.jpg",525, "gluten", true, pvDinner));
+		Item lobsterRavioli = itemRepo.save(new Item("Lobster Ravioli", "Filled with tail and claw lobster meat, Mascarpone cheese, roasted shallots and roasted garlic, dijon mustard, Parmesan, chili pepper flakes, spices, and bread crumbs.", BigDecimal.valueOf(13.99),
+				"/img/lobsterRavioli.jpg",525, "gluten, seafood", true, pvDinner));
+		Item shrimpScampi = itemRepo.save(new Item("Shrimp Scampi", "Angel hair pasta tossed w/ shrimp seared in extra virgin olive oil w/ garlic, fresh tomatoes, fresh basil, white wine sauce, and red onions", BigDecimal.valueOf(13.99),
+				"/img/shrimpScampi.jpg",525, "gluten, seafood", true, pvDinner));
 		
 		Item crabcakes = itemRepo.save(new Item("crabcakes", "cakes but made of crabs", BigDecimal.valueOf(786549.00),
 				"/img/crabcakes.jpg", 350000, "imitation crab, birthday cake mix", true, steakhouseAppetizers));
@@ -90,23 +143,12 @@ public class RestaurantPopulator implements CommandLineRunner {
 				"/img/fishsticks.jpg", 100000, "Alaskan cod", true, steakhouseAppetizers));		
 		Item texasBurrito = itemRepo.save(new Item("Texas Burrito", "Large flour tortilla filled with taco meat topped with chilli con queso. Served with rice and  beans (with beef fajita/chicken fajita, add .75c)", BigDecimal.valueOf(8.25), "/img/texasburrito.jpg", 780,
 				"ground beef, cheese, rice and beans", true, lunch));
-		
 		Item tostadas = itemRepo.save(new Item("Tostadas", "Two beef or chicken tostados with beans, lettuce, sour cream, guacamole, and cheese", BigDecimal.valueOf(43520152.00), "/img/tostados.jpg",
 				100000, "beef or chicken tostados with beans, lettuce, sour cream, guacamole, and cheese", true, lunch));
-	
 		Item elSabino = itemRepo.save(new Item("El Sabino", "One cheese or chicken enchilada serve with rice, beans, and a cheese puff)", BigDecimal.valueOf(8.25), "/img/elSabino.jpg", 960,
 				"chicken, cheese, rice and beans", true, lunch));
 		Item hounddogs = itemRepo.save(new Item("Hounddogs", "Our Traditional thin crust served square cut.  Your choice of three of three mouth watering sauces-ORIGINAL, SPICE or HOWLIN' HOT.", BigDecimal.valueOf(15.99), "/img/elSabino.jpg", 2976,
 				"chicken, cheese, rice and beans", true, lunch));
 		
-//		Item tacoLaco = itemRepo.save(new Item("Taco Laco", "Large flour tortilla filled with taco meat topped with chilliA fried flour tortilla shaped like a bowl, filled with choice of ground beef or shredded chicken, topped with lettuce, sliced tomatoes, sour cream and shredded cheese.", BigDecimal.valueOf(8.25), "/img/.jpg", 780,
-//				"ground beef, cheese, rice and beans", true, lunch));
-		
-//		Item texasBurrito = itemRepo.save(new Item("Texas Burrito", "Large flour tortilla filled with taco meat topped with chilli con queso. Served with rice and  beans (with beef fajita/chicken fajita, add .75c)", BigDecimal.valueOf(8.25), "/img/.jpg", 780,
-//				"ground beef, cheese, rice and beans", true, lunch));
-//		
-//		Item texasBurrito = itemRepo.save(new Item("Texas Burrito", "Large flour tortilla filled with taco meat topped with chilli con queso. Served with rice and  beans (with beef fajita/chicken fajita, add .75c)", BigDecimal.valueOf(8.25), "/img/.jpg", 780,
-//				"ground beef, cheese, rice and beans", true, lunch));
-
 	}
 }

@@ -9,12 +9,8 @@
     <link rel="stylesheet" href="/CSS/layout.css" />
     <link rel="stylesheet" href="/CSS/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<<<<<<< HEAD
-=======
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
->>>>>>> master
 </head>
-
 <body>
     <div class="grid-hack">
         <main class="container">
@@ -25,11 +21,7 @@
                     <nav class="flex-navigation">
                         <ul>
                             <li>
-<<<<<<< HEAD
-                                <a href="#">Contact Us</a>
-=======
                                 <a th:href="@{/index/contact}">Contact Us</a>
->>>>>>> master
                             </li>
                             <li>
                                 <a href="#">Our Partners</a>
@@ -53,26 +45,16 @@
                             quod, modi quia illum labore saepe nam ducimus quaerat nemo repellat, ullam eius libero rem!</p>
                     </div>
                 </section>
-<<<<<<< HEAD
-                      	
-=======
-
                 <span type="hidden" name="itemId" th:value="${itemId}"></span>
->>>>>>> master
                 <ul class="menusList flex-list-menu">
                     <li th:each="menu : ${restaurant.menus}">
                         <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}|" th:text="${menu.menuName}">
                         </a>
                         <div class="button-group">
-<<<<<<< HEAD
                             <button class="deleteMenuButton remove-button">Delete Menu</button>
-=======
-
->>>>>>> master
                         </div>
                     </li>
                 </ul>
-
                 <div class="flex-content-manager">
                     <h2>Add a menu for this restaurant</h2>
                     <section class="addMenu">
@@ -86,7 +68,6 @@
                     </section>
                 </div>
             </section>
-
             <footer class="footer">
                 <h4>Handcrest&reg;</h4>
                 <nav class="flex-navigation">
@@ -105,7 +86,6 @@
             </footer>
         </main>
     </div>
-
     <script src="/js/javascript.js"></script>
     <script src="/js/deleteMenu.js"></script>
     <script src="/js/addmenu.js"></script>

@@ -30,7 +30,7 @@ public class CustomerController {
 		return "customerMenu";
 	}
 	
-	@RequestMapping("/customer/{restaurantName}/menus/{menuId}/items/{itemId}")
+	@RequestMapping("index/customer/{restaurantName}/menus/{menuId}/items/{itemId}")
 	public String getItem(@PathVariable(name = "restaurantName")String restaurantName,
 			@PathVariable(name = "menuId")Long menuId,
 			@PathVariable(name = "itemId")Long itemId, Model model) {
