@@ -27,7 +27,7 @@ submitItemButton.addEventListener("click", function submitItem(){
                             <img src="${item.picture}" style="width:10vw" />
                         </a>
                         <button class="soldOut">Sold Out</button>
-                        <button class="deleteItemButton">Delete Item</button>
+                        <button class="deleteItemButton back-button">Delete Item</button>
                     </li>	   
                 `
             })

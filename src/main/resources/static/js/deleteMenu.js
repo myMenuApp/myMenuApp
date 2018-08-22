@@ -24,7 +24,7 @@ function removeMenu(event) {
 									${menu.menuName}
 								</a> 
 								<div class="button-group">
-								<button class = "deleteMenuButton">Delete Menu</button>
+								<button class = "deleteMenuButton back-button">Delete Menu</button>
 								</div>
 							</li>	
 						`		
