@@ -105,29 +105,14 @@ const submitRenameBtn = document.querySelector('.submitRenameBtn');
 const itemName = document.querySelector('[name="itemRename"]')
 const menuIdApi = document.querySelector("[name='menuId']");
 const itemIdApi = document.querySelector("[name='itemId']");
+const itemNameToChange = document.querySelector('.itemNameToChange')
 submitRenameBtn.addEventListener('click', closeItemNameModal);
 submitRenameBtn.addEventListener("click", function saveChanges(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function (response){
         if(xhr.readyState == 4 && xhr.status == 200) {
-            const itemName = JSON.parse(response.currentTarget.response)
-            let html=`
-            <h1 text="${itemName.itemName}"></h1>
-            <button id="renameItemBtn">Rename</button>
-            <div id = "itemName-modal-screen">
-                <div id = "itemName-modal-box">
-                    <header>
-                        <h3>Rename item</h3>
-                        <button id = "close-itemName-modal">Cancel</button>
-                    </header>
-                    <label>Picture: <input type="text" name="itemRename" placeholder="${itemName.itemName}" /></label>
-                    <button class="submitRenameBtn">Save changes</button>
-                </div>
-            </div>
-                
-                `
-                
-            itemName.innerHTML = html;
+            const itemRename = JSON.parse(response.currentTarget.response)
+            itemNameToChange.innerText = itemRename.itemName;
         }
     })
     xhr.open("PUT", `/api/menus/${menuIdApi.value}/items/${itemIdApi.value}?itemName=${itemName.value}`, true);
