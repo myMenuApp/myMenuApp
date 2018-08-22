@@ -8,44 +8,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" />
 </head>
 <body>
-<div class="grid-hack">
-<main class="container"> 
-<header class="header">  
-    <div class="header-container">
-        <img src="../img/logo.png" class="logo"  ></img>
-        <h1>MyMenu</h1>
-        <nav class="flex-navigation">
-            <ul>
-                <li><a href="#">Contact Us</a></li> 
-                <li><a href="#">Our Partners</a></li> 
-                <li><a href="#">Follow Us</a></li>                                          
-                <button id="openModalBtn">			
-                        <span>Login</span>
-                    </button>
-                <div id="loginModal" class="modal">
-                    <div class="modal-content flex-container-login">
-                        <div class="flex-login">
-                            <span id="close-modal">X</span>
-                            <span class="login-window">
-                            <form th:action="@{/index/admin}">
-                                <h4>Login:</h4>
-                                <p>Username:</p>
-                                <input type="text" placeholder="login" class="flex-1" />
-                                <p>Password:</p>
-                                <input type="text" placeholder="login password" class="flex-2" /><br/>
-                                <button class="mainBtn"><span>Login</span></button>
-                             </form>                     
-                                <a href="#" class="questions">Forgot Username?</a>
-                                <a href="#" class="questions">Forgot Password?</a>
-                            </span>
-                            </div>  
-                    </div>
+    <div class="grid-hack">
+        <main class="container">
+            <header class="header">
+                <div class="header-container">
+
+                    <h1>MyMenu</h1>
+                    <img src="../img/HandcrestLogo.jpg" class="logo"></img>
+                    <input id="burger" type="checkbox" />
+                    <label for="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <nav class="flex-navigation">
+                        <ul>
+                            <li>
+                                <a th:href="@{/index/contact}">Contact Us</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/index/aboutUs}">About My Menu</a>
+                            </li>
+                            <li>
+                                <a href="#">Follow Us</a>
+                            </li>
+                            <li>
+                                <button id="openModalBtn">
+                                    <span>Login</span>
+                                </button>
+                            </li>
+                            <div id="loginModal" class="modal">
+                                <div class="modal-content flex-container-login">
+                                    <div class="flex-login">
+                                        <span id="close-modal">X</span>
+                                        <span class="login-window">
+                                            <form th:action="|@{/index/admin}|">
+                                                <h4>Login:</h4>
+                                                <p>Username:</p>
+                                                <input type="text" placeholder="login" class="flex-1" />
+                                                <p>Password:</p>
+                                                <input type="password" placeholder="login password" class="flex-2" />
+                                                <br/>
+                                                <button class="mainBtn">
+                                                    <span>Login</span>
+                                                </button>
+                                            </form>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </nav>
                 </div>
-            </ul>
-        </nav>
+            </header>
+
+            <section class="overlay">
+                <div class="hero-image">
+                    <div class="slides hero-one">
+                        <span class="hero-text">
+                            <h1>Welcome to myMenu</h1>
+                            <h2>The Menu Revolution Starts Here!</h2>
+                            <p> Here at My Menu our goal is to provide</p>
+                            <p> an elegant ordering experience through modern integration.</p>
+                            <p>We strive to bring our clients the best dining experience</p>
+                            <p>through our state of the art menu, ordering, and pay systems</p>
+                            <button>
+                                <a href="#sec1"> View Our Restaurants </a>
+                            </button>
+                        </span>
+                    </div>
+
+
+                    <img class="slides" src="../img/coffee.jpeg" />
+                    <img class="slides" src="../img/breakfast.jpeg" />
+                    <img class="slides" src="../img/salad.jpeg" />
+                    <img class="slides" src="../img/wineanddine.jpg" />
+                    <img class="slides" src="../img/drinks.jpeg" />
+                    <img class="slides" src="../img/brownie.jpeg" />
+                    <img class="slides" src="../img/bar.jpg" />
+                </div>
+            </section>
+
+            <section class="flex-container-4" id="top">
+                <div class="flex-login-line" id="sec1">
+                    <h3 class="flex-list-title"> Restaurant List:</h3>
+                </div>
+                <div class="flex-item-box">
+                    <ul class="flex-list-restaurants">
+                        <li th:each="restaurant : ${restaurants}">
+                            <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
+                                <span th:text="${restaurant.restaurantName}"></span>
+                            </a>
+                            <img th:src="${restaurant.restaurantLogo}" class="restaurant-card-picture restaurantLogo" />
+                            <span th:text="${restaurant.restaurantDescription}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <footer class="footer hero-img">
+                <h4>Handcrest&reg;</h4>
+                <nav class="flex-navigation">
+                    <ul>
+                        <li>
+                            <a th:href="@{/index/contact}">Contact Us</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/index/aboutUs}">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#top">Back to the Top</a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
+        </main>
     </div>
 </header>
 <div class="hero-image">

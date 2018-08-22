@@ -38,7 +38,7 @@ public class MenuController {
 	
 	@RequestMapping("/index/admin")
 	public String getLogin(Model model) {
-		model.addAttribute("admin");
+		model.addAttribute("restaurants", restaurantRepo.findAll());
 		return "admin";
 	}
 	
@@ -47,25 +47,17 @@ public class MenuController {
 		return "contact";
 	}
 	
-	@RequestMapping("/index/{restaurantName}")
+	@RequestMapping("index/admin/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		return "restaurant";
 	}
-//	@RequestMapping("/index/{restaurantName}/customerRestaurant")
-//	public String getCustomerRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
-//		model.addAttribute("customerRestaurant", restaurantRepo.findByRestaurantName(restaurantName));
-//		return "customerRestaurant";
-//	}
-//	
-//	@RequestMapping("/index/{restaurantName}/customerRestaurant/customerMenu")
-//	public String getCustomerMenu(@PathVariable(name = "restaurantName")String restaurantName, 
-//									 Model model) {
-//		model.addAttribute("customerRestaurant", restaurantRepo.findByRestaurantName(restaurantName));
-//		
-//		return "customerMenu";
-//	}
-//	
+	@RequestMapping("/index/aboutUs")
+	public String getAboutUs(Model model) {
+		model.addAttribute("aboutUs");
+		return "aboutUs";
+}
+
 	@RequestMapping("/index/{restaurantName}/menus/{menuId}")
 	public String getMenu(@PathVariable(name = "restaurantName")String restaurantName,
 							@PathVariable(name = "menuId") Long menuId, Model model) {
