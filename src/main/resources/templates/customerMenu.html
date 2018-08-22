@@ -58,7 +58,7 @@
     <section class="flex-container-items-menu">
     <ul class= "itemsList"> <!--Java script for freeze item-->
         <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
-            <a th:href= "|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
+            <a th:href= "|@{/index/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
                 <span th:text="${item.itemName}"></span>
                 <img th:src="${item.picture}" style="width:20vw" />
             </a>
