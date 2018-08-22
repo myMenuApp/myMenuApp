@@ -95,8 +95,8 @@
                 <ul class="itemsList">
                     <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
                         <input type="hidden" name="enabled" th:value="${item.enabled}" />
-                        <span th:text="${item.itemName}"></span>
                         <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
+	                        <span th:text="${item.itemName}"></span>
                             <img th:src="${item.picture}" style="width:10vw" />
                         </a>
                         <span class="button-group">
