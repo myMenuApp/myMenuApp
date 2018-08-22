@@ -7,7 +7,7 @@
 
 		if (event.target.classList.contains('soldOut')){
 			const soldOutBtn = event.target
-			const freezeContainer = soldOutBtn.parentElement
+			const freezeContainer = soldOutBtn.parentElement.parentElement
 			
 			const hrefArray = freezeContainer.querySelector('a').getAttribute('href').split("/")
 			const menuId = document.querySelector("[name='menuId']");

@@ -5,7 +5,7 @@ itemList.addEventListener('click', removeItem)
 function removeItem(event) {
 	if (event.target.classList.contains('deleteItemButton')) {
 		const deleteItemBtn = event.target
-		const itemContainer = deleteItemBtn.parentElement
+		const itemContainer = deleteItemBtn.parentElement.parentElement
 		
 		const hrefArray = itemContainer.querySelector('a').getAttribute('href').split("/")
 		const restaurantName =hrefArray[2]
