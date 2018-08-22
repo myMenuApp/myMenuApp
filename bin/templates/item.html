@@ -63,13 +63,28 @@
                             </div>
                         </div>
                         <h2 th:text="${restaurantName}"></h2>
-                        <h3 th:text="${item.itemName}" class="menuNameToChange"></h3>
+
+                        <h3 th:text="${item.itemName}" class="itemNameToChange"></h3>
+                        <input type="hidden" name="itemId" th:value="${item.itemId}" />
+                        <input type="hidden" name="menuId" th:value="${menu.menuId}" />
+                        <button id="renameItemBtn">Rename</button>
+                        <div id = "itemName-modal-screen">
+                            <div id = "itemName-modal-box">
+                                <header>
+                                    <h3>Rename item</h3>
+                                    <button id = "close-itemName-modal">Cancel</button>
+                                </header>
+                                <label>Name: <input type="text" name="itemRename" th:placeholder="${item.itemName}" /></label>
+                                <button class="submitRenameBtn">Save changes</button>
+                            </div>
+                        </div>
+
                     </span>
                 </header>
 
                 <section>
                     <div class="flex-item-list">
-                        <h3 th:text="${item.itemName}" class="menuNameToChange"></h3>
+                        <h3 th:text="${item.itemName}" class="itemNameToChange"></h3>
                         <input type="hidden" name="itemId" th:value="${item.itemId}" /> <input
                             type="hidden" name="menuId" th:value="${menu.menuId}" />
                         <ul class="itemDetails">
@@ -196,5 +211,9 @@
     <script src="/js/OpenNav.js"></script>
     <script src="/js/carosule.js"></script>
     <script src="/js/editItem.js"></script>
+
+    <!-- Fix "Go Back" button
+    <a th:href="@{/menu}">Go Back</a> -->
+
 </body>
 </html>
