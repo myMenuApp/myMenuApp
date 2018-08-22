@@ -110,6 +110,7 @@ ul{
 }
 .hero-img{
     background-image: url("/img/footerbanner2.jpg");
+	background-size: cover;     
 }
 /* body sections layouts */
 
