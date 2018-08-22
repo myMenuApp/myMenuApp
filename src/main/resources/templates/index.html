@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"  />
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" />
 </head>
 <body>
@@ -93,11 +94,10 @@
                 </div>
             </section>
 
-            <section class="flex-container-4" id="top">
-                <div class="flex-login-line" id="sec1">
+            <section class="flex-container-4" id="sec1">
                     <h3 class="flex-list-title"> Restaurant List:</h3>
-                </div>
                 <div class="flex-item-box">
+
                     <ul class="flex-list-restaurants">
                         <li th:each="restaurant : ${restaurants}">
                             <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
@@ -122,7 +122,7 @@
                             <a th:href="@{/index/aboutUs}">About Us</a>
                         </li>
                         <li>
-                            <a href="#top">Back to the Top</a>
+                            <a href="#sec1">Back to the Top</a>
                         </li>
                     </ul>
                 </nav>

@@ -26,23 +26,26 @@
                                         <span></span>
                                     </label>
                                     <nav class="flex-navigation">
-                                        <ul>
-                                                <li>
+                                            <ul>
+                                                    <li>
                                                         <a th:href="@{/index}">Home</a>
                                                     </li>
-                                            <li>
-                                                <a th:href="@{/index/contact}">Contact Us</a>
-                                            </li>
-                                            <li>
-                                                    <a th:href="@{/customer}">List of Restaurants</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Our Partners</a>
-                                            </li>    
-                                        <li>
-                                            <a href="#">Follow Us</a>
-                                        </li>
-                                        </ul>
+                                                    <li>
+                                                        <a th:href="@{/index/contact}">Contact Us</a>
+                                                    </li>
+                                                    <li>
+                                                            <a th:href="@{/index/aboutUs}">About My Menu</a>
+                                                    </li>
+                                                    <li>
+                                                        <a th:href="@{/index#sec1}">List of Restaurants</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Our Partners</a>
+                                                    </li>    
+                                                    <li>
+                                                        <a href="#">Follow Us</a>
+                                                    </li>
+                                                </ul>
                                     </nav>
                                 </div>
         </header>
@@ -54,7 +57,7 @@
     <div class="flex-container-7">
         <div class="flex-personal">
                 <h3>John Baltes</h3>
-                <h5>Project Creator &amp; Frontend Design</h5>
+                <h5>Project Creator &amp; <br/> Frontend Design</h5>
                 <img src="/img/john.jpeg" />
                 <button class="collapse">About John:</button> 
                 <div class="inner-text">         
@@ -70,7 +73,7 @@
         </div>
         <div class="flex-personal">
                 <h3>Maulik Patel</h3>
-                <h5>Backend &amp; Ajax</h5>
+                <h5>Backend &amp; <br/> Ajax</h5>
                 <img src="../img/maulik.jpg" />
                 <button class="collapse">About Maulik:</button> 
                 <div class="inner-text">         
@@ -86,7 +89,7 @@
         </div>
         <div class="flex-personal">
                 <h3>Andrew Padula</h3>
-                <h5>Backend &amp; Ajax</h5>
+                <h5>Backend &amp; <br/>Ajax</h5>
                 <img src="../img/andy.jpg" />
                 <button class="collapse">About Andrew:</button> 
                 <div class="inner-text">         
@@ -102,7 +105,7 @@
         </div>
         <div class="flex-personal">
                 <h3>Joanne Kelly</h3>
-                <h5>TDD</h5>
+                <h5>TDD &amp;<br/> Backend</h5>
                 <img src="../img/joanne-.jpg" />
                 <button class="collapse">About Joanne:</button> 
                 <div class="inner-text">         
@@ -118,7 +121,7 @@
         </div>
         <div class="flex-personal">
                 <h3>Dominick Hemphill</h3>
-                <h5>Backend &amp; Frontend Design</h5>
+                <h5>Backend &amp; <br/>Frontend Design</h5>
                 <img src="../img/dominick.jpg" />
                 <button class="collapse">About Dom:</button> 
                 <div class="inner-text">         
@@ -134,7 +137,7 @@
         </div>
         <div class="flex-personal">
                 <h3>Ian Pelow</h3>
-                <h5>Frontend Design</h5>
+                <h5>Frontend</h5>
                 <img src="../img/ian.jpg" />
                 <button class="collapse">About Ian:</button> 
                 <div class="inner-text">         
@@ -150,7 +153,7 @@
         </div>
         <div class="flex-personal">
                 <h3>Nate Norris</h3>
-                <h5>Trello Blocker</h5>
+                <h5>Backend &amp;<br/> Databasing</h5>
                 <img src="../img/nate.jpg" />
                 <button class="collapse">About Nate:</button> 
                 <div class="inner-text">         
@@ -165,7 +168,7 @@
                     </div>
                 </div>
         </div>
-        <div class="flex-personal">
+       <!-- <div class="flex-personal">
                 <h3>Aaron Smith</h3>
                 <h5>Scrum Master</h5>
                 <img src="../img/aaron.png" />
@@ -179,8 +182,8 @@
                     <a href="github.com/retrojb"><img src="../img/portfolio.png"  /></a>
                     <a href="github.com/retrojb"><img src="../img/email.png"  /></a>
                     </div>
-                </div>
-        </div>
+                </div> 
+        </div>-->
     </div>
 </section>
 
@@ -191,17 +194,17 @@
         <footer class="footer hero-img">
             <h4>Handcrest&reg;</h4>
             <nav class="flex-navigation">
-                <ul>
-                    <li>
-                        <a href="#">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Our Partners</a>
-                    </li>
-                    <li>
-                        <a href="#">Follow Us</a>
-                    </li>
-                </ul>
+                    <ul>
+                            <li>
+                                <a th:href="@{/index/contact}">Contact Us</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/index/aboutUs}">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#sec1">Back to the Top</a>
+                            </li>
+                        </ul>
             </nav>
         </footer>
     </div>
