@@ -59,9 +59,7 @@
                 <p th:text="${restaurant.restaurantDescription}"></p>
                 <p th:text="${restaurant.restaurantHours}"></p>
                 <p th:text="${restaurant.restaurantPhone}"></p>           	
-                <span><a th:text="${restaurant.restaurantWeb}">Visit Website</a></span>
                 <p th:text="${restaurant.restaurantAddress}"></p>
-                <p th:text="${restaurant.restaurantMap}"></p>
                 
                 <ul class="menusList flex-list-menu">
                     <li th:each="menu : ${restaurant.menus}">

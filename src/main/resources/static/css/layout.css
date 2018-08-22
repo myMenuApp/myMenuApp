@@ -26,12 +26,14 @@ ul{
     width: 100%;
     z-index: 999;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    border: 3px solid green;
 }
   .header-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
 }
   .flex-navigation{
     display: flex;
@@ -724,7 +726,6 @@ ul{
     text-decoration: none;
     cursor: pointer;
 }
-
 
 /* Responsive Section */
   @media only screen and (max-width: 640px) {

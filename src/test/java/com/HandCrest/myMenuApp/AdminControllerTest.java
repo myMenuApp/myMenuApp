@@ -50,30 +50,30 @@ public class AdminControllerTest {
 //  }
 	
 	
-	@Test
-	public void shouldSetAdminLoginCookieFoo() {
-		HttpServletResponse response = mock(HttpServletResponse.class);
-		ArgumentCaptor<Cookie> cookieCaptor = ArgumentCaptor.forClass(Cookie.class);
-
-		underTest.adminLogin(response);
-
-		verify(response).addCookie(cookieCaptor.capture());
-		Cookie cookie = cookieCaptor.getValue();
-
-		assertThat(cookie.getName(), is("role"));
-	}
-
-	@Test
-	public void shouldSetAdminLogoutCookieFoo() {
-		HttpServletResponse response = mock(HttpServletResponse.class);
-		ArgumentCaptor<Cookie> cookieCaptor = ArgumentCaptor.forClass(Cookie.class);
-
-		underTest.adminLogin(response);
-
-		verify(response).addCookie(cookieCaptor.capture());
-		Cookie cookie = cookieCaptor.getValue();
-
-		assertThat(cookie.getName(), is("role"));
-	}
+//	@Test
+//	public void shouldSetAdminLoginCookieFoo() {
+//		HttpServletResponse response = mock(HttpServletResponse.class);
+//		ArgumentCaptor<Cookie> cookieCaptor = ArgumentCaptor.forClass(Cookie.class);
+//
+//		underTest.adminLogin(response);
+//
+//		verify(response).addCookie(cookieCaptor.capture());
+//		Cookie cookie = cookieCaptor.getValue();
+//
+//		assertThat(cookie.getName(), is("role"));
+//	}
+//
+//	@Test
+//	public void shouldSetAdminLogoutCookieFoo() {
+//		HttpServletResponse response = mock(HttpServletResponse.class);
+//		ArgumentCaptor<Cookie> cookieCaptor = ArgumentCaptor.forClass(Cookie.class);
+//
+//		underTest.adminLogin(response);
+//
+//		verify(response).addCookie(cookieCaptor.capture());
+//		Cookie cookie = cookieCaptor.getValue();
+//
+//		assertThat(cookie.getName(), is("role"));
+//	}
 
 }
