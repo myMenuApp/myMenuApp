@@ -6,10 +6,9 @@ body {
     top: 40px;
     left: 40px;
     z-index: 6;
-    
+    font-size: 20px;
     font-weight: 900;
-    font-family: 'Limelight', cursive;
-    font-size: 36px;
+    font-family: sans-serif;
     text-transform: uppercase;
   }
   body h1 > span {
