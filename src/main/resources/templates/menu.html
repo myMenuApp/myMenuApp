@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menuLayout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css"  />
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" />
 </head>
 
@@ -46,11 +47,15 @@
             </header>
 
             <div class="flex-container-4">
-                <span>
+               <!-- <span class="flex-rename">
                     <h2 th:text="${restaurantName}"></h2>
-                    <h3 th:text="${menu.menuName}"></h3>
+                    <h3 th:text="${menuName}" class="menuNameToChange"></h3>
                     <input type="hidden" name="menuId" th:value="${menu.menuId}" />
-                    <button id="renameMenuBtn">Rename</button>
+                    <button id="renameMenuBtn" class="back-button">Rename</button>
+                    
+                    <input type="search" placeholder="search"  />
+                    <button>Search</button>
+                    
                     <div id="menuName-modal-screen">
                         <div id="menuName-modal-box">
                             <header>
@@ -63,26 +68,48 @@
                             <button class="submitMenuNameBtn">Save changes</button>
                         </div>
                     </div>
-                </span>
-            </div>
+                </span>  -->
+                <span class="flex-rename">
+                        <h2 th:text="${restaurantName}"></h2>
+                        <h3 th:text="${menu.menuName}" class="menuNameToChange"></h3>
+                        <input type="hidden" name="menuId" th:value="${menu.menuId}" />
+                        <button id="renameMenuBtn">Rename menu</button>
 
-            <section class="flex-container-menu">
+                        <input type="search" placeholder="search"  />
+                    <button>Search</button>
+                        <div id = "menuName-modal-screen">
+                            <div id = "menuName-modal-box">
+                                <header>
+                                    <h3>Rename menu</h3>
+                                    <button id = "close-menuName-modal">Cancel</button>
+                                </header>
+                                <label>Menu name: <input type="text" name="menuRenameInput" th:placeholder="${menu.menuName}" /></label>
+                                <button class="submitMenuNameBtn">Save changes</button>
+                            </div>
+                        </div>
+                    </span>    
+                
+            
+
+            <section class="flex-menu-food">
                 <ul class="itemsList">
                     <li th:each="item : ${menu.items}" th:classappend="${item.enabled} ? inStock : outStock">
                         <input type="hidden" name="enabled" th:value="${item.enabled}" />
+                        <span th:text="${item.itemName}"></span>
                         <a th:href="|@{/index/}${restaurant.restaurantName}/@{menus}/${menu.menuId}@{/items/}${item.itemId}|">
-                            <span th:text="${item.itemName}"></span>
                             <img th:src="${item.picture}" style="width:10vw" />
                         </a>
-                        <button class="soldOut">SoldOut</button>
-                        <button class="deleteItemButton">Delete Item</button>
+                        <span class="button-group">
+                        <button class="soldOut back-button">SoldOut</button>
+                        <button class="deleteItemButton back-button">Delete Item</button>
+                    </span>
                     </li>
                 </ul>
-            </section>
+            
 
-            <section class="addItem flex-menu-manager">
+            <section class="addItem">
+                <div class="editor">
                 <h2>Add an item to this menu</h2>
-                <aside class="addItem flex-menu-manager">
                     <label>Item name:
                         <input type="text" name="addItemNameApi" placeholder="Name" />
                     </label>
@@ -104,23 +131,34 @@
                     </label>
                     <input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}" />
                     <input type="hidden" name="menuId" th:value="${menu.menuId}" />
-                    <button class="submitItemButton">Submit</button>
-                </aside>
+                    <button class="submitItemButton back-button">Submit</button>
+                </div>
             </section>
-            <footer class="footer">
+        </section>
+        </div>
+            <footer class="footer hero-img">
                 <h4>Handcrest&reg;</h4>
                 <nav class="flex-navigation">
                     <ul>
-                        <li>
-                            <a href="#">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="#">Our Partners</a>
-                        </li>
-                        <li>
-                            <a href="#">Follow Us</a>
-                        </li>
-                    </ul>
+                            <li>
+                                <a th:href="@{/index}">Home</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/index/contact}">Contact Us</a>
+                            </li>
+                            <li>
+                                    <a th:href="@{/index/aboutUs}">About My Menu</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/index#sec1}">List of Restaurants</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Partners</a>
+                            </li>    
+                            <li>
+                                <a href="#">Follow Us</a>
+                            </li>
+                        </ul>
                 </nav>
             </footer>
         </main>

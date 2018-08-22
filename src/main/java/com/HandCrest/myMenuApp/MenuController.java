@@ -38,7 +38,7 @@ public class MenuController {
 	
 	@RequestMapping("/index/admin")
 	public String getLogin(Model model) {
-		model.addAttribute("admin");
+		model.addAttribute("restaurants", restaurantRepo.findAll());
 		return "admin";
 	}
 	
@@ -47,7 +47,7 @@ public class MenuController {
 		return "contact";
 	}
 	
-	@RequestMapping("/index/{restaurantName}")
+	@RequestMapping("index/admin/{restaurantName}")
 	public String getRestaurant(@PathVariable(name = "restaurantName")String restaurantName, Model model) {
 		model.addAttribute("restaurant", restaurantRepo.findByRestaurantName(restaurantName));
 		return "restaurant";

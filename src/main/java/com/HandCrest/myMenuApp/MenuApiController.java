@@ -40,19 +40,16 @@ public class MenuApiController {
 
 	@RequestMapping(value = "/menus", method = RequestMethod.DELETE)
 	public Collection<Menu> deleteMenu(@RequestParam(value = "restaurantName") String restaurantName,
-			@RequestParam(value = "menuId") Long menuId,  @RequestParam(value = "itemId") Long itemId) {
+			@RequestParam(value = "menuId") Long menuId) {
 		
-		for (Item item : (menuRepo.findOne(menuId)).getItems()) {
-			
-			if (menuRepo.findOne(menuId).getItems().size()>0) {
+		for (Item item : ((Menu)menuRepo.findOne(menuId)).getItems()) {
 				
-				for(Comment comment : itemRepo.findOne(itemId).getComments()) {
+				for(Comment comment : item.getComments()) {
 					commentRepo.delete(comment);					
 					}
 			itemRepo.delete(item);
 			}
-			
-		}
+		
 		menuRepo.delete(menuRepo.findOne(menuId));
 		return restaurantRepo.findByRestaurantName(restaurantName).getMenus();
 	}
