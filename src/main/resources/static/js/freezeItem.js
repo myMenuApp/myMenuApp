@@ -27,8 +27,10 @@
 						${item.itemName}
 						<img src="${item.picture}" style="width:10vw" />
 						</a>
+						<span class="button-group>
 						<button class="soldOut" innerText=>Sold Out</button>
 						<button class="deleteItemButton">Delete Item</button>
+						</span>
 						</li>
 						`
 					})
