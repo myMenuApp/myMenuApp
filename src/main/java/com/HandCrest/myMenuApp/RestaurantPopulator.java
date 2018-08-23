@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
-@Service
+// @Service
 public class RestaurantPopulator implements CommandLineRunner {
 	@Autowired
 	ItemRepository itemRepo;
