@@ -49,10 +49,11 @@ ul{
     padding: 4px;
 }
 .logo{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     left: 1rem;
     top: 1rem;
+    z-index: 99;
 }
 
 /* Hero Image*/

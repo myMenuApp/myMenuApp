@@ -3,10 +3,10 @@ body {
   }
   body h1 {
     position: fixed;
-    top: 40px;
-    left: 40px;
+    top: 20px;
+    left: 110px;
     z-index: 6;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 900;
     font-family: sans-serif;
     text-transform: uppercase;
