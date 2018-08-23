@@ -13,10 +13,72 @@
     <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" />
 </head>
 <body>
-    <div class="grid-hack">
-        <main class="container">
-            <header class="header">
-                <div class="header-container">
+<div class="grid-hack">
+<main class="container"> 
+<header class="header">  
+    <div class="header-container">
+        <img src="../img/logo.png" class="logo"  ></img>
+        <h1>MyMenu</h1>
+        <nav class="flex-navigation">
+            <ul>
+                <li><a href="#">Contact Us</a></li> 
+                <li><a href="#">Our Partners</a></li> 
+                <li><a href="#">Follow Us</a></li> 
+                <button id="openModalBtn">
+                        <span>Login</span>
+                    </button>
+                <div id="loginModal" class="modal">
+                    <div class="modal-content flex-container-login">
+                        <div class="flex-login">
+                            <span id="close-modal">X
+                            </span>
+                            <span class="login-window">
+                                <h4>Login:</h4>
+                                <p>Username:</p>
+                                <input type="text" placeholder="Login" class="flex-1" />
+                                <p>Password:</p>
+                                <input type="password" placeholder="Password" class="flex-2" /><br/>
+                                <button class="mainBtn"><span>Login</span></button>
+                                <a href="#" class="questions">Forgot Username?</a>
+                                <a href="#" class="questions">Forgot Password?</a>
+                            </span>
+                            </div>  
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="hero-image">
+        <img class="slides" src="../img/dinnerlogin.jpg"  />
+        <img class="slides" src="../img/dinnerstockbg.jpg"  />
+        <img class="slides" src="../img/freshveg.jpg" />
+        <img class="slides" src="../img/dinnerlogin.jpg" />      
+        
+        
+    </div> 
+
+<section class="flex-container-4">
+<div class="flex-login-line">
+    <h3 class="flex-list-title"> Restaurant List:</h3>
+    
+</div>       
+   
+    <ul class="flex-list-restaurants">
+        <li th:each="restaurant : ${restaurants}">
+            <a th:href="|@{/index/}${restaurant.restaurantName}|">
+                <span th:text="${restaurant.restaurantName}"></span>
+            </a>
+            <img src="../img/dinnerlogin.jpg" class="restaurant-card-picture"  />
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore suscipit, magnam, dolores deserunt rem rerum asperiores nesciunt, ea quisquam tenetur tempora neque optio quod corrupti delectus perferendis unde sunt? Earum?</span>
+        </li>
+    </ul>
+    <div class="flex-list-restaurants">
+    
+    <span class="flex-list-app-content">
+        <h3> Our Goal:</h3>
+        <p>Here at My Menu our goal is to provide an elegant ordering experience through modern integration.We strive to bring our clients the best dining experience through our state of the art menu, ordering, and pay systems</p>
+    </span>
 
                     <img src="../img/HandcrestLogo.jpg" class="logo"></img>
                     <h1>My Menu&copy;</h1>
