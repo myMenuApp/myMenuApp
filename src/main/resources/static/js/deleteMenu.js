@@ -1,5 +1,4 @@
 const menuList = document.querySelector('.menusList')
-const itemId = document.querySelector("[name = 'itemId']")
 menuList.addEventListener('click', removeMenu)
 
 function removeMenu(event) {

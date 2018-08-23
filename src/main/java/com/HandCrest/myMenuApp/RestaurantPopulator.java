@@ -33,10 +33,10 @@ public class RestaurantPopulator implements CommandLineRunner {
 				"Friday & Saturday 4PM to 1AM", "/img/DEleven.jpg"));
 		Restaurant ramen = restaurantRepo.save(new Restaurant("The Ramen Shop", "The finest Ramen shop in all of New Zeland. Our chefs use only the freshest imported foods, to make an esquised ramen.", 
 				"Monday  - Saturaday 11AM - 8PM", "/img/ramen.png"));
-		Restaurant domIan = restaurantRepo.save(new Restaurant("Dom & Ian's Place"));
+		Restaurant domIan = restaurantRepo.save(new Restaurant("Dom & Ian's Place", "An unforgettable experience.", "Open 24/7", "/img/DomAndIans.jpg"));
 //		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Steakhouse"));
-		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Smith & Wollensky"));
-		Restaurant chinese = restaurantRepo.save(new Restaurant("Taste of Orient"));
+		Restaurant steakhouse = restaurantRepo.save(new Restaurant("Smith & Wollensky", "Chophouse chain outpost serving prime steaks & seafood in a clubby, power-dining setting.", null, "/img/smithandwollensky.jpg"));
+		Restaurant chinese = restaurantRepo.save(new Restaurant("Taste of Orient", null, null, "/img/tasteoforient.jpg"));
 		
 		Menu steakhouseAppetizers = menuRepo.save(new Menu("Appetizers", steakhouse));
 		Menu pvAppetizers = menuRepo.save(new Menu("Pizza", pastaVilla));
