@@ -22,9 +22,9 @@ public class ApiControllerTest {
 		
 	//If this was a database entry into a restaurant table, to populate my "restaurant" object I would search for name
 	// and populate the menu ID and item ID associated with Mitchell's Fish Market (this has changed multiple times, I need to know this)
-	String restaurantName = "Mitchell's Fish Market";
+	String restaurantName = "Fish Market";
 	Long menuId = (long) 7;
-	Long itemId = (long) 10;
+	Long itemId = (long) 7;
 	String picture = "/img/milk.jpg";
 
 	@Test public void canary() { // test we can find localhost:8080/
