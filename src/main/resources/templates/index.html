@@ -103,7 +103,7 @@
                             <a th:href="|@{/index/customer/}${restaurant.restaurantName}|">
                                 <span th:text="${restaurant.restaurantName}"></span>
                             </a>
-                            <img th:src="${restaurant.restaurantLogo}" class="restaurant-card-picture restaurantLogo" />
+                           <figure><img th:src="${restaurant.restaurantLogo}" class="restaurant-card-picture restaurantLogo" /></figure>
                             <span th:text="${restaurant.restaurantDescription}"></span>
                         </li>
                     </ul>

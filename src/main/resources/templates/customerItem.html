@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/menu.css" />
-    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet"  />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"  />
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous" />
 </head>
 
 <body>
@@ -46,43 +47,47 @@
                             <li>
                                 <a th:href="|@{/customer/}${restaurant.restaurantName}/@{menus}/${menu.menuId}">Back to Menu</a>
                             </li>
-                        <li>
-                        <a href="#">Follow Us</a>
-                        </li>
+                            <li>
+                                <a href="#">Follow Us</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </header>
 
             <div class="flex-container-4">
-            <span class="flex-thing">
-                <button class="back-button"><i class="fas fa-angle-double-left"></i><a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|">Back to Menu</a></button>
-                <h2 th:text="|${restaurantName}"></h2> <h3 th:text="${menu.menuName}"></h3>
-                    
-            </span>
-            <div class="flex-item-box">
-                <span class="flex-22">
-                    <h3 th:text="${items.itemName}"></h3>
-                <img th:src="${items.picture}" class="item-image" />
-            </span>
-                <ul class="itemDetails flex-item-list">
-                    <li>
-                    </li>
-                    <li>
-                        <span th:text="|Description: ${items.description}|"></span>
-                    </li>
-                    <li>
-                        <span th:text="|Price: $${items.price}|"></span>
-                    </li>
-                    <li>
-                        <span th:text="|Calories: ${items.calories}|"></span>
-                    </li>
-                    <li>
-                        <span th:text="|Ingredients: ${items.ingredients}|"></span>
-                    </li>
-                </ul>
-            </div>
-        <!--    <section>
+                <span class="flex-thing">
+                    <button class="back-button">
+                        <i class="fas fa-angle-double-left"></i>
+                        <a th:href="|@{/index/customer/}${restaurant.restaurantName}@{/menus/}${menu.menuId}|">Back to Menu</a>
+                    </button>
+                    <h2 th:text="|${restaurantName}"></h2>
+                    <h3 th:text="${menu.menuName}"></h3>
+
+                </span>
+                <div class="flex-item-box">
+                    <span class="flex-22">
+                        <h3 th:text="${items.itemName}"></h3>
+                        <img th:src="${items.picture}" class="item-image" />
+                    </span>
+                    <ul class="itemDetails flex-item-list">
+                        <li>
+                        </li>
+                        <li>
+                            <span th:text="|Description: ${items.description}|"></span>
+                        </li>
+                        <li>
+                            <span th:text="|Price: $${items.price}|"></span>
+                        </li>
+                        <li>
+                            <span th:text="|Calories: ${items.calories}|"></span>
+                        </li>
+                        <li>
+                            <span th:text="|Ingredients: ${items.ingredients}|"></span>
+                        </li>
+                    </ul>
+                </div>
+                <!--    <section>
                     <div class="flex-container-comments">
                         <h2>Leave a Comment:</h2>
                         <div class="flex-name-container">
@@ -101,7 +106,7 @@
                         </li>
                     </ul>
             </section>  -->
-        </div>
+            </div>
             <footer class="footer hero-img">
                 <h4>Handcrest&reg;</h4>
                 <nav class="flex-navigation">
@@ -120,7 +125,7 @@
             </footer>
         </main>
     </div>
-    <script src="/js/comment.js"></script> 
+    <script src="/js/comment.js"></script>
 
 </body>
 
